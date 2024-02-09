@@ -1,8 +1,7 @@
+import Carousel from "../components/Home/Carousel";
 
 function Home() {
-  return (
-    <div>Home</div>
-  )
+  return <div><Carousel/></div>;
 }
 
-export default Home
+export default Home;
