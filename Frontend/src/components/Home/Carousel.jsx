@@ -103,6 +103,7 @@ function Carousel() {
         effect={"fade"}
         onSwiper={(swiper) => setSwiperRef(swiper)}
         modules={[EffectFade, Navigation, Pagination]}
+        loop={true}
         className="mySwiper"
       >
         {data.map((el) => {
