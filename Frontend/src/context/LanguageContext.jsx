@@ -19,9 +19,14 @@ export const LanguageProvider = ({ children }) => {
 
   const toggleLanguage = () => {
     setLanguage(language === "en" ? "ar" : "en");
+    window.location.reload();
   };
 
-  return <LanguageContext.Provider value={{ language, toggleLanguage }}>{children}</LanguageContext.Provider>;
+  return (
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
 };
 
 export const useLanguage = () => useContext(LanguageContext);
