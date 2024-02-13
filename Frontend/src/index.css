@@ -1,3 +1,9 @@
 * {
   font-family: "Markazi Text", serif;
 }
+.dir-ar{
+  direction: rtl;
+}
+.dir-en{
+  direction: ltr;
+}

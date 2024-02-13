@@ -6,10 +6,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import "./carousel.css";
+import { useLanguage } from "../../context/LanguageContext";
 function Carousel() {
+  const { language } = useLanguage();
   // to handle prev and next buttons
   const [swiperRef, setSwiperRef] = useState(null);
-
+  console.log(language);
   const prevHandler = () => {
     swiperRef.slidePrev();
   };
@@ -40,32 +42,42 @@ function Carousel() {
   }, [swiperRef]);
   ////////////////////////////////////////////
   // by seif
-  const data = [
-    {
-      id: 1,
-      img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
-      country: "cairo",
-      desc: "cairo is very beautiful country and i love it very much",
-    },
-    {
-      id: 2,
-      img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
-      country: "Alex",
-      desc: "alex is beautiful and have a beautiful sea",
-    },
-    {
-      id: 3,
-      img: "https://swiperjs.com/demos/images/nature-3.jpg",
-      country: "Dahab",
-      desc: "beautiful and have mountains and sea and fish",
-    },
-    {
-      id: 4,
-      img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
-      country: "hurghada",
-      desc: "have a wonderfull sea and many tourists vist it every year",
-    },
-  ];
+  const data =
+    language == "en"
+      ? [
+          {
+            id: 1,
+            img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
+            country: "cairo",
+            desc: "cairo is very beautiful country and i love it very much",
+          },
+          {
+            id: 2,
+            img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
+            country: "Alex",
+            desc: "alex is beautiful and have a beautiful sea",
+          },
+          {
+            id: 3,
+            img: "https://swiperjs.com/demos/images/nature-3.jpg",
+            country: "Dahab",
+            desc: "beautiful and have mountains and sea and fish",
+          },
+          {
+            id: 4,
+            img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
+            country: "hurghada",
+            desc: "have a wonderfull sea and many tourists vist it every year",
+          },
+        ]
+      : [
+          {
+            id: 1,
+            img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
+            country: "القاهرة",
+            desc: "القاهرة مدينة جميلة",
+          },
+        ];
   return (
     <>
       <Swiper
