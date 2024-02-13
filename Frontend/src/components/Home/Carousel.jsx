@@ -77,6 +77,24 @@ function Carousel() {
             country: "القاهرة",
             desc: "القاهرة مدينة جميلة",
           },
+          {
+            id: 2,
+            img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
+            country: "الاسكندرية",
+            desc: "alex is beautiful and have a beautiful sea",
+          },
+          {
+            id: 3,
+            img: "https://swiperjs.com/demos/images/nature-3.jpg",
+            country: "دهب",
+            desc: "beautiful and have mountains and sea and fish",
+          },
+          {
+            id: 4,
+            img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
+            country: "الغردقة",
+            desc: "have a wonderfull sea and many tourists vist it every year",
+          },
         ];
   return (
     <>
