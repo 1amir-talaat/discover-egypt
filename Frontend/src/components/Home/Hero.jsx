@@ -48,13 +48,13 @@ function Hero() {
   }, [heroSwiper]);
 
   return (
-    <div className="hero">
+    <div className="hero ">
       <div className="overlay">
         <img src={heroData[activeIndex].img} alt="" className="blur" />
         <div className="shodo"></div>
       </div>
 
-      <div className="hero-content">
+      <div className="hero-content container">
         <div className="top-section">
           <div className="hero-text hero-animated">
             <div className="hero-text-content">
@@ -65,6 +65,7 @@ function Hero() {
           </div>
           <div className="hero-slider">
             <Swiper
+              dir={language == "ar" ? "rtl" : "ltr"}
               autoplay={{ delay: 500 }}
               effect={"cards"}
               onSwiper={(swiper) => setHeroSwiper(swiper)}
