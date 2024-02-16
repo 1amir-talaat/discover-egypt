@@ -1,0 +1,48 @@
+.cov-img {
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 18/9;
+    width: 100%;
+}
+.events .swiper-slide {
+    height: 600px;
+}
+.events {
+    position: relativel;
+}
+.event-info {
+    position: absolute;
+    bottom: 74px;
+    right: 10%;
+    background-color: white;
+    width: 30rem;
+    min-height: 25rem;
+    padding: 40px;
+    z-index: 9999;
+}
+
+.event-info-right {
+    right: unset;
+    left: 10%;
+}
+
+.info-btn {
+    margin-top: 10px;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+}
+.p-info {
+    margin-top: 10px;
+}
+.events-buttons button {
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 33px;
+    padding: 0.3rem;
+    margin: 0.3rem;
+}
