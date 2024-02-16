@@ -2,7 +2,7 @@
   "ar": [
     {
       "title": "مغامرات البحار",
-      "image": "https://scth.scene7.com/is/image/scth/ritz-carlton-property-in-the-red-sea:crop-1160x650?defaultImage=ritz-carlton-property-in-the-red-sea&wid=1600&hei=896",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg",
       "description": "ويمتد ساحل البحر الأحمر لأكثر من 28 ألف كيلومتر، وأنسب وقت للاستمتاع بالبحر الدافئ والشمس هو فصل الشتاء، والذي يختلف في السعودية عن أي مكان في العالم. اقضِ أمتع الأوقات في المنتجعات الفاخرة والمستدامة",
       "atatus": "ltr"
     },
@@ -17,18 +17,24 @@
       "image": "https://scth.scene7.com/is/image/scth/three-kids-exploring-acave",
       "description": "اكتشف عروضنا المثيرة - بما في ذلك رحلات السفاري خلال عطلتك القادمة.",
       "atatus": "ltr"
+    },
+    {
+      "title": "مهرجان الأهرامات للضوء والصوت",
+      "image": "https://c1.wallpaperflare.com/path/655/497/134/egypt-photos-giza-lights-7a8bc9410465b662931c94150f5a5ee2.jpg",
+      "description": "لا يفوتك عرض الاهرامات مع الاضواء يقام ابتداءا من يوم 10 الي يوم 14 ابريل",
+      "atatus": "ltr"
     }
   ],
   "en": [
     {
       "title": "Sea Adventures",
-      "image": "https://scth.scene7.com/is/image/scth/ritz-carlton-property-in-the-red-sea",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg",
       "description": "The Red Sea coast extends for more than 28 thousand kilometers, and the most appropriate time to enjoy the warm sea and sun is the winter season, which is different in Saudi Arabia from anywhere in the world. Spend the most enjoyable times in luxurious and sustainable resorts",
       "atatus": "rtl"
     },
     {
       "title": "Arama season",
-      "image": "https://scth.scene7.com/is/image/scth/al-urmah-entry",
+      "image": "//media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs12517-021-07060-z/MediaObjects/12517_2021_7060_Fig5_HTML.jpg",
       "description": "Enjoy camping amidst the enchanting nature and various eco-tourism activities in the Egyptian desert.",
       "atatus": "rtl"
     },
@@ -36,6 +42,12 @@
       "title": "Egypt Holidays",
       "image": "https://scth.scene7.com/is/image/scth/three-kids-exploring-acave",
       "description": "Discover our exciting offers - including safaris during your next holiday",
+      "atatus": "rtl"
+    },
+    {
+      "title": "Pyramids Festival of Light and Sound",
+      "image": "https://c1.wallpaperflare.com/path/655/497/134/egypt-photos-giza-lights-7a8bc9410465b662931c94150f5a5ee2.jpg",
+      "description": "Don't miss the pyramids show with lights, which will be held from April 10 to April 14.",
       "atatus": "rtl"
     }
   ]

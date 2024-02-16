@@ -63,7 +63,7 @@ function Events() {
           })}
         </Swiper>
       </div>
-      {/* <div className={`event-info  d-flex flex-column  ${language == "en" ? "event-info-right" : ""}`}>
+      <div className={`event-info  d-flex flex-column  ${language == "en" ? "event-info-right" : ""}`}>
         <div className="info-data flex-grow-1">
           <h1>{data[activeIndex % data.length].title}</h1>
           <p className="p-info">{data[activeIndex % data.length].description}</p>
@@ -85,8 +85,8 @@ function Events() {
               }}
             ></div>
           </div>
-        </div> */}
-      {/* </div> */}
+        </div>
+      </div>
     </div>
   );
 }
