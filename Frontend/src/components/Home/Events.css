@@ -1,48 +1,93 @@
 .cov-img {
-    object-fit: cover;
-    object-position: center;
-    aspect-ratio: 18/9;
-    width: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
 }
-.events .swiper-slide {
-    height: 600px;
+
+.swiper-slide-content {
+  width: calc(100%);
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
+
 .events {
-    position: relativel;
+  position: relativel;
+  height: 605px;
 }
 .event-info {
-    position: absolute;
-    bottom: 74px;
-    right: 10%;
-    background-color: white;
-    width: 30rem;
-    min-height: 25rem;
-    padding: 40px;
-    z-index: 9999;
+  position: absolute;
+  bottom: 74px;
+  right: 10%;
+  background-color: white;
+  width: 30rem;
+  min-height: 25rem;
+  padding: 40px;
+  z-index: 9999;
 }
 
 .event-info-right {
-    right: unset;
-    left: 10%;
+  right: unset;
+  left: 10%;
 }
 
 .info-btn {
-    margin-top: 10px;
-    background-color: #f7f7f7;
-    border-radius: 20px;
+  margin-top: 10px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
 }
 .p-info {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .events-buttons button {
-    text-align: center;
-    border: none;
-    border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    background-color: #f7f7f7;
-    color: #333;
-    font-size: 33px;
-    padding: 0.3rem;
-    margin: 0.3rem;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  background-color: #f7f7f7;
+  color: #333;
+  font-size: 33px;
+  padding: 0.3rem;
+  margin: 0.3rem;
+}
+
+.events {
+  margin-top: 50px;
+  cursor: move;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.events .slide {
+  width: 100%;
+  height: 100%;
+}
+
+.events .slide .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.events .swiper-slide {
+  width: 80% !important;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+}
+
+.swiper-wrapper {
+  overflow: visible !important;
+}
+
+.swiper-slide-next,
+.swiper-slide-prev {
+  background-color: transparent !important;
 }
