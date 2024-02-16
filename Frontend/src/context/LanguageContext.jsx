@@ -22,11 +22,7 @@ export const LanguageProvider = ({ children }) => {
     window.location.reload();
   };
 
-  return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={{ language, toggleLanguage }}>{children}</LanguageContext.Provider>;
 };
 
 export const useLanguage = () => useContext(LanguageContext);

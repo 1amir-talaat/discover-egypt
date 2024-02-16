@@ -1,0 +1,46 @@
+{
+  "ar": [
+    {
+      "title": "السعودية فوق ما تتخيل",
+      "description": "استمتع ميسي باكتشاف أماكن كثيرة في السعودية، والآن دورك تكتشف ما يفوق خيالك.",
+      "img": "https://scth.scene7.com/is/image/scth/messi-family-mob"
+    },
+    {
+      "title": "موسم الرياض",
+      "description": "مهرجان ترفيهي عالمي يترقبه الجميع كل عام، تتنوع فعاليات موسم الرياض بين العروض الحماسية، والمطاعم والمقاهي، والحفلات الموسيقية وغيرها من المعارض والكرنفالات.",
+      "img": "https://scth.scene7.com/is/image/scth/riyadh-season-card"
+    },
+    {
+      "title": "مكافآت ما لها مثيل!",
+      "description": "اكسب مكافآت رائعة واستمتع بالسياحة أو السفر أو اللي يناسب لايف ستايلك اليومي .. وأكثر في السعودية.",
+      "img": "https://scth.scene7.com/is/image/scth/rewards-homepage"
+    },
+    {
+      "title": "الدليلة",
+      "description": "استمتع بجمال طبيعي ساحر مصحوب بتراث ثقافي باهر، بانتظارك مغامرات بين احضان الطبيعة متجددة.",
+      "img": "https://scth.scene7.com/is/image/scth/3-day-alula"
+    }
+  ],
+  "en": [
+    {
+      "title": "Saudi Arabia Beyond Your Imagination",
+      "description": "Enjoy Messi discovering many places in Saudi Arabia, and now it's your turn to discover what exceeds your imagination.",
+      "img": "https://scth.scene7.com/is/image/scth/messi-family-mob"
+    },
+    {
+      "title": "Riyadh Season",
+      "description": "An international entertainment festival awaited by everyone every year, Riyadh Season's activities range from exciting shows, to restaurants and cafes, music concerts, and other exhibitions and carnivals.",
+      "img": "https://scth.scene7.com/is/image/scth/riyadh-season-card"
+    },
+    {
+      "title": "Unprecedented Rewards!",
+      "description": "Earn amazing rewards and enjoy tourism, travel, or whatever suits your daily lifestyle.. and more in Saudi Arabia.",
+      "img": "https://scth.scene7.com/is/image/scth/rewards-homepage"
+    },
+    {
+      "title": "AlUla",
+      "description": "Enjoy a charming natural beauty accompanied by a splendid cultural heritage, adventures await you amidst the rejuvenating embrace of nature.",
+      "img": "https://scth.scene7.com/is/image/scth/3-day-alula"
+    }
+  ]
+}
