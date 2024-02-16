@@ -5,26 +5,26 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
-import "./carousel.css";
+import "./Carousel.css";
 import { useLanguage } from "../../context/LanguageContext";
 function Carousel() {
   const { language } = useLanguage();
   // to handle prev and next buttons
-  const [swiperRef, setSwiperRef] = useState(null);
+  const [carouselSwiperRef, setCarouselSwiperRef] = useState(null);
   console.log(language);
   const prevHandler = () => {
-    swiperRef.slidePrev();
+    carouselSwiperRef.slidePrev();
   };
 
   const nextHandler = () => {
-    swiperRef.slideNext();
+    carouselSwiperRef.slideNext();
   };
   ///////////////////////////
   // for doing the text animation
   useEffect(() => {
-    if (swiperRef) {
+    if (carouselSwiperRef) {
       //checking if the slide is active because if the state is true so slide is active
-      swiperRef.on("slideChange", () => {
+      carouselSwiperRef.on("slideChange", () => {
         const animatedElements = document.querySelectorAll(".animated"); //getting tags with class animated (the number of created elements in the loop based on the data)
         animatedElements.forEach((element) => {
           element.style.animation = "none"; // without it the animation will start from the center so there is no animation in the other slides only in first so i force the browser to recalculate the animation
@@ -35,11 +35,11 @@ function Carousel() {
       });
     }
     return () => {
-      if (swiperRef) {
-        swiperRef.off("slideChange");
+      if (carouselSwiperRef) {
+        carouselSwiperRef.off("slideChange");
       }
     };
-  }, [swiperRef]);
+  }, [carouselSwiperRef]);
   ////////////////////////////////////////////
   // by seif
   const data =
@@ -101,7 +101,7 @@ function Carousel() {
       <Swiper
         spaceBetween={30}
         effect={"fade"}
-        onSwiper={(swiper) => setSwiperRef(swiper)}
+        onSwiper={(swiper) => setCarouselSwiperRef(swiper)}
         modules={[EffectFade, Navigation, Pagination]}
         loop={true}
         className="mySwiper"
@@ -115,9 +115,7 @@ function Carousel() {
                   {/* the content  */}
                   <div className="carousel-content">
                     {/* the carousel header  */}
-                    <h2 className="carousel-header ">
-                      Winter Destinations in Egypt
-                    </h2>
+                    <h2 className="carousel-header ">Winter Destinations in Egypt</h2>
                     <hr />
                     {/* end of the header  */}
                     {/* //////////////// */}
