@@ -7,15 +7,21 @@
   position: relative;
   height: 100%;
   object-fit: fill;
-  filter: brightness(0.7);
+  filter: brightness(0.6);
 }
 
 .carousel-element {
-  height: 70dvh;
+  height: 65vh;
 }
 .carousel-header {
   color: #f7f7f7;
-  font-size: calc(5.71429px + 1.78571rem);
+  font-size: 3.125rem;
+  /* margin-top: 60px; */
+  position: sticky;
+  top: 0;
+}
+.flex-cont {
+  margin-top: 60px;
 }
 hr {
   color: #f7f7f7;
@@ -28,6 +34,7 @@ hr {
 }
 .carousel-buttons {
   text-align: center;
+  opacity: 0.8;
 }
 
 .carousel-buttons button {
@@ -44,7 +51,7 @@ hr {
 }
 .carousel-texts h3 {
   text-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.4);
-  font-size: 3.125rem;
+  font-size: 4.5rem;
 }
 .carousel-texts p {
   text-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.4);
@@ -110,18 +117,25 @@ button:hover .arrow:before {
   left: 50%;
   transform: translate(-50%, -40%);
 }
-@media (max-width: 576px) {
+@media (min-width: 769px) {
+  .carousel-header {
+    margin-top: 2rem; /* Adjust as needed */
+  }
+}
+
+@media (max-width: 768px) {
   .carousel-texts p {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow-y: hidden;
-    font-size: 1.1rem; /* Example adjustment */
-    line-height: 1.2; /* Example adjustment */
+    font-size: 1.1rem;
+    line-height: 1.2;
   }
   ::-webkit-scrollbar {
     display: none;
   }
 }
+
 .animated {
   opacity: 0;
   animation: fadeInUp 0.5s ease-in-out forwards;

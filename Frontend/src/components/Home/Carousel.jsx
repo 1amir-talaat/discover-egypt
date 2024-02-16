@@ -11,7 +11,6 @@ function Carousel() {
   const { language } = useLanguage();
   // to handle prev and next buttons
   const [carouselSwiperRef, setCarouselSwiperRef] = useState(null);
-  console.log(language);
   const prevHandler = () => {
     carouselSwiperRef.slidePrev();
   };
@@ -19,6 +18,7 @@ function Carousel() {
   const nextHandler = () => {
     carouselSwiperRef.slideNext();
   };
+
   ///////////////////////////
   // for doing the text animation
   useEffect(() => {
@@ -49,25 +49,25 @@ function Carousel() {
             id: 1,
             img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
             country: "cairo",
-            desc: "cairo is very beautiful country and i love it very much",
+            desc: "Cairo is the capital and largest city of Egypt. The city's metropolitan area is the largest in the Middle East and the Arab world, and 15th-largest in the world",
           },
           {
             id: 2,
             img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
             country: "Alex",
-            desc: "alex is beautiful and have a beautiful sea",
+            desc: "One of Egypt's largest cities, Alexandria is also its principal seaport and a major industrial centre. Alex lies on the Mediterranean Sea at the western edge of the Nile River delta,",
           },
           {
             id: 3,
             img: "https://swiperjs.com/demos/images/nature-3.jpg",
             country: "Dahab",
-            desc: "beautiful and have mountains and sea and fish",
+            desc: "Dahab has some of Egypt's most spectacular reefs for diving and snorkelling along with its golden sandy beaches ",
           },
           {
             id: 4,
             img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
             country: "hurghada",
-            desc: "have a wonderfull sea and many tourists vist it every year",
+            desc: "hurghada's beautiful sandy beaches and turquoise crystalline waters and watersports fans will be a big fan of the many opportunities for diving and snorkelling here amongst the vibrant marine life",
           },
         ]
       : [
@@ -75,25 +75,25 @@ function Carousel() {
             id: 1,
             img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
             country: "القاهرة",
-            desc: "القاهرة مدينة جميلة",
+            desc: "القاهرة هي عاصمة مصر وأكبر مدنها. تعد المنطقة الحضرية للمدينة هي الأكبر في الشرق الأوسط والعالم العربي والمرتبة 15 على مستوى العالم",
           },
           {
             id: 2,
             img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
             country: "الاسكندرية",
-            desc: "alex is beautiful and have a beautiful sea",
+            desc: "تعتبر الإسكندرية إحدى أكبر مدن مصر، وهي أيضًا ميناء بحري رئيسي ومركز صناعي رئيسي. تقع المدينة على البحر الأبيض المتوسط ​​على الطرف الغربي لدلتا نهر النيل",
           },
           {
             id: 3,
             img: "https://swiperjs.com/demos/images/nature-3.jpg",
             country: "دهب",
-            desc: "beautiful and have mountains and sea and fish",
+            desc: "تضم دهب بعضًا من أروع الشعاب المرجانية في مصر لممارسة رياضة الغوص والغطس إلى جانب شواطئها الرملية الذهبية",
           },
           {
             id: 4,
             img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
             country: "الغردقة",
-            desc: "have a wonderfull sea and many tourists vist it every year",
+            desc: "ستكون شواطئ الغردقة الرملية الجميلة والمياه البلورية الفيروزية وعشاق الرياضات المائية من أشد المعجبين بالفرص العديدة للغوص والغطس هنا وسط الحياة البحرية النابضة بالحياة.",
           },
         ];
   return (
@@ -115,19 +115,25 @@ function Carousel() {
                   {/* the content  */}
                   <div className="carousel-content">
                     {/* the carousel header  */}
-                    <h2 className="carousel-header ">Winter Destinations in Egypt</h2>
+                    <h1 className="carousel-header ">
+                      {language == "en"
+                        ? "Winter Destinations in Egypt "
+                        : "وجهات الشتاء في مصر"}
+                    </h1>
                     <hr />
                     {/* end of the header  */}
                     {/* //////////////// */}
                     {/* the container of the buttons and description */}
-                    <div className="d-flex justify-content-between mt-5">
+                    <div className="d-flex justify-content-between flex-cont">
                       {/* description  */}
                       <div className="carousel-texts">
                         <div className="animated">
                           <h3>{el.country}</h3>
-                          <p>{el.desc}</p>
+                          <div className="desc-container">
+                            <p>{el.desc}</p>
+                          </div>
                           <button className="explore">
-                            Explore
+                            {language == "en" ? "Explore " : "استكشف"}
                             <div className="arrow-wrapper">
                               <div className="arrow"></div>
                             </div>
