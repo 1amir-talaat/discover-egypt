@@ -50,7 +50,7 @@ function Places() {
         <Swiper spaceBetween={40} slidesPerView={3} dir={language}>
           {data[language].map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="card m-1 experience-card border-0 shadow-sm w-100 position-relative mb-5">
+              <div className="card m-1 experience-card border-0 shadow w-100 position-relative mb-5">
                 <img className="card-img-top experience-card-image" src={item.image} alt={item.description} />
                 <div className="card-body my-4 ">
                   <h2>{item.title}</h2>
