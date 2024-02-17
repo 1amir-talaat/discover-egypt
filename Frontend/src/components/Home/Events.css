@@ -158,11 +158,3 @@
 .info-buttons .events-buttons {
   display: flex;
 }
-
-.event-h1{
-  margin-right: 10vw;
-  margin-top: 4.125rem;
-  font-size: 50px;
-  font-weight: 700;
-  margin-bottom: 40px;
-}

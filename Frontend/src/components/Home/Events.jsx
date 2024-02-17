@@ -47,7 +47,10 @@ function Events() {
 
   return (
     <>
-      <h1 className="event-h1">عروض وفعاليات حصرية</h1>
+      <div className="container mt-5 mb-2">
+        <h1 style={{ fontSize: 50, marginTop: 100, marginBottom: 50 }}>{language == "en" ? "Exclusive offers and events" : "عروض وفعاليات حصرية"}</h1>
+      </div>
+
       <div className="events position-relative">
         <div className="slide">
           <Swiper
