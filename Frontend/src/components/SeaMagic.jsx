@@ -115,6 +115,7 @@ function SeaMagic() {
                     </h4>
                 </div>
 
+                {/* Make the Most of the Coast // حقق أقصى استفادة من الشاطئ */}
                 <div className="row mt-5 mb-5">
                     <h1 style={{ fontSize: 50 }}>{language == "en" ? "Make the Most of the Coast" : "حقق أقصى استفادة من الشاطئ"}</h1>
                     <Swiper
@@ -155,6 +156,91 @@ function SeaMagic() {
                     </Swiper>
                 </div>
 
+                {/* Beaches // الشواطئ */}
+                <div className="row mt-5">
+                    <h1 style={{ fontSize: 50 }}>{language == "en" ? "Beaches" : "الشواطئ"}</h1>
+                    <Swiper
+                        spaceBetween={15}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1.5,
+                            },
+                            768: {
+                                slidesPerView: 2.5,
+                            },
+                            1400: {
+                                slidesPerView: 3,
+                            },
+                        }}
+                        dir={langDirection}
+                        key={langDirection}
+                        className="ms-3"
+                    >
+                        {testing_data.map((item, index) => (
+                            <SwiperSlide key={index}>
+
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
+                {/* sea // البحر */}
+                <div className="row mt-5">
+                    <h1 style={{ fontSize: 50 }}>{language == "en" ? "Sea" : "البحر"}</h1>
+                    <Swiper
+                        spaceBetween={15}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1.5,
+                            },
+                            768: {
+                                slidesPerView: 2.5,
+                            },
+                            1400: {
+                                slidesPerView: 3,
+                            },
+                        }}
+                        dir={langDirection}
+                        key={langDirection}
+                        className="ms-3"
+                    >
+                        {testing_data.map((item, index) => (
+                            <SwiperSlide key={index}>
+                                
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
+                {/* Underwater // تحت المياه */}
+                <div className="row mt-5">
+                    <h1 style={{ fontSize: 50 }}>{language == "en" ? "Underwater" : "قاع البحر"}</h1>
+                    <Swiper
+                        spaceBetween={15}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1.5,
+                            },
+                            768: {
+                                slidesPerView: 2.5,
+                            },
+                            1400: {
+                                slidesPerView: 3,
+                            },
+                        }}
+                        dir={langDirection}
+                        key={langDirection}
+                        className="ms-3"
+                    >
+                        {testing_data.map((item, index) => (
+                            <SwiperSlide key={index}>
+                                
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
+                {/* Discover the best sea destinations in Egypt // اكتشف أفضل الوجهات البحرية في مصر */}
                 <div className="row mt-5">
                     <h1 style={{ fontSize: 50 }}>{language == "en" ? "Discover the best sea destinations in Egypt" : "اكتشف أفضل الوجهات البحرية في مصر"}</h1>
                     <Swiper
@@ -176,7 +262,7 @@ function SeaMagic() {
                     >
                         {testing_data.map((item, index) => (
                             <SwiperSlide key={index}>
-                                
+
                             </SwiperSlide>
                         ))}
                     </Swiper>
