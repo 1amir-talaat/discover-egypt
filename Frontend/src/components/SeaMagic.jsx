@@ -115,7 +115,7 @@ function SeaMagic() {
                     </h4>
                 </div>
 
-                <div className="row">
+                <div className="row mt-5 mb-5">
                     <h1 style={{ fontSize: 50 }}>{language == "en" ? "Make the Most of the Coast" : "حقق أقصى استفادة من الشاطئ"}</h1>
                     <Swiper
                         spaceBetween={15}
@@ -155,6 +155,32 @@ function SeaMagic() {
                     </Swiper>
                 </div>
 
+                <div className="row mt-5">
+                    <h1 style={{ fontSize: 50 }}>{language == "en" ? "Discover the best sea destinations in Egypt" : "اكتشف أفضل الوجهات البحرية في مصر"}</h1>
+                    <Swiper
+                        spaceBetween={15}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1.5,
+                            },
+                            768: {
+                                slidesPerView: 2.5,
+                            },
+                            1400: {
+                                slidesPerView: 3,
+                            },
+                        }}
+                        dir={langDirection}
+                        key={langDirection}
+                        className="ms-3"
+                    >
+                        {testing_data.map((item, index) => (
+                            <SwiperSlide key={index}>
+                                
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
             </div>
         </>
     );
