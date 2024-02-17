@@ -1,6 +1,16 @@
 {
   "ar": [
     {
+      "title": "مهرجان الفنون الشعبية بالفسطاط",
+      "description": "يعد مهرجان الفنون الشعبية بالفسطاط فرصة لعرض وتسليط الضوء على التراث الشعبي المصري من خلال فعاليات فنية وحرفية تقام في أحياء التراث بالقاهرة.",
+      "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
+    },
+    {
+      "title": "مهرجان أبو سمبل للشمس",
+      "description": "يحدث هذا الحدث مرتين في السنة عندما تتوافق أشعة الشمس لتنير الحجر الداخلي لمعبد أبو سمبل، ويجذب السياح الذين يرغبون في مشاهدة هذه الظاهرة القديمة.",
+      "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
+    },
+    {
       "title": "مهرجان القاهرة السينمائي الدولي",
       "description": "يعد مهرجان القاهرة السينمائي الدولي مناسبة سنوية مهمة في عالم السينما، حيث يعرض أفلاما دولية ومصرية متنوعة ويجتذب صناع السينما وعشاقها من جميع أنحاء العالم.",
       "img": "https://mediterranee-audiovisuelle.com/wp-content/uploads/2023/04/CIFF-756x756.jpg"
@@ -14,19 +24,19 @@
       "title": "مهرجان الجاز بالقاهرة",
       "description": "يجذب مهرجان الجاز بالقاهرة عشاق الموسيقى من جميع أنحاء العالم للاستمتاع بأداء موسيقى الجاز الراقية في أجواء فنية مميزة.",
       "img": "https://www.europejazz.net/sites/default/files/styles/ejn_contain_cover/public/cairo.jpg?itok=ybAwMQDK"
-    },
-    {
-      "title": "مهرجان أبو سمبل للشمس",
-      "description": "يحدث هذا الحدث مرتين في السنة عندما تتوافق أشعة الشمس لتنير الحجر الداخلي لمعبد أبو سمبل، ويجذب السياح الذين يرغبون في مشاهدة هذه الظاهرة القديمة.",
-      "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
-    },
-    {
-      "title": "مهرجان الفنون الشعبية بالفسطاط",
-      "description": "يعد مهرجان الفنون الشعبية بالفسطاط فرصة لعرض وتسليط الضوء على التراث الشعبي المصري من خلال فعاليات فنية وحرفية تقام في أحياء التراث بالقاهرة.",
-      "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
     }
   ],
   "en": [
+    {
+      "title": "Fustat Folk Arts Festival",
+      "description": "The Fustat Folk Arts Festival provides an opportunity to showcase and highlight Egyptian folk heritage through artistic and craft activities held in heritage neighborhoods in Cairo.",
+      "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
+    },
+    {
+      "title": "Abu Simbel Sun Festival",
+      "description": "This event occurs twice a year when sunlight aligns to illuminate the inner sanctum of the Abu Simbel temple, attracting tourists who wish to witness this ancient phenomenon.",
+      "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
+    },
     {
       "title": "Cairo International Film Festival",
       "description": "The Cairo International Film Festival is an important annual event in the world of cinema, showcasing a diverse range of international and Egyptian films and attracting filmmakers and enthusiasts from around the world.",
@@ -41,16 +51,6 @@
       "title": "Cairo Jazz Festival",
       "description": "The Cairo Jazz Festival attracts music enthusiasts from around the world to enjoy performances of fine jazz music in distinctive artistic atmospheres.",
       "img": "https://www.europejazz.net/sites/default/files/styles/ejn_contain_cover/public/cairo.jpg?itok=ybAwMQDK"
-    },
-    {
-      "title": "Abu Simbel Sun Festival",
-      "description": "This event occurs twice a year when sunlight aligns to illuminate the inner sanctum of the Abu Simbel temple, attracting tourists who wish to witness this ancient phenomenon.",
-      "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
-    },
-    {
-      "title": "Fustat Folk Arts Festival",
-      "description": "The Fustat Folk Arts Festival provides an opportunity to showcase and highlight Egyptian folk heritage through artistic and craft activities held in heritage neighborhoods in Cairo.",
-      "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
     }
   ]
 }
