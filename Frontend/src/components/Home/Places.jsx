@@ -24,7 +24,7 @@ function Places() {
     ],
     en: [
       {
-        title: "About Saudi",
+        title: "About Egypt",
         path: "/about-egypt",
         image: "https://www.visitsaudi.com/content/dam/messi/saudi-arabian-architecture.jpg",
       },
