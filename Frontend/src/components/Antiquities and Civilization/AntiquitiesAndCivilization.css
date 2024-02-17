@@ -1,0 +1,12 @@
+.antiquities-card img {
+  width: 100% !important;
+  height: 250px !important;
+  filter: brightness(80%);
+}
+
+.antiquities-card {
+  transition: 0.7s ease;
+}
+.antiquities-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
+}
