@@ -33,7 +33,7 @@ const PlaceController = {
       res.status(400).json({ error: error.message });
     }
   },
-  
+
   getPlacesByCategory: async (req, res) => {
     const { category } = req.params;
     try {
@@ -59,23 +59,28 @@ const PlaceController = {
 
     const lowerKeyword = keyword.toLowerCase();
 
+    const keywords = lowerKeyword.split(" ");
+
     try {
       const places = await Place.findAll({
         where: {
-          [Op.or]: [
-            { city_ar: { [Op.like]: `%${lowerKeyword}%` } },
-            { city_en: { [Op.like]: `%${lowerKeyword}%` } },
-            { title_ar: { [Op.like]: `%${lowerKeyword}%` } },
-            { title_en: { [Op.like]: `%${lowerKeyword}%` } },
-            { desc_ar: { [Op.like]: `%${lowerKeyword}%` } },
-            { desc_en: { [Op.like]: `%${lowerKeyword}%` } },
-            { min_price: { [Op.like]: `%${lowerKeyword}%` } },
-            { max_price: { [Op.like]: `%${lowerKeyword}%` } },
-            { place_name: { [Op.like]: `%${lowerKeyword}%` } },
-            { category: { [Op.like]: `%${lowerKeyword}%` } },
-            { sub_category: { [Op.like]: `%${lowerKeyword}%` } },
-            { location_url: { [Op.like]: `%${lowerKeyword}%` } },
-          ],
+          [Op.and]: keywords.map((keyword) => ({
+            [Op.or]: [
+              { city_ar: { [Op.like]: `%${keyword}%` } },
+              { city_en: { [Op.like]: `%${keyword}%` } },
+              { title_ar: { [Op.like]: `%${keyword}%` } },
+              { title_en: { [Op.like]: `%${keyword}%` } },
+              { desc_ar: { [Op.like]: `%${keyword}%` } },
+              { desc_en: { [Op.like]: `%${keyword}%` } },
+              { place_name: { [Op.like]: `%${keyword}%` } },
+              { category: { [Op.like]: `%${keyword}%` } },
+              { sub_category: { [Op.like]: `%${keyword}%` } },
+              { location_url: { [Op.like]: `%${keyword}%` } },
+              {
+                [Op.and]: [{ min_price: { [Op.lte]: keyword } }, { max_price: { [Op.gte]: keyword } }],
+              },
+            ],
+          })),
         },
         include: [{ model: Review }, { model: PlacesImg }],
       });
