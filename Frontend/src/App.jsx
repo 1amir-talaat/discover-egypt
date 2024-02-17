@@ -16,7 +16,7 @@ function App() {
       <button className="btn btn-warning" onClick={() => { toggleLanguage() }}>{language == "en" ? "English" : "Arabic"}</button>
       <BrowserRouter>
         <Routes>
-          <Route path="/DiscoverEgypt" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
           </Route>
           {/* sea magic  */}

@@ -23,6 +23,10 @@ li a:hover {
     padding-left: 11px;
 }
 
+a-ar:hover {
+    padding-right: 11px;
+}
+
 .col-3 {
     padding-top: 20px;
 }
@@ -39,27 +43,49 @@ li a:hover {
 }
 
 .second-foot {
+    height: 350px;
     color: white;
     background-color: #087e8c;
 }
 
+.row-con {
+    padding-top: 4%;
+}
+
 .full-logo {
-    width: 40%;
+    width: 50%;
     margin: 0;
     padding: 0;
 }
 
 .team {
-    font-size: 27px;
+    font-size: 40px;
 }
 
 .e-form {
+    padding: 20px 0px;
     position: relative;
 }
 
+.numbers a {
+    line-height: 32px;
+    margin: 0px;
+    color: white;
+    text-decoration: none;
+}
+.numbers {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+
 .e-input {
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    font-size: 20px;
     border-radius: 27px;
-    width: 95%;
+    width: 98%;
     height: 45px;
 }
 
@@ -67,8 +93,8 @@ li a:hover {
     color: white;
     height: 35px;
     position: absolute;
-    top: 5px;
-    right: 7%;
+    top: 25px;
+    right: 5%;
     border-radius: 20px;
     background-color: #087e8c;
     transition: 0.4s;
@@ -86,6 +112,7 @@ li a:hover {
 }
 
 .contact-bdy {
+    margin-top: 34px;
     position: absolute;
     right: 0px;
 }
@@ -94,15 +121,39 @@ li a:hover {
     position: relative;
 }
 
+.p-con a {
+    color: white;
+}
+
+.p-con {
+    margin-top: 34px;
+}
+
 .p-link {
     padding-bottom: 10px;
     font-size: 30px;
     margin-right: 20px;
     color: #303030;
-    text-decoration: none;
     transition: text-decoration 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 .p-link:hover {
     text-decoration: underline;
+}
+
+.scroll-to-up {
+    color: white;
+    position: absolute;
+    border-radius: 50%;
+    left: 0px;
+    bottom: -70px;
+    display: flex;
+    font-size: 40px;
+    transition: 1s;
+}
+
+.scroll-to-up:hover {
+    color: black;
+    background-color: white;
 }

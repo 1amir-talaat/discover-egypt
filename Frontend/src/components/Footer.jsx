@@ -5,11 +5,15 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
+import { CiCircleChevUp } from "react-icons/ci";
 import "./footer.css";
 import { useLanguage } from "../context/LanguageContext";
 
 function Footer() {
     const { language } = useLanguage();
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
     return (
         <>
             <footer>
@@ -20,31 +24,55 @@ function Footer() {
                         </div>
                         <div className="col-3">
                             <hr className="footer-sub-line" />
-                            <h2>season & Events</h2>
+                            <h2>
+                                {language == "ar"
+                                    ? "الموسم والأحداث"
+                                    : "season & Events"}
+                            </h2>
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "Pyramids Festival of Light"
                                             : "عرض الاهرامات للضوء"}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "Abu Simbel Sun Festival"
                                             : "شمس أبو سمبل"}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "Alexandria International Film Festival"
                                             : "مهرجان الإسكندرية السينمائي الدولي"}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "El Gouna Film Festival"
                                             : "مهرجان الجونه للافلام"}
@@ -54,24 +82,43 @@ function Footer() {
                         </div>
                         <div className="col-3">
                             <hr className="footer-sub-line" />
-                            <h2>Discover Egypt</h2>
+                            <h2>
+                                {language == "en"
+                                    ? "Discover Egypt"
+                                    : "اكتشف مصر"}
+                            </h2>
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "nature"
                                             : "الطبيعه"}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "lakes"
                                             : "البحيرات"}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "The nile"
                                             : "نهر النيل"}
@@ -81,17 +128,31 @@ function Footer() {
                         </div>
                         <div className="col-3">
                             <hr className="footer-sub-line" />
-                            <h2>Useful informations</h2>
+                            <h2>
+                                {language == "en"
+                                    ? "Useful informations"
+                                    : "معلومات مهمه"}
+                            </h2>
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "About Rgypt"
                                             : "مصر"}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a
+                                        href="#"
+                                        className={
+                                            language == "en" ? "a-en" : "a-ar"
+                                        }
+                                    >
                                         {language == "en"
                                             ? "important numbers"
                                             : "ارقام مهمه"}
@@ -102,22 +163,41 @@ function Footer() {
                     </div>
                 </div>
                 <div className="container-fuid second-foot">
-                    <div className="container second-foot">
-                        <div className="row">
+                    <div className="container">
+                        <div className="row row-con">
                             <div className="col">
-                                <h2>powerd by</h2>
+                                <h2>
+                                    {" "}
+                                    {language == "en"
+                                        ? "powerd by"
+                                        : "انشيء بواسطه"}{" "}
+                                </h2>
                                 <p className="d-inline team">
                                     {language == "en"
                                         ? "Elrahala team"
                                         : "الرحاله"}
                                 </p>
-                                <img src={full} className="full-logo" />
                             </div>
                             <div className="col">
-                                <h2>Call Center</h2>
+                                <h2>
+                                    {language == "en"
+                                        ? "Call Center"
+                                        : "مركز المكالمات"}
+                                </h2>
+                                <div className="numbers">
+                                    <a href="tel:+01066272505">{language=="en"?"sameh muhammad":"سامح محمد"}</a>
+                                    <a href="tel:+01141606848">{language=="en"?"amir talaat":"امير طلعت"}</a>
+                                    <a href="tel:+01021105085"> {language=="en"?"saif ahmed":"سيف احمد"} </a>
+                                    <a href="tel:+01121859584">{language=="en"?"zeyad hymen":"زياد هيمن"}</a>
+                                    <a href="tel:+">{language=="en"?"basmala magdy":"بسملة مجدي"}</a>
+                                </div>
                             </div>
                             <div className="col">
-                                <h2>Subsecribe for notifications</h2>
+                                <h2>
+                                    {language == "en"
+                                        ? "Subsecribe for notifications"
+                                        : "اشترك لوصول الاشعارات"}
+                                </h2>
                                 <form className="form e-form" method="post">
                                     <input
                                         type="text"
@@ -127,39 +207,51 @@ function Footer() {
                                     <input
                                         className="e-submit btn"
                                         type="submit"
-                                        value="join"
+                                        value={
+                                            language == "en" ? "join" : "تاكيد"
+                                        }
                                     />
                                 </form>
                             </div>
                             <div className="col">
-                                <h2>FeedBack</h2>
+                                <h2>
+                                    {language == "en" ? "Feedback" : "الانطباع"}
+                                </h2>
                                 <form className="form e-form" method="post">
                                     <input
-                                        type="text"
+                                        type="email"
                                         name="Feedback"
                                         className="e-input"
                                     />
                                     <input
                                         className="e-submit btn"
                                         type="submit"
-                                        value="Add feedback"
+                                        value={
+                                            language == "en"
+                                                ? "Add Feedback"
+                                                : "نشر التعليق"
+                                        }
                                     />
                                 </form>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col">
-                                <a href="" className="p-link" > {language=="en"?"Privacy policy":"سياسات الخصوصيه"}</a>
-                                <a href="" className="p-link" > {language=="en"?"Cookies":"ملفات تعريف الارتباط"} </a>
-                            </div>
                             <div className="col contact-y">
                                 <div className="contact-bdy d-flex">
-                                    <h3>Contact with us:</h3>
+                                    <h3>
+                                        {language == "en"
+                                            ? "Contact with us:"
+                                            : "تواصل معنا : "}
+                                    </h3>
                                     <FaFacebookF className="i-cons" />
                                     <FaInstagram className="i-cons" />
                                     <FaXTwitter className="i-cons" />
                                     <FaYoutube className="i-cons" />
                                 </div>
+                                <CiCircleChevUp
+                                    onClick={scrollToTop}
+                                    className="scroll-to-up"
+                                />
                             </div>
                         </div>
                     </div>
