@@ -1,7 +1,10 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
 
-const sequelize = new Sequelize("freedb_it-project", "freedb_1amir", "9@2Kv%SdE?W2aCU", {
-  host: "sql.freedb.tech",
+dotenv.config();
+
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+  host: process.env.DB_HOST,
   dialect: "mysql",
   logging: false,
   port: 3306,
