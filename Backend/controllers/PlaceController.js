@@ -1,3 +1,4 @@
+import { Op } from "sequelize";
 import Place from "../models/Place.js";
 import Review from "../models/Review.js";
 import PlacesImg from "../models/PlacesImg.js";
@@ -20,7 +21,9 @@ const PlaceController = {
     const { city } = req.params;
     try {
       const places = await Place.findAll({
-        where: { city_ar: city },
+        where: {
+          [Op.or]: [{ city_ar: city }, { city_en: city }],
+        },
         include: [{ model: Review }, { model: PlacesImg }],
       });
 
