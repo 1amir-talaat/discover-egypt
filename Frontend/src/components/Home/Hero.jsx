@@ -76,8 +76,8 @@ function Hero() {
             >
               {heroData.map((d, index) => {
                 return (
-                  <SwiperSlide>
-                    <img src={d.img} alt="d.title" />
+                  <SwiperSlide key={index}>
+                    <img src={d.img} alt={d.title} />
                   </SwiperSlide>
                 );
               })}
@@ -87,7 +87,7 @@ function Hero() {
         <div className="tab-area">
           {heroData.map((d, index) => {
             return (
-              <div className={activeIndex == index ? "tab-item active" : "tab-item"} onClick={() => handleTabClick(index)}>
+              <div key={index} className={activeIndex == index ? "tab-item active" : "tab-item"} onClick={() => handleTabClick(index)}>
                 <div className="tab-title">{d.title}</div>
               </div>
             );

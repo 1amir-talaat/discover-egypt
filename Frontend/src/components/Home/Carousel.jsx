@@ -7,10 +7,12 @@ import "swiper/css/pagination";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import "./Carousel.css";
 import { useLanguage } from "../../context/LanguageContext";
+
 function Carousel() {
   const { language } = useLanguage();
   // to handle prev and next buttons
   const [carouselSwiperRef, setCarouselSwiperRef] = useState(null);
+  console.log(language);
   const prevHandler = () => {
     carouselSwiperRef.slidePrev();
   };
@@ -18,7 +20,6 @@ function Carousel() {
   const nextHandler = () => {
     carouselSwiperRef.slideNext();
   };
-
   ///////////////////////////
   // for doing the text animation
   useEffect(() => {
@@ -47,7 +48,7 @@ function Carousel() {
       ? [
           {
             id: 1,
-            img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
+            img: "https://media.gettyimages.com/id/145167188/photo/egypt-cairo-view-of-city.jpg?s=612x612&w=0&k=20&c=x6ALHX35T3_3ZVxMUViI8axN-D5seAYT3dKeSSH2Ztg=",
             country: "cairo",
             desc: "Cairo is the capital and largest city of Egypt. The city's metropolitan area is the largest in the Middle East and the Arab world, and 15th-largest in the world",
           },
@@ -73,7 +74,7 @@ function Carousel() {
       : [
           {
             id: 1,
-            img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
+            img: "https://media.gettyimages.com/id/145167188/photo/egypt-cairo-view-of-city.jpg?s=612x612&w=0&k=20&c=x6ALHX35T3_3ZVxMUViI8axN-D5seAYT3dKeSSH2Ztg=",
             country: "القاهرة",
             desc: "القاهرة هي عاصمة مصر وأكبر مدنها. تعد المنطقة الحضرية للمدينة هي الأكبر في الشرق الأوسط والعالم العربي والمرتبة 15 على مستوى العالم",
           },
@@ -115,11 +116,7 @@ function Carousel() {
                   {/* the content  */}
                   <div className="carousel-content">
                     {/* the carousel header  */}
-                    <h1 className="carousel-header ">
-                      {language == "en"
-                        ? "Winter Destinations in Egypt "
-                        : "وجهات الشتاء في مصر"}
-                    </h1>
+                    <h1 className="carousel-header ">{language == "en" ? "Winter Destinations in Egypt " : "وجهات الشتاء في مصر"}</h1>
                     <hr />
                     {/* end of the header  */}
                     {/* //////////////// */}
