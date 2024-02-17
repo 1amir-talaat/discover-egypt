@@ -10,10 +10,8 @@ import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 function App() {
   const { language, toggleLanguage } = useLanguage();
   return (
-    <div className={language=="en"?"dir-en":"dir-ar" }>
-      <button onClick={()=>{
-        toggleLanguage()
-      }}>seif</button>
+    <div className={language == "en" ? "dir-en" : "dir-ar"}>
+      <button className="btn btn-warning" onClick={() => {toggleLanguage()}}>{language == "en"? "English" : "Arabic"}</button>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
