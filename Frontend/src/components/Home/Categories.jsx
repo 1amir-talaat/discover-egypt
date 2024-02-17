@@ -45,7 +45,7 @@ function Categories() {
           <div className="test w-100 position-relative">
             <img className="w-100 rounded category-image " src="https://images.pexels.com/photos/3264721/pexels-photo-3264721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
             <h1 className={`text-white position-absolute ${language === "en" ? "category-title-en" : "category-title-ar"} `}>{language == "en" ? "Sea Magic" : "سحر البحر"}</h1>
-            <button className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}>{language == "en" ? "Explore More" : "أستكشف أكثر"}</button>
+            <a href="/seamagic" className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}>{language == "en" ? "Explore More" : "أستكشف أكثر"}</a>
           </div>        
         </SwiperSlide>
       </Swiper>
