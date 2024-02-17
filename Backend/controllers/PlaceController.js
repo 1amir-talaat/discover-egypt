@@ -33,6 +33,21 @@ const PlaceController = {
       res.status(400).json({ error: error.message });
     }
   },
+  getPlacesByCategory: async (req, res) => {
+    const {category}=req.params
+    try {
+      const places =await Place.findAll({
+        where:{
+          category: category
+        },
+        include: [{ model: Review }, { model: PlacesImg }],
+      })
+      const data = transformPlacesData(places);
+      res.status(200).json(data);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  },
 };
 
 function transformPlacesData(places) {
