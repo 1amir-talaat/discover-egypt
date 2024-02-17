@@ -15,14 +15,7 @@ function App() {
   const { language, toggleLanguage } = useLanguage();
   return (
     <div className={language == "en" ? "dir-en" : "dir-ar"}>
-      <button
-        className="btn btn-warning"
-        onClick={() => {
-          toggleLanguage();
-        }}
-      >
-        {language == "en" ? "English" : "Arabic"}
-      </button>
+      <button className="btn btn-warning" onClick={() => {toggleLanguage()}}>{language == "en"? "English" : "Arabic"}</button>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
