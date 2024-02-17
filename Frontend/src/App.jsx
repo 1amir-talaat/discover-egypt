@@ -5,6 +5,8 @@ import { useLanguage } from "./context/LanguageContext";
 
 // hyman
 import SeaMagic from "./components/Sea Magic/SeaMagic";
+//seif
+import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 function App() {
   const { language, toggleLanguage } = useLanguage();
   return (
@@ -21,8 +23,10 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
           </Route>
-          {/* hyman */}
+          {/* sea magic  */}
           <Route path="/seamagic" element={<SeaMagic />}></Route>
+          {/* about egypt  */}
+          <Route path="aboutegypt" element={<AboutEgypt />} />
         </Routes>
       </BrowserRouter>
     </div>
