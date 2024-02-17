@@ -14,13 +14,13 @@ function App() {
       <button className="btn btn-warning" onClick={() => {toggleLanguage()}}>{language == "en"? "English" : "Arabic"}</button>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/discoveregypt" element={<Layout />}>
             <Route index element={<Home />} />
           </Route>
           {/* sea magic  */}
-          <Route path="/seamagic" element={<SeaMagic />}></Route>
+          <Route path="/discoveregypt/seamagic" element={<SeaMagic />}></Route>
           {/* about egypt  */}
-          <Route path="/aboutegypt" element={<AboutEgypt />} />
+          <Route path="/discoveregypt/aboutegypt" element={<AboutEgypt />} />
         </Routes>
       </BrowserRouter>
     </div>
