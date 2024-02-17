@@ -12,6 +12,10 @@ const PlacesImg = sequelize.define("PlacesImg", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  place_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
 
 (async () => {

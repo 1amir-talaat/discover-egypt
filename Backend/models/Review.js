@@ -12,7 +12,11 @@ const Review = sequelize.define("Review", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  review: {
+  review_en: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  review_ar: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -22,6 +26,10 @@ const Review = sequelize.define("Review", {
     validate: {
       isEmail: true,
     },
+  },
+  place_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
   },
 });
 

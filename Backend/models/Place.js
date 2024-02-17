@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/Connection.js";
-
 import Review from "./Review.js";
 import PlacesImg from "./PlacesImg.js";
 
@@ -11,15 +10,27 @@ const Place = sequelize.define("Place", {
     autoIncrement: true,
     allowNull: false,
   },
-  city: {
+  city_ar: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  title: {
+  city_en: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  desc: {
+  title_en: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  title_ar: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  desc_en: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  desc_ar: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -32,7 +43,6 @@ const Place = sequelize.define("Place", {
     allowNull: false,
   },
   place_name: {
-    // this  specified place and the city is the general place example: "dahab, abo-galom",
     type: DataTypes.STRING,
     allowNull: false,
   },
