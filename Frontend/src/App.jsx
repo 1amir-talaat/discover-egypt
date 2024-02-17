@@ -7,7 +7,6 @@ import { useLanguage } from "./context/LanguageContext";
 import SeaMagic from "./components/Sea Magic/SeaMagic";
 import NatureAndAdventure from "./components/Nature And Adventure/NatureAndAdventure";
 import AntiquitiesAndCivilization from "./components/Antiquities and Civilization/AntiquitiesAndCivilization";
-//seif
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
 function App() {
