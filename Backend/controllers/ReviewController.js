@@ -1,8 +1,18 @@
 import Review from "../models/Review.js";
 
 const ReviewController = {
-  // Controller functions for Review model CRUD operations
-  // Implement as needed...
+  CreateReview: async(req,res)=>{
+    const data =req.body
+    try {
+      await Review.create(
+        {
+          
+        }
+      )
+    } catch (error) {
+      
+    }
+  }
 };
 
 export default ReviewController;
