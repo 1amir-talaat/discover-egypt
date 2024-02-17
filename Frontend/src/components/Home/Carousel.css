@@ -1,143 +1,145 @@
 .carousel-img {
-    width: 100%;
-    background: #f7f7f7;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 100%;
-    object-fit: fill;
-    filter: brightness(0.6);
+  width: 100%;
+  background: #f7f7f7;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+  object-fit: fill;
+  filter: brightness(0.6);
 }
 
 .carousel-element {
-    height: 70dvh;
+  height: 70dvh;
 }
 .carousel-header {
-    color: #f7f7f7;
-    font-size: calc(5.71429px + 1.78571rem);
+  color: #f7f7f7;
+  font-size: calc(5.71429px + 1.78571rem);
 }
 hr {
-    color: #f7f7f7;
+  color: #f7f7f7;
 }
 .carousel-content {
-    color: #f7f7f7;
+  color: #f7f7f7;
 }
 .carousel-texts {
-    width: 50%;
+  width: 50%;
 }
 .carousel-buttons {
-    text-align: center;
+  text-align: center;
 }
 
 .carousel-buttons button {
-    text-align: center;
-    border: none;
-    border-radius: 50%; /* Make it a perfect circle */
-    width: 4rem; /* Adjust the width and height as needed */
-    height: 4rem;
-    background-color: #f7f7f7; /* Background color */
-    color: #333; /* Text color */
-    font-size: 33px; /* Font size */
-    padding: 0.3rem; /* Add padding */
-    margin: 0.3rem; /* Add margin */
+  text-align: center;
+  border: none;
+  border-radius: 50%; /* Make it a perfect circle */
+  width: 4rem; /* Adjust the width and height as needed */
+  height: 4rem;
+  background-color: #f7f7f7; /* Background color */
+  color: #333; /* Text color */
+  font-size: 33px; /* Font size */
+  padding: 0.3rem; /* Add padding */
+  margin: 0.3rem; /* Add margin */
 }
 .carousel-texts h3 {
-    text-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.4);
-    font-size: 3.125rem;
+  text-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.4);
+  font-size: 3.125rem;
 }
 .carousel-texts p {
-    text-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.4);
-    font-size: 1.2rem;
+  text-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.4);
+  font-size: 1.2rem;
 }
 .explore {
-    box-sizing: border-box;
-    border: 1px solid #f7f7f7;
-    border-radius: 3.2rem;
-    color: #fff;
-    padding: 0.5em;
-    background: transparent;
-    display: flex;
-    transition: 0.2s background;
-    align-items: center;
-    gap: 0.6em;
-    margin-bottom: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #f7f7f7;
+  border-radius: 3.2rem;
+  color: #fff;
+  padding: 0.5em;
+  background: transparent;
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 1rem;
 }
 
 button .arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button .arrow {
-    margin-top: 1px;
-    width: 10px;
-    background: transparent;
-    height: 2px;
-    position: relative;
-    transition: 0.2s;
+  margin-top: 1px;
+  width: 10px;
+  background: transparent;
+  height: 2px;
+  position: relative;
+  transition: 0.2s;
 }
 
 button .arrow::before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    border: solid #fff;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    top: -3px;
-    right: 3px;
-    transition: 0.5s;
-    padding: 3px;
-    transform: rotate(-45deg);
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.5s;
+  padding: 3px;
+  transform: rotate(-45deg);
 }
 
 .explore:hover {
-    background-color: #78006e;
+  background-color: #087e8c;
+  /* color: black; */
+  transition: 0.4s;
 }
 
 button:hover .arrow {
-    background: #fff;
+  background: #fff;
 }
 
 button:hover .arrow:before {
-    right: 0;
+  right: 0;
 }
 .carousel-cont {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -40%);
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -40%);
 }
 @media (max-width: 576px) {
-    .carousel-texts p {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow-y: hidden;
-        font-size: 1.1rem; /* Example adjustment */
-        line-height: 1.2; /* Example adjustment */
-    }
-    ::-webkit-scrollbar {
-        display: none;
-    }
+  .carousel-texts p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-y: hidden;
+    font-size: 1.1rem; /* Example adjustment */
+    line-height: 1.2; /* Example adjustment */
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .animated {
-    opacity: 0;
-    animation: fadeInUp 0.5s ease-in-out forwards;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-in-out forwards;
 }
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .flex-cont {
-    margin-top: 105px;
+  margin-top: 105px;
 }
