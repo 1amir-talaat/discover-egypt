@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SwiperCore from "swiper";
+
+import Bar from "../Bar";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
@@ -21,9 +23,13 @@ function Events() {
 
   let data = eventsData[language];
 
+  console.log(progress);
+
   const handleSlideChange = (swiper) => {
-    setActiveIndex(swiper.activeIndex);
-    updateProgress(swiper.activeIndex, swiper.slides.length);
+    console.log(swiper.slides.length);
+
+    setActiveIndex(swiper.realIndex);
+    updateProgress(swiper.realIndex, swiper.slides.length);
   };
 
   const prevHandler = () => {
@@ -35,59 +41,72 @@ function Events() {
   };
 
   const updateProgress = (activeIndex, totalSlides) => {
-    const progress = (activeIndex / (totalSlides - 1)) * 100;
+    const progress = (activeIndex / totalSlides) * 100;
     setProgress(progress);
   };
 
   return (
-    <div className="events">
-      <div className="slide">
-        <Swiper
-          grabCursor={true}
-          onSlideChange={handleSlideChange}
-          slidesPerView= {'auto'}
-          centeredSlides= {true}
-          spaceBetween= {20}
-          loop= {true}
-          onSwiper={(swiper) => setSwiperRef(swiper)}
-          scrollbar={{ draggable: true }}
-        >
-          {data.map((d) => {
-            return (
-              <SwiperSlide>
-                <div className="swiper-slide-content">
-                  <img src={d.image} alt={d["title"]} className="cov-img" />
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
-      {/* <div className={`event-info  d-flex flex-column  ${language == "en" ? "event-info-right" : ""}`}>
-        <div className="info-data flex-grow-1">
-          <h1>{data[activeIndex % data.length].title}</h1>
-          <p className="p-info">{data[activeIndex % data.length].description}</p>
-          <button className="btn info-btn">{language == "ar" ? "عرض المزيد" : "show more"}</button>
+    <>
+      <h1 className="event-h1">عروض وفعاليات حصرية</h1>
+      <div className="events position-relative">
+        <div className="slide">
+          <Swiper
+            grabCursor={true}
+            onSlideChange={handleSlideChange}
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            spaceBetween={20}
+            loop={true}
+            initialSlide={0}
+            onSwiper={(swiper) => setSwiperRef(swiper)}
+            scrollbar={{ draggable: true }}
+          >
+            {data.map((d, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div className="swiper-slide-content">
+                    <img
+                      style={
+                        d.image == "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg" ? { objectPosition: "bottom" } : {}
+                      }
+                      src={d.image}
+                      alt={d["title"]}
+                      className="cov-img"
+                    />
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
-
-        <div className="info-buttons flex-grow-0 d-flex">
-          <div className="events-buttons">
-            <button onClick={prevHandler}>{"<"}</button>
-            <button onClick={nextHandler}>{">"}</button>
+        <div className="event-info">
+          <Bar />
+          <div className={` info d-flex flex-column  ${language == "en" ? "event-info-right" : ""}`}>
+            <div className="info-data flex-grow-1">
+              <h1>{data[activeIndex % data.length].title}</h1>
+              <p className="p-info">{data[activeIndex % data.length].description}</p>
+              <button className="info-btn">{language == "ar" ? "عرض المزيد" : "show more"}</button>
+            </div>
           </div>
-          <div className="progress-bar-container">
-            <div
-              className="progress-bar"
-              style={{
-                width: `${progress}%`,
-                backgroundColor: "red",
-                height: "10px",
-              }}
-            ></div>
+          <div className="info-buttons flex-grow-0 d-flex">
+            <div className="progress-bar-container">
+              <div
+                className="progress-bar"
+                style={{
+                  width: `${progress}%`,
+                  backgroundColor: "red",
+                  height: "10px",
+                }}
+              ></div>
+            </div>
+            <div className="events-buttons">
+              <button onClick={prevHandler}>{"<"}</button>
+              <button onClick={nextHandler}>{">"}</button>
+            </div>
           </div>
-        </div> */}
-      {/* </div> */}
-    </div>
+        </div>
+      </div>
+    </>
   );
 }
 

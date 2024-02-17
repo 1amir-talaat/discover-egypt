@@ -4,12 +4,16 @@ import Home from "./pages/Home";
 import { useLanguage } from "./context/LanguageContext";
 
 function App() {
-  const { language,toggleLanguage } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   return (
-    <div className={language=="en"?"dir-en":"dir-ar" }>
-      <button onClick={()=>{
-        toggleLanguage()
-      }}>seif</button>
+    <div className={language == "en" ? "dir-en" : "dir-ar"}>
+      <button
+        onClick={() => {
+          toggleLanguage();
+        }}
+      >
+        seif
+      </button>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
