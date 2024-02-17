@@ -48,13 +48,13 @@
   flex-direction: row;
   margin-bottom: 45px;
   padding-top: 50px;
-  padding-left: 7.5vw;
-  padding-right: 7.5vw;
+  /* padding-left: 7.5vw; */
+  /* padding-right: 7.5vw; */
 }
 
 .hero .hero-text {
   padding: 20px 0 0;
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -99,7 +99,7 @@
 }
 
 .hero .hero-slider {
-  width: 60%;
+  width: 40%;
 }
 
 .hero .swiper {
@@ -128,8 +128,8 @@
   align-items: center;
   justify-content: space-around;
   display: flex;
-  padding-left: 7.5vw;
-  padding-right: 7.5vw;
+  /* padding-left: 7.5vw;
+  padding-right: 7.5vw; */
   padding-top: 15px;
 }
 

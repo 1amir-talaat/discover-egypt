@@ -48,13 +48,13 @@ function Hero() {
   }, [heroSwiper]);
 
   return (
-    <div className="hero">
+    <div className="hero ">
       <div className="overlay">
         <img src={heroData[activeIndex].img} alt="" className="blur" />
         <div className="shodo"></div>
       </div>
 
-      <div className="hero-content">
+      <div className="hero-content container">
         <div className="top-section">
           <div className="hero-text hero-animated">
             <div className="hero-text-content">
@@ -65,6 +65,7 @@ function Hero() {
           </div>
           <div className="hero-slider">
             <Swiper
+              dir={language == "ar" ? "rtl" : "ltr"}
               autoplay={{ delay: 500 }}
               effect={"cards"}
               onSwiper={(swiper) => setHeroSwiper(swiper)}
@@ -75,8 +76,8 @@ function Hero() {
             >
               {heroData.map((d, index) => {
                 return (
-                  <SwiperSlide>
-                    <img src={d.img} alt="d.title" />
+                  <SwiperSlide key={index}>
+                    <img src={d.img} alt={d.title} />
                   </SwiperSlide>
                 );
               })}
@@ -86,7 +87,7 @@ function Hero() {
         <div className="tab-area">
           {heroData.map((d, index) => {
             return (
-              <div className={activeIndex == index ? "tab-item active" : "tab-item"} onClick={() => handleTabClick(index)}>
+              <div key={index} className={activeIndex == index ? "tab-item active" : "tab-item"} onClick={() => handleTabClick(index)}>
                 <div className="tab-title">{d.title}</div>
               </div>
             );

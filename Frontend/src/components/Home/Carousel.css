@@ -7,7 +7,7 @@
   position: relative;
   height: 100%;
   object-fit: fill;
-  filter: brightness(0.7);
+  filter: brightness(0.6);
 }
 
 .carousel-element {
@@ -94,7 +94,9 @@ button .arrow::before {
 }
 
 .explore:hover {
-  background-color: #78006e;
+  background-color: #087e8c;
+  /* color: black; */
+  transition: 0.4s;
 }
 
 button:hover .arrow {
@@ -122,6 +124,7 @@ button:hover .arrow:before {
     display: none;
   }
 }
+
 .animated {
   opacity: 0;
   animation: fadeInUp 0.5s ease-in-out forwards;
@@ -135,4 +138,8 @@ button:hover .arrow:before {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.flex-cont {
+  margin-top: 105px;
 }
