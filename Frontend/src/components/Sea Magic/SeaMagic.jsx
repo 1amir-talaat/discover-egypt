@@ -314,7 +314,7 @@ function SeaMagic() {
                         }}
                         dir={langDirection}
                         key={langDirection}
-                        className="ms-3"
+                        className="ms-3 mt-3"
                     >
                         {beaches.map((item, index) => (
                             <SwiperSlide key={index}>
@@ -355,7 +355,7 @@ function SeaMagic() {
                         }}
                         dir={langDirection}
                         key={langDirection}
-                        className="ms-3"
+                        className="ms-3 mt-3"
                     >
                         {testing_data.map((item, index) => (
                             <SwiperSlide key={index}>
@@ -383,7 +383,7 @@ function SeaMagic() {
                         }}
                         dir={langDirection}
                         key={langDirection}
-                        className="ms-3"
+                        className="ms-3 mt-3"
                     >
                         {testing_data.map((item, index) => (
                             <SwiperSlide key={index}>
@@ -411,7 +411,7 @@ function SeaMagic() {
                         }}
                         dir={langDirection}
                         key={langDirection}
-                        className="ms-3"
+                        className="ms-3 mt-3"
                     >
                         {testing_data.map((item, index) => (
                             <SwiperSlide key={index}>
