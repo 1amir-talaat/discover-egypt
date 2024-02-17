@@ -5,8 +5,6 @@ import { useLanguage } from "./context/LanguageContext";
 
 // hyman
 import SeaMagic from "./components/Sea Magic/SeaMagic";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 //seif
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 function App() {
@@ -16,7 +14,6 @@ function App() {
       <button className="btn btn-danger" onClick={() => { toggleLanguage(); }}>
         {language == "en" ? "English" : "Arabic"}
       </button>
-      <Navbar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -28,7 +25,6 @@ function App() {
           <Route path="/aboutegypt" element={<AboutEgypt />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }
