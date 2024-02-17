@@ -1,6 +1,7 @@
 .experience-card-hr {
   position: relative;
   top: 35px;
+  width: 90%;
   border: none;
   height: 1px;
   background: rgb(73, 73, 73);
@@ -26,10 +27,8 @@
 
 .experience-card {  
   border-radius: 15px; 
-  height: 500px;
   transition: 0.8s ease;
 }
 .experience-card:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px !important;
 }
-

@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import { useLanguage } from "./context/LanguageContext";
 
 // hyman
-import SeaMagic from "./components/SeaMagic";
+import SeaMagic from "./components/Sea Magic/SeaMagic";
 function App() {
   const { language,toggleLanguage } = useLanguage();
   return (
