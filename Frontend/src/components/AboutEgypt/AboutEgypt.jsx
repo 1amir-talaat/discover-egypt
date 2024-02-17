@@ -53,32 +53,19 @@ function AboutEgypt() {
           src="https://images.pexels.com/photos/18887144/pexels-photo-18887144/free-photo-of-tropical-resort-on-a-desert-in-egypt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt=""
         />
-        <h1 className={language == "en" ? "image-text-en" : "image-text-ar"}>
-          {language == "en" ? "About Egypt" : "معلومات حول مصر"}
-        </h1>
+        <h1 className={language == "en" ? "image-text-en" : "image-text-ar"}>{language == "en" ? "About Egypt" : "معلومات حول مصر"}</h1>
       </div>
       {/* traditions part */}
       <div className="container mt-5">
         {/* a container for animation */}
-        <div
-          data-aos={language == "en" ? "fade-left" : "fade-right"}
-          data-aos-duration="1500"
-        >
-          <h1>
-            {language == "en" ? "Traditions of Egypt" : "التقاليد المصرية"}
-          </h1>
+        <div data-aos={language == "en" ? "fade-left" : "fade-right"} data-aos-duration="1500">
+          <h1>{language == "en" ? "Traditions of Egypt" : "التقاليد المصرية"}</h1>
           {/* the content and image container  */}
           <div className="d-flex traditinos">
-            <img
-              src="https://images.pexels.com/photos/6782583/pexels-photo-6782583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt=""
-            />
+            <img src="https://images.pexels.com/photos/6782583/pexels-photo-6782583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
             <div className="traditions-texts align-self-center ">
               <div className="container">
-                <h4 className="text-center">
-                  {" "}
-                  {language == "en" ? "language" : "اللغة"}
-                </h4>
+                <h4 className="text-center"> {language == "en" ? "language" : "اللغة"}</h4>
                 <p>
                   {language == "ar"
                     ? "تتميز الهجة المصرية بتنوعها اللغوي وثراها الثقافي، حيث تعكس تاريخًا عريقًا وتنوعًا ثقافيًا غنيًا. تتضمن اللهجة المصرية مجموعة من العبارات والتعابير الشهيرة التي يستخدمها الناس في حياتهم اليومية، مما يمنحها طابعًا فريدًا وممتعًا. بفضل تراثها الغني، تعد الهجة المصرية مصدر إلهام للأدب والفن، وتعكس جوهر الثقافة المصرية بشكل لافت ومميز."
@@ -94,18 +81,12 @@ function AboutEgypt() {
       {/* culture part */}
       <div className="container mt-5">
         {/* a container for animation */}
-        <div
-          data-aos={language == "en" ? "fade-right" : "fade-left"}
-          data-aos-duration="1500"
-        >
+        <div data-aos={language == "en" ? "fade-right" : "fade-left"} data-aos-duration="1500">
           {/* the content and image container  */}
           <div className="d-flex traditinos">
             <div className="traditions-texts align-self-center ">
               <div className="container">
-                <h4 className="text-center">
-                  {" "}
-                  {language == "en" ? "Culture" : "الثقافة"}
-                </h4>
+                <h4 className="text-center"> {language == "en" ? "Culture" : "الثقافة"}</h4>
                 <p>
                   {language == "ar"
                     ? "ثقافة مصر تعكس تنوعها الثقافي والتاريخي الغني، حيث تتجلى في التراث الفرعوني العريق والفنون الشعبية والأدب والموسيقى والمطبخ الشهير. تمزج الثقافة المصرية بين العراقة والحداثة، حيث تحتفظ بتقاليدها وتقاليدها القديمة مع استيعابها للتأثيرات العالمية المعاصرة. يشكل الدين والأسرة جزءًا أساسيًا من الهوية المصرية، وتتجلى قيم الضيافة والتضامن في المجتمع المصري."
@@ -113,10 +94,7 @@ function AboutEgypt() {
                 </p>
               </div>
             </div>
-            <img
-              src="https://images.pexels.com/photos/2482317/pexels-photo-2482317.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt=""
-            />
+            <img src="https://images.pexels.com/photos/2482317/pexels-photo-2482317.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
           </div>
           {/* end of content and image conatiner  */}
         </div>
@@ -124,9 +102,7 @@ function AboutEgypt() {
       {/* end culture part */}
       {/* Laws & Etiquette */}
       <div className="container mt-5 mb-2">
-        <h1 style={{ fontSize: 50, marginTop: 100, marginBottom: 50 }}>
-          {language == "en" ? "Laws & Etiquette" : "الآداب العامة"}
-        </h1>
+        <h1 style={{ fontSize: 42, marginTop: 100, marginBottom: 50 }}>{language == "en" ? "Laws & Etiquette" : "الآداب العامة"}</h1>
       </div>
 
       <div className="events position-relative mb-3">
@@ -148,10 +124,7 @@ function AboutEgypt() {
                   <div className="swiper-slide-content">
                     <img
                       style={
-                        d.image ==
-                        "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg"
-                          ? { objectPosition: "bottom" }
-                          : {}
+                        d.image == "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg" ? { objectPosition: "bottom" } : {}
                       }
                       src={d.image}
                       alt={d["title"]}
@@ -165,19 +138,11 @@ function AboutEgypt() {
         </div>
         <div className="event-info">
           <Bar />
-          <div
-            className={` info d-flex flex-column  ${
-              language == "en" ? "event-info-right" : ""
-            }`}
-          >
+          <div className={` info d-flex flex-column  ${language == "en" ? "event-info-right" : ""}`}>
             <div className="info-data flex-grow-1">
               <h1>{data[activeIndex % data.length].title}</h1>
-              <p className="p-info">
-                {data[activeIndex % data.length].description}
-              </p>
-              <button className="info-btn">
-                {language == "ar" ? "عرض المزيد" : "show more"}
-              </button>
+              <p className="p-info">{data[activeIndex % data.length].description}</p>
+              <button className="info-btn">{language == "ar" ? "عرض المزيد" : "show more"}</button>
             </div>
           </div>
           <div className="info-buttons flex-grow-0 d-flex">
@@ -199,7 +164,6 @@ function AboutEgypt() {
         </div>
       </div>
       {/* end Laws & Etiquette  */}
-
     </div>
   );
 }

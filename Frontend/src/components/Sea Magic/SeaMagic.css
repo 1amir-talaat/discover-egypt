@@ -16,9 +16,15 @@
 }
 
 .seamagic-image {
-  filter: brightness(50%);
   height: 650px !important;
+  filter: brightness(50%);
 }
+
+.seamagic-image:hover {
+  transition: 0.4s;
+  filter: brightness(40%);
+}
+
 .seamagic-title-en {
   bottom: 230px;
   left: 20px;
@@ -75,7 +81,6 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
 }
 
-
 .beach-card-hr {
   position: relative;
   top: 35px;
@@ -112,7 +117,6 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
 }
 
-
 .sea-card-hr {
   position: relative;
   top: 35px;
@@ -148,7 +152,6 @@
 .sea-card:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
 }
-
 
 .underwater-card-hr {
   position: relative;

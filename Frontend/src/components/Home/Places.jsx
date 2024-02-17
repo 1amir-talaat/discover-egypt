@@ -44,7 +44,7 @@ function Places() {
   return (
     <>
       <div className="container mt-5 mb-5">
-        <h1 className="mb-4" style={{ fontSize: 50 }}>
+        <h1 className="mb-4" style={{ fontSize: 42 }}>
           {language == "en" ? "Know Before You Go" : "تعرف على الأماكن قبل زيارتها"}
         </h1>
         <Swiper spaceBetween={40} slidesPerView={3} dir={language}>
