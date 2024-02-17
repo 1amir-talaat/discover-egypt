@@ -72,7 +72,7 @@
   transition: 0.8s ease;
 }
 .seamagic-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
 }
 
 
@@ -89,7 +89,7 @@
   padding: 5px 10px 0px;
   border-radius: 5px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 15px;
 }
@@ -109,7 +109,7 @@
   transition: 0.8s ease;
 }
 .beach-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
 }
 
 
@@ -126,7 +126,7 @@
   padding: 5px 10px 0px;
   border-radius: 5px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 15px;
 }
@@ -146,7 +146,7 @@
   transition: 0.8s ease;
 }
 .sea-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
 }
 
 
@@ -163,7 +163,7 @@
   padding: 5px 10px 0px;
   border-radius: 5px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 15px;
 }
@@ -183,5 +183,5 @@
   transition: 0.8s ease;
 }
 .underwater-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
 }
