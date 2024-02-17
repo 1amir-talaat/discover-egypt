@@ -5,22 +5,28 @@ import { useLanguage } from "./context/LanguageContext";
 
 // hyman
 import SeaMagic from "./components/Sea Magic/SeaMagic";
+import NatureAndAdventure from "./components/Nature And Adventure/NatureAndAdventure";
+import AntiquitiesAndCivilization from "./components/Antiquities and Civilization/AntiquitiesAndCivilization";
 //seif
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 function App() {
   const { language, toggleLanguage } = useLanguage();
   return (
     <div className={language == "en" ? "dir-en" : "dir-ar"}>
-      <button className="btn btn-warning" onClick={() => {toggleLanguage()}}>{language == "en"? "English" : "Arabic"}</button>
+      <button className="btn btn-warning" onClick={() => { toggleLanguage() }}>{language == "en" ? "English" : "Arabic"}</button>
       <BrowserRouter>
         <Routes>
-          <Route path="/discoveregypt" element={<Layout />}>
+          <Route path="/DiscoverEgypt" element={<Layout />}>
             <Route index element={<Home />} />
           </Route>
           {/* sea magic  */}
-          <Route path="/discoveregypt/seamagic" element={<SeaMagic />}></Route>
-          {/* about egypt  */}
-          <Route path="/discoveregypt/aboutegypt" element={<AboutEgypt />} />
+          <Route path="/DiscoverEgypt/SeaMagic" element={<SeaMagic />}></Route>
+          {/* Nature and Adventure  */}
+          <Route path="/DiscoverEgypt/NatureAndAdventure" element={<NatureAndAdventure />}></Route>
+          {/* Antiquities and Civilization */}
+          <Route path="/DiscoverEgypt/AntiquitiesAndCivilization" element={<AntiquitiesAndCivilization />}></Route>
+          {/* About Egypt  */}
+          <Route path="/DiscoverEgypt/AboutEgypt" element={<AboutEgypt />} />
         </Routes>
       </BrowserRouter>
     </div>
