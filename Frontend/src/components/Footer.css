@@ -1,0 +1,108 @@
+.logo-col img {
+    margin: 20px 0px;
+    width: 90%;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    color: #303030;
+    font-family: Gilroy-SemiBold, Helvetica, Arial, sans-serif;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+li {
+    padding: 5px 0px;
+}
+
+li a:hover {
+    padding-left: 11px;
+}
+
+.col-3 {
+    padding-top: 20px;
+}
+
+.footer-sub-line {
+    color: #087e8c;
+    position: relative;
+    margin: 0;
+    border: 2px solid #087e8c;
+    border-radius: 5px;
+    width: 20%;
+    text-align: left;
+    top: -10px;
+}
+
+.second-foot {
+    color: white;
+    background-color: #087e8c;
+}
+
+.full-logo {
+    width: 40%;
+    margin: 0;
+    padding: 0;
+}
+
+.team {
+    font-size: 27px;
+}
+
+.e-form {
+    position: relative;
+}
+
+.e-input {
+    border-radius: 27px;
+    width: 95%;
+    height: 45px;
+}
+
+.e-submit {
+    color: white;
+    height: 35px;
+    position: absolute;
+    top: 5px;
+    right: 7%;
+    border-radius: 20px;
+    background-color: #087e8c;
+    transition: 0.4s;
+}
+
+.e-submit:hover {
+    color: white;
+    background-color: #036570;
+}
+
+.i-cons {
+    margin-left: 5px;
+    width: 30px;
+    height: 27px;
+}
+
+.contact-bdy {
+    position: absolute;
+    right: 0px;
+}
+
+.contact-y {
+    position: relative;
+}
+
+.p-link {
+    padding-bottom: 10px;
+    font-size: 30px;
+    margin-right: 20px;
+    color: #303030;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+.p-link:hover {
+    text-decoration: underline;
+}
