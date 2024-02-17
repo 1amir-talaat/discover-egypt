@@ -3,14 +3,48 @@ import "./AboutEgypt.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useLanguage } from "../../context/LanguageContext";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
+import SwiperCore from "swiper";
+import Bar from "../Bar";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import "swiper/css";
+import "../Home/Events.css";
+import "swiper/css/effect-cards";
+import AboutData from "./AboutEgypt.json";
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 function AboutEgypt() {
+  // swiper
+  const [swiperRef, setSwiperRef] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { language } = useLanguage();
+  let data = AboutData[language];
+  const handleSlideChange = (swiper) => {
+    console.log(swiper.slides.length);
+
+    setActiveIndex(swiper.realIndex);
+    updateProgress(swiper.realIndex, swiper.slides.length);
+  };
+
+  const prevHandler = () => {
+    swiperRef.slidePrev();
+  };
+
+  const nextHandler = () => {
+    swiperRef.slideNext();
+  };
+
+  const updateProgress = (activeIndex, totalSlides) => {
+    const progress = (activeIndex / totalSlides) * 100;
+    setProgress(progress);
+  };
   //adding aos
   useEffect(() => {
     AOS.init();
   }, []);
   //handling languages
-  const { language } = useLanguage();
   return (
     <div>
       {/* image and text  */}
@@ -80,7 +114,7 @@ function AboutEgypt() {
               </div>
             </div>
             <img
-              src="https://images.pexels.com/photos/3199399/pexels-photo-3199399.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="https://images.pexels.com/photos/2482317/pexels-photo-2482317.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt=""
             />
           </div>
@@ -88,9 +122,84 @@ function AboutEgypt() {
         </div>
       </div>
       {/* end culture part */}
-      {/* currency part */}
-      
-      {/* end currency part  */}
+      {/* Laws & Etiquette */}
+      <div className="container mt-5 mb-2">
+        <h1 style={{ fontSize: 50, marginTop: 100, marginBottom: 50 }}>
+          {language == "en" ? "Laws & Etiquette" : "الآداب العامة"}
+        </h1>
+      </div>
+
+      <div className="events position-relative mb-3">
+        <div className="slide">
+          <Swiper
+            grabCursor={true}
+            onSlideChange={handleSlideChange}
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            spaceBetween={20}
+            loop={true}
+            initialSlide={0}
+            onSwiper={(swiper) => setSwiperRef(swiper)}
+            scrollbar={{ draggable: true }}
+          >
+            {data.map((d, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div className="swiper-slide-content">
+                    <img
+                      style={
+                        d.image ==
+                        "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg"
+                          ? { objectPosition: "bottom" }
+                          : {}
+                      }
+                      src={d.image}
+                      alt={d["title"]}
+                      className="cov-img"
+                    />
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+        <div className="event-info">
+          <Bar />
+          <div
+            className={` info d-flex flex-column  ${
+              language == "en" ? "event-info-right" : ""
+            }`}
+          >
+            <div className="info-data flex-grow-1">
+              <h1>{data[activeIndex % data.length].title}</h1>
+              <p className="p-info">
+                {data[activeIndex % data.length].description}
+              </p>
+              <button className="info-btn">
+                {language == "ar" ? "عرض المزيد" : "show more"}
+              </button>
+            </div>
+          </div>
+          <div className="info-buttons flex-grow-0 d-flex">
+            <div className="progress-bar-container">
+              <div
+                className="progress-bar"
+                style={{
+                  width: `${progress}%`,
+                  backgroundColor: "red",
+                  height: "10px",
+                }}
+              ></div>
+            </div>
+            <div className="events-buttons">
+              <button onClick={prevHandler}>{"<"}</button>
+              <button onClick={nextHandler}>{">"}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* end Laws & Etiquette  */}
+
     </div>
   );
 }
