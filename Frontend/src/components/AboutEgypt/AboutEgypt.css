@@ -96,29 +96,14 @@
   }
 }
 @media (max-width: 992px) {
-  .image-text-en {
-    position: absolute;
-    bottom: 10%;
-    left: 7%;
-    color: white;
-    font-size: 65px;
-    font-weight: 700;
-  }
-
-  .image-text-ar {
-    position: absolute;
-    bottom: 10%;
-    right: 7%;
-    color: white;
-    font-size: 65px;
-    font-weight: 700;
-  }
   .traditinos {
     flex-direction: column !important;
     height: 50rem;
+    /* margin-bottom: 60px; */
   }
   .traditinos img {
     width: 100%;
+    height: 50rem;
   }
   .traditions-texts {
     width: 100%;
