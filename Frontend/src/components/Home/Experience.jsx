@@ -142,6 +142,7 @@ function Experience() {
       >
 
         {testing_data.map((item, index) => (
+
           <SwiperSlide key={index}>
             <div className="card experience-card border-0 shadow-sm w-100 position-relative mb-5">
               <img className="card-img-top experience-card-image" src={item.image} alt={item.description} />
@@ -153,15 +154,14 @@ function Experience() {
                 <p style={{ color: "gray", fontSize: 20 }}>
                   {language === "en" ? `Price Start From ${item.price} $` : `السعر يبدأ من ${item.price * 4} جنيه`}
                 </p>
-                <hr className="experience-card-hr mt-4" />
-                <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
-                  <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
-                </button>
               </div>
+              <hr className="experience-card-hr mt-4 ms-3" />
+              <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
+                <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
+              </button>
             </div>
           </SwiperSlide>
-        ))}
-
+        ))};
 
       </Swiper>
     </div>

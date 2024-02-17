@@ -50,25 +50,25 @@ function Carousel() {
             id: 1,
             img: "https://media.gettyimages.com/id/145167188/photo/egypt-cairo-view-of-city.jpg?s=612x612&w=0&k=20&c=x6ALHX35T3_3ZVxMUViI8axN-D5seAYT3dKeSSH2Ztg=",
             country: "cairo",
-            desc: "Cairo is the capital and largest city of Egypt. The city's metropolitan area is the largest in the Middle East and the Arab world, and 15th-largest in the world",
+            desc: "cairo is very beautiful country and i love it very much",
           },
           {
             id: 2,
             img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
             country: "Alex",
-            desc: "One of Egypt's largest cities, Alexandria is also its principal seaport and a major industrial centre. Alex lies on the Mediterranean Sea at the western edge of the Nile River delta,",
+            desc: "alex is beautiful and have a beautiful sea",
           },
           {
             id: 3,
             img: "https://swiperjs.com/demos/images/nature-3.jpg",
             country: "Dahab",
-            desc: "Dahab has some of Egypt's most spectacular reefs for diving and snorkelling along with its golden sandy beaches ",
+            desc: "beautiful and have mountains and sea and fish",
           },
           {
             id: 4,
             img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
             country: "hurghada",
-            desc: "hurghada's beautiful sandy beaches and turquoise crystalline waters and watersports fans will be a big fan of the many opportunities for diving and snorkelling here amongst the vibrant marine life",
+            desc: "have a wonderfull sea and many tourists vist it every year",
           },
         ]
       : [
@@ -76,25 +76,7 @@ function Carousel() {
             id: 1,
             img: "https://media.gettyimages.com/id/145167188/photo/egypt-cairo-view-of-city.jpg?s=612x612&w=0&k=20&c=x6ALHX35T3_3ZVxMUViI8axN-D5seAYT3dKeSSH2Ztg=",
             country: "القاهرة",
-            desc: "القاهرة هي عاصمة مصر وأكبر مدنها. تعد المنطقة الحضرية للمدينة هي الأكبر في الشرق الأوسط والعالم العربي والمرتبة 15 على مستوى العالم",
-          },
-          {
-            id: 2,
-            img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
-            country: "الاسكندرية",
-            desc: "تعتبر الإسكندرية إحدى أكبر مدن مصر، وهي أيضًا ميناء بحري رئيسي ومركز صناعي رئيسي. تقع المدينة على البحر الأبيض المتوسط ​​على الطرف الغربي لدلتا نهر النيل",
-          },
-          {
-            id: 3,
-            img: "https://swiperjs.com/demos/images/nature-3.jpg",
-            country: "دهب",
-            desc: "تضم دهب بعضًا من أروع الشعاب المرجانية في مصر لممارسة رياضة الغوص والغطس إلى جانب شواطئها الرملية الذهبية",
-          },
-          {
-            id: 4,
-            img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
-            country: "الغردقة",
-            desc: "ستكون شواطئ الغردقة الرملية الجميلة والمياه البلورية الفيروزية وعشاق الرياضات المائية من أشد المعجبين بالفرص العديدة للغوص والغطس هنا وسط الحياة البحرية النابضة بالحياة.",
+            desc: "القاهرة مدينة جميلة",
           },
         ];
   return (
