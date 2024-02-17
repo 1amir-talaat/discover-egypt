@@ -142,6 +142,7 @@ function Experience() {
       >
 
         {testing_data.map((item, index) => (
+
           <SwiperSlide key={index}>
             <div className="card experience-card border-0 shadow-sm w-100 position-relative mb-5">
               <img className="card-img-top experience-card-image" src={item.image} alt={item.description} />
@@ -160,8 +161,7 @@ function Experience() {
               </div>
             </div>
           </SwiperSlide>
-        ))}
-
+        ))};
 
       </Swiper>
     </div>
