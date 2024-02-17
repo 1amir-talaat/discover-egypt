@@ -76,12 +76,10 @@
 }
 
 
-
 .beach-card-hr {
   position: relative;
   top: 35px;
   border: none;
-  width: 90%;
   height: 1px;
   background: rgb(73, 73, 73);
   margin-bottom: 50px;
@@ -106,9 +104,81 @@
 
 .beach-card {
   border-radius: 15px;
-  height: 500px;
+  height: 531px;
   transition: 0.8s ease;
 }
 .beach-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px !important;
+}
+
+
+.sea-card-hr {
+  position: relative;
+  top: 35px;
+  border: none;
+  height: 1px;
+  background: rgb(73, 73, 73);
+  margin-bottom: 50px;
+}
+
+.sea-card-badge {
+  padding: 5px 10px 0px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 15px;
+}
+
+.sea-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.sea-card {
+  border-radius: 15px;
+  height: 540px;
+  transition: 0.8s ease;
+}
+.sea-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px !important;
+}
+
+
+.underwater-card-hr {
+  position: relative;
+  top: 35px;
+  border: none;
+  height: 1px;
+  background: rgb(73, 73, 73);
+  margin-bottom: 50px;
+}
+
+.underwater-card-badge {
+  padding: 5px 10px 0px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 15px;
+}
+
+.underwater-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.underwater-card {
+  border-radius: 15px;
+  height: 580px;
+  transition: 0.8s ease;
+}
+.underwater-card:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px !important;
 }

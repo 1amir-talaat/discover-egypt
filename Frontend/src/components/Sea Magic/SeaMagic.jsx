@@ -233,6 +233,128 @@ function SeaMagic() {
         }
     ];
 
+    const sea = language == "en" ? [
+        {
+            "id": 1,
+            "ship_name": "Luxor-Aswan Nile Cruise",
+            "description": "Experience the majestic Nile River aboard a traditional cruise ship, passing by ancient temples and picturesque landscapes.",
+            "price": 500,
+            "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/77/97/65.jpg"
+        },
+        {
+            "id": 2,
+            "ship_name": "Red Sea Diving Safari",
+            "description": "Embark on an adventure in the Red Sea aboard a diving safari ship, exploring vibrant coral reefs and diverse marine life.",
+            "price": 800,
+            "image": "https://extradivers-worldwide.com/images/DynArtwork/zoom-rse-aussen-1_19789.jpg"
+        },
+        {
+            "id": 3,
+            "ship_name": "Alexandria Port Day Trip",
+            "description": "Discover the charm of Alexandria on a day trip from Cairo, exploring ancient ruins, museums, and the Mediterranean coastline.",
+            "price": 300,
+            "image": "https://apa.gov.eg/wp-content/uploads/2022/12/slider-three-2048x1366.jpg"
+        },
+        {
+            "id": 4,
+            "ship_name": "Sinai Peninsula Cruise",
+            "description": "Sail along the coast of the Sinai Peninsula, visiting historic landmarks, pristine beaches, and enjoying water activities.",
+            "price": 700,
+            "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/f2/63/f2.jpg"
+        }
+    ] : [
+        {
+            "id": 1,
+            "ship_name": "رحلة نيلية من الأقصر إلى أسوان",
+            "description": "استمتع بنهر النيل الساحر على متن سفينة نيلية تقليدية، واستمتع بمرور الآثار القديمة والمناظر الطبيعية الخلابة.",
+            "price": 500,
+            "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/77/97/65.jpg"
+        },
+        {
+            "id": 2,
+            "ship_name": "سفاري الغوص في البحر الأحمر",
+            "description": "انطلق في مغامرة في البحر الأحمر على متن سفينة سفاري للغوص، استكشاف الشعاب المرجانية الحية والحياة البحرية المتنوعة.",
+            "price": 800,
+            "image": "https://extradivers-worldwide.com/images/DynArtwork/zoom-rse-aussen-1_19789.jpg"
+        },
+        {
+            "id": 3,
+            "ship_name": "رحلة يومية إلى ميناء الإسكندرية",
+            "description": "اكتشف سحر الإسكندرية في رحلة يومية من القاهرة، استكشاف الآثار القديمة والمتاحف وسواحل البحر الأبيض المتوسط.",
+            "price": 300,
+            "image": "https://apa.gov.eg/wp-content/uploads/2022/12/slider-three-2048x1366.jpg"
+        },
+        {
+            "id": 4,
+            "ship_name": "رحلة بحرية في شبه جزيرة سيناء",
+            "description": "انطلق على طول ساحل شبه جزيرة سيناء، زيارة المعالم التاريخية والشواطئ النظيفة والاستمتاع بالأنشطة المائية.",
+            "price": 700,
+            "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/f2/63/f2.jpg"
+        }
+    ];
+
+    const underwater = language == "en" ? [
+        {
+            "id": 1,
+            "activity_name": "Red Sea Scuba Diving",
+            "description": "Explore the vibrant underwater world of the Red Sea with scuba diving adventures, encountering colorful coral reefs and a variety of marine species.",
+            "price": 100,
+            "image": "https://www.travelstart.co.za/blog/wp-content/uploads/2020/02/984.jpg"
+        },
+        {
+            "id": 2,
+            "activity_name": "Snorkeling in Ras Mohammed National Park",
+            "description": "Discover the beauty of Ras Mohammed National Park's underwater scenery through snorkeling, encountering diverse marine life and stunning coral formations.",
+            "price": 50,
+            "image": "https://cdn.getyourguide.com/img/location/5952616233df8.jpeg/62.webp"
+        },
+        {
+            "id": 3,
+            "activity_name": "Submarine Adventure in Hurghada",
+            "description": "Embark on a unique submarine adventure in Hurghada, diving deep below the surface to observe the underwater world without getting wet.",
+            "price": 150,
+            "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/9a/fd/ca.jpg"
+        },
+        {
+            "id": 4,
+            "activity_name": "Underwater Photography in Dahab",
+            "description": "Capture the mesmerizing beauty of Dahab's underwater landscapes through underwater photography sessions, guided by experienced instructors.",
+            "price": 80,
+            "image": "https://www.weseektravel.com/wp-content/uploads/2022/05/diving-dahab-blue-hole-1-720x540.jpg"
+        }
+    ] : [
+        {
+            "id": 1,
+            "activity_name": "غوص في البحر الأحمر",
+            "description": "استكشف عالم البحار الحيوي في البحر الأحمر مع مغامرات الغوص، واكتشف الشعاب المرجانية الملونة ومجموعة متنوعة من أنواع الأسماك.",
+            "price": 100,
+            "image": "https://www.travelstart.co.za/blog/wp-content/uploads/2020/02/984.jpg"
+        },
+        {
+            "id": 2,
+            "activity_name": "الغطس في حديقة رأس محمد الوطنية",
+            "description": "اكتشف جمال الطبيعة البحرية لحديقة رأس محمد الوطنية من خلال الغطس، واستمتع بمشاهدة مختلف أنواع الحياة البحرية وتكوينات الشعاب المرجانية الرائعة.",
+            "price": 50,
+            "image": "https://cdn.getyourguide.com/img/location/5952616233df8.jpeg/62.webp"
+        },
+        {
+            "id": 3,
+            "activity_name": "مغامرة الغواصة في الغردقة",
+            "description": "انطلق في مغامرة فريدة على متن غواصة في الغردقة، وانغمس في عمق البحر لمشاهدة عالم البحار دون الحاجة للبلل.",
+            "price": 150,
+            "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/9a/fd/ca.jpg"
+        },
+        {
+            "id": 4,
+            "activity_name": "تصوير تحت الماء في دهب",
+            "description": "التقط جمال المناظر الطبيعية تحت الماء في دهب من خلال جلسات التصوير تحت الماء، بإرشاد من مدربين متمرسين.",
+            "price": 80,
+            "image": "https://www.weseektravel.com/wp-content/uploads/2022/05/diving-dahab-blue-hole-1-720x540.jpg"
+        }
+    ];
+
+
+
     return (
         <>
             <div className="video-box">
@@ -282,7 +404,7 @@ function SeaMagic() {
                                         <h5 className="text-white me-3 ms-3 mt-3">{language === "en" ? "Activities" : "أنشطة"}</h5>
                                         <div className="ps-4 pe-4">
                                             {item.activities.map((activity, activityIndex) => (
-                                                <div key={activityIndex} className="badge text-white fw-light me-2 seamagic-activity" style={{ fontSize: 18 }}>{activity}</div>
+                                                <div key={activityIndex} className="badge text-white fw-light me-2 mt-1 seamagic-activity" style={{ fontSize: 18 }}>{activity}</div>
                                             ))}
                                         </div>
                                     </div>
@@ -309,7 +431,7 @@ function SeaMagic() {
                                 slidesPerView: 2.5,
                             },
                             1400: {
-                                slidesPerView: 3,
+                                slidesPerView: 3.5,
                             },
                         }}
                         dir={langDirection}
@@ -327,7 +449,7 @@ function SeaMagic() {
                                         <h2>{item.beach_name}</h2>
                                         <h5>{item.description}</h5>
                                     </div>
-                                    <hr className="beach-card-hr ms-4" />
+                                    <hr className="beach-card-hr " />
                                     <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
                                         <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
                                     </button>
@@ -350,16 +472,29 @@ function SeaMagic() {
                                 slidesPerView: 2.5,
                             },
                             1400: {
-                                slidesPerView: 3,
+                                slidesPerView: 3.5,
                             },
                         }}
                         dir={langDirection}
                         key={langDirection}
-                        className="ms-3 mt-3"
+                        className="ms-3"
                     >
-                        {testing_data.map((item, index) => (
+                        {sea.map((item, index) => (
                             <SwiperSlide key={index}>
-
+                                <div className="card sea-card border-0 shadow-sm w-100 position-relative mb-5">
+                                    <img className="card-img-top sea-card-image" src={item.image} alt={item.description} />
+                                    <div className="card-body">
+                                        <p style={{ color: "gray", fontSize: 20 }}>
+                                            {item.price === "مجاناً" || item.price === "Free" ? item.price : (language === "en" ? `$${item.price}` : `${item.price * 10  } جنيه`)}
+                                        </p>
+                                        <h2>{item.ship_name}</h2>
+                                        <h5>{item.description}</h5>
+                                    </div>
+                                    <hr className="sea-card-hr " />
+                                    <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
+                                        <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
+                                    </button>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
@@ -378,44 +513,29 @@ function SeaMagic() {
                                 slidesPerView: 2.5,
                             },
                             1400: {
-                                slidesPerView: 3,
+                                slidesPerView: 3.5,
                             },
                         }}
                         dir={langDirection}
                         key={langDirection}
                         className="ms-3 mt-3"
                     >
-                        {testing_data.map((item, index) => (
+                        {underwater.map((item, index) => (
                             <SwiperSlide key={index}>
-
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-
-                {/* Discover the best sea destinations in Egypt // اكتشف أفضل الوجهات البحرية في مصر */}
-                <div className="row mt-5">
-                    <h1 style={{ fontSize: 50 }}>{language == "en" ? "Discover the best sea destinations in Egypt" : "اكتشف أفضل الوجهات البحرية في مصر"}</h1>
-                    <Swiper
-                        spaceBetween={15}
-                        breakpoints={{
-                            0: {
-                                slidesPerView: 1.5,
-                            },
-                            768: {
-                                slidesPerView: 2.5,
-                            },
-                            1400: {
-                                slidesPerView: 3,
-                            },
-                        }}
-                        dir={langDirection}
-                        key={langDirection}
-                        className="ms-3 mt-3"
-                    >
-                        {testing_data.map((item, index) => (
-                            <SwiperSlide key={index}>
-
+                                <div className="card underwater-card border-0 shadow-sm w-100 position-relative mb-5">
+                                    <img className="card-img-top underwater-card-image" src={item.image} alt={item.description} />
+                                    <div className="card-body">
+                                        <p style={{ color: "gray", fontSize: 20 }}>
+                                            {item.price === "مجاناً" || item.price === "Free" ? item.price : (language === "en" ? `$${item.price}` : `${item.price * 15} جنيه`)}
+                                        </p>
+                                        <h2>{item.activity_name}</h2>
+                                        <h5>{item.description}</h5>
+                                    </div>
+                                    <hr className="underwater-card-hr " />
+                                    <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
+                                        <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
+                                    </button>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
