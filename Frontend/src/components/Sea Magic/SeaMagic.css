@@ -72,7 +72,7 @@
   transition: 0.8s ease;
 }
 .seamagic-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px !important;
 }
 
 
@@ -108,7 +108,7 @@
   transition: 0.8s ease;
 }
 .beach-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px !important;
 }
 
 
@@ -144,7 +144,7 @@
   transition: 0.8s ease;
 }
 .sea-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px !important;
 }
 
 
@@ -180,5 +180,5 @@
   transition: 0.8s ease;
 }
 .underwater-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px !important;
 }
