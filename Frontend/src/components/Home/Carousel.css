@@ -11,7 +11,7 @@
 }
 
 .carousel-element {
-  height: 70dvh;
+  height: 80dvh;
 }
 .carousel-header {
   color: #f7f7f7;
@@ -55,7 +55,7 @@ hr {
   border: 1px solid #f7f7f7;
   border-radius: 3.2rem;
   color: #fff;
-  padding: 8px 18px;;
+  padding: 8px 18px;
   background: transparent;
   display: flex;
   transition: 0.2s background;
@@ -108,11 +108,11 @@ button:hover .arrow:before {
 }
 .carousel-cont {
   position: absolute;
-  top: 35%;
+  top: 50%; /* Adjust the vertical position */
   left: 50%;
   transform: translate(-50%, -40%);
 }
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .carousel-texts p {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -141,5 +141,5 @@ button:hover .arrow:before {
 }
 
 .flex-cont {
-  margin-top: 105px;
+  padding: 90px 0;
 }
