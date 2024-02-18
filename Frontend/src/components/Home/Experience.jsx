@@ -171,7 +171,6 @@ function Experience() {
             </div>
           </SwiperSlide>
         ))}
-        ;
       </Swiper>
     </div>
   );
