@@ -10,13 +10,12 @@ import { IoSearch } from "react-icons/io5";
 import Manu from "./components/Manu";
 import SeeGo from "./components/SeeGo";
 
-function SlideAnimation() {
+function Navbar() {
   const { language, toggleLanguage } = useLanguage();
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [navType, setNavType] = useState(null);
 
-  
   const toggleDropdown = (dropdown) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
     setDropdownVisible(activeDropdown === dropdown ? false : true);
@@ -136,4 +135,4 @@ function SlideAnimation() {
   );
 }
 
-export default SlideAnimation;
+export default Navbar;
