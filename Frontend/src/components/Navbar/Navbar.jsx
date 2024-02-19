@@ -21,7 +21,7 @@ function Navbar() {
     setDropdownVisible(activeDropdown === dropdown ? false : true);
   };
 
-  const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition" : ""}`;
+  const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : ""}`;
 
   // eslint-disable-next-line react/prop-types
   const DropdownContent = ({ type }) => {
@@ -38,40 +38,37 @@ function Navbar() {
   };
 
   // eslint-disable-next-line react/prop-types
+  // eslint-disable-next-line react/prop-types
   const DropdownManue = ({ type }) => {
+    let data = {
+      en: [],
+      ar: [],
+    };
+
     switch (type) {
       case "See & Do":
-        return (
-          <Manu type={setNavType} data={["Explore All", " Destinations", "Activities & Attractions", " Food & Drink", " Experiences & Tours"]} />
-        );
+        data = {
+          en: ["Explore All", "Activities & Attractions", "Food & Drink", "Experiences & Tours"],
+          ar: ["تصفح الكل", "الأنشطة والمعالم السياحية", "المأكولات والمشروبات", "المغامرات والجولات"],
+        };
+        break;
       case "Plan Your Trip":
-        return (
-          <Manu
-            type={setNavType}
-            data={[
-              language === "ar" ? "تصفح الكل" : "Explore All",
-              language === "ar" ? "مخطط الرحلات" : "Trip Planner",
-              language === "ar" ? "وسائل النقل" : "Transportation",
-              language === "ar" ? "دليل الرحلات بالسيارة" : "Road Trip Guide",
-            ]}
-          />
-        );
+        data = {
+          en: ["Explore All", "Trip Planner", "Transportation", "Road Trip Guide"],
+          ar: ["تصفح الكل", "مخطط الرحلات", "وسائل النقل", "دليل الرحلات بالسيارة"],
+        };
+        break;
       case "Travel Essentials":
-        return (
-          <Manu
-            type={setNavType}
-            data={[
-              language === "ar" ? "تصفح الكل" : "Explore All",
-              language === "ar" ? "معلومات حول السعودية" : "About Saudi",
-              language === "ar" ? "نصائح السفر الآمن" : "Safety Travel Tips",
-              language === "ar" ? "أرقام مفيدة" : "Useful Contacts",
-              language === "ar" ? "إرشادات ومتطلبات السفر" : "Travel Regulations",
-            ]}
-          />
-        );
+        data = {
+          en: ["Explore All", "About Saudi", "Safety Travel Tips", "Useful Contacts", "Travel Regulations"],
+          ar: ["تصفح الكل", "معلومات حول السعودية", "نصائح السفر الآمن", "أرقام مفيدة", "إرشادات ومتطلبات السفر"],
+        };
+        break;
       default:
-        return null;
+        break;
     }
+
+    return <Manu type={setNavType} data={data} />;
   };
 
   return (

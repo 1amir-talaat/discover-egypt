@@ -4,7 +4,8 @@ import FoodAndDrinkContent from "./components/FoodAndDrinkContent";
 import ExperiencesAndToursContent from "./components/ExperiencesAndToursContent";
 
 function SeeGo({ type }) {
-  let content = null;
+  console.log(type);
+  let content = <ExperiencesAndToursContent />;
 
   switch (type) {
     case "Explore All":
@@ -23,11 +24,7 @@ function SeeGo({ type }) {
       content = <div>No content available for this type</div>;
   }
 
-  return (
-    <div className="see-go">
-      {content}
-    </div>
-  );
+  return <>{content}</>;
 }
 
 SeeGo.propTypes = {

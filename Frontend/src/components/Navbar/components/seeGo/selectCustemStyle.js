@@ -31,7 +31,7 @@ export default {
 
   menuList: (provided) => ({
     ...provided,
-    height: "100px",
+    height: "90px",
     "&::-webkit-scrollbar": {
       width: "6px",
     },
@@ -40,15 +40,5 @@ export default {
       borderRadius: "3px",
     },
   }),
-  menu: (provided) => ({
-    ...provided,
-    height: "100px",
-    "&::-webkit-scrollbar": {
-      width: "6px",
-    },
-    "&::-webkit-scrollbar-thumb": {
-      background: "#087e8c",
-      borderRadius: "3px",
-    },
-  }),
+
 };
