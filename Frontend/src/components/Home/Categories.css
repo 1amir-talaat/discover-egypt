@@ -1,7 +1,7 @@
 .category-image {
   filter: brightness(75%);
 }
-.category-image:hover {
+.swiper-slide .test:hover .category-image {
   transition: 0.3s ease;
   filter: brightness(60%);
 }
