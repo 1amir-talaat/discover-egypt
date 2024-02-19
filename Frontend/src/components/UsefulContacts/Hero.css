@@ -1,0 +1,15 @@
+.hero-container{
+    height: 60vh;
+    background-image: url("https://www.visitsaudi.com/content/dam/saudi-tourism/media/safety-useful-numbers/safety-poster.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 100px;
+    filter: brightness(100%);
+}
+.hero-container h1{
+    font-size: 10vh;
+    padding: 30vh 9vh;
+    z-index: 99%;
+    color: white;
+    
+}
