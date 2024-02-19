@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
 
 
 function Navbar() {
@@ -37,7 +36,7 @@ function Navbar() {
 
   return (
     <div className={`${navbarClass} fixed-top p-5 ${scrolledClass}`}>
-      <Link to={"/"} className="nav-logo text-decoration-none">{language === "en" ? "Discover Egypt" : "اكتشف مصر"}</Link>
+      <a href="/" className="nav-logo text-decoration-none">{language === "en" ? "Discover Egypt" : "اكتشف مصر"}</a>
       <div className={`nav-items ${isOpen && "open"}`}>
         {navItems.map((item, index) => (
           <a key={index} href={item.path}>{language === "en" ? item.textEn : item.textAr}</a>
