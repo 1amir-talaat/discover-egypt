@@ -8,7 +8,7 @@ function Places() {
     ar: [
       {
         title: "معلومات حول مصر",
-        path: "/about-egypt",
+        path: "/AboutEgypt",
         image: "https://www.visitsaudi.com/content/dam/messi/saudi-arabian-architecture.jpg",
       },
       {
