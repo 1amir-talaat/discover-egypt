@@ -48,7 +48,7 @@ function Hero() {
   }, [heroSwiper]);
 
   return (
-    <div className="hero ">
+    <div className="hero " style={{paddingTop:100}}>
       <div className="overlay">
         <img src={heroData[activeIndex].img} alt="" className="blur" />
         <div className="shodo"></div>
