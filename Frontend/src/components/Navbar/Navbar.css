@@ -346,3 +346,41 @@
 .weather-info .weather-select {
   flex: 0.3;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}
+
+.menu {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.menu--close {
+  animation: fadeOut 0.2s ease-in-out;
+}
+
+.weather-info {
+  padding: 36px;
+}
+
+.weather-ico img {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}

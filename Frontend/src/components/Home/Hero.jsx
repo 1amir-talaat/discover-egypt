@@ -17,7 +17,6 @@ function Hero() {
   let heroData = data[language];
 
   const handleSlideChange = (swiper) => {
-    console.log(swiper);
     setActiveIndex(swiper.activeIndex);
   };
 

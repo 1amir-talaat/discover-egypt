@@ -8,7 +8,7 @@ import { LuUser } from "react-icons/lu";
 import { MdLanguage } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import Manu from "./components/Manu";
-import SeeGo from "./components/SeeGo";
+import SeeGo from "./components/seeGo/SeeGo";
 
 function Navbar() {
   const { language, toggleLanguage } = useLanguage();
