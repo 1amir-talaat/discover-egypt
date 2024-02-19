@@ -74,12 +74,21 @@
   width: 0;
   height: 2px;
   background: black;
-  transition: all 0.45s;
+  transition: all 0.45s ease;
+}
+.Navbar > .nav-items > a,
+.Navbar-Arabic > .nav-items > a {
+
+  transition: all 0.45s ease;
 }
 
-.Navbar > .nav-items > a:hover::before,
-.Navbar-Arabic > .nav-items > a:hover::before {
-  width: 100%;
+.Navbar > .nav-items > a:hover,
+.Navbar-Arabic > .nav-items > a:hover {
+  color: rgb(131, 131, 131);
+}
+.Navbar.Navbar.scrolled > .nav-items > a:hover,
+.Navbar-Arabic.Navbar.scrolled > .nav-items > a:hover {
+  color: rgb(182, 182, 182);
 }
 
 .Navbar > .nav-toggle,
