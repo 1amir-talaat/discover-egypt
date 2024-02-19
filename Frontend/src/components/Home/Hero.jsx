@@ -21,6 +21,18 @@ function Hero() {
     setActiveIndex(swiper.activeIndex);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (heroSwiper) {
+        const nextIndex = (activeIndex + 1) % heroSwiper.slides.length;
+        setActiveIndex(nextIndex);
+        heroSwiper.slideTo(nextIndex);
+      }
+    }, 5000); // Adjust autoplay interval as needed
+
+    return () => clearInterval(interval);
+  }, [heroSwiper, activeIndex]);
+
   const handleTabClick = (index) => {
     setActiveIndex(index);
     if (heroSwiper) {

@@ -5,6 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import { CiCircleChevUp } from "react-icons/ci";
 import "./Footer.css";
+import img from "./footer.png";
 import { useLanguage } from "../context/LanguageContext";
 
 function Footer() {
@@ -15,6 +16,7 @@ function Footer() {
   return (
     <>
       <footer>
+        <img src={img} style={{ width: "100%"}} alt="" />
         <div className="container">
           <div className="row">
             <div className="col-3 logo-col">
@@ -95,15 +97,26 @@ function Footer() {
               <div className="col">
                 <h2>{language == "en" ? "Call Center" : "مركز المكالمات"}</h2>
                 <div className="numbers">
-                  <a style={{fontSize: 20}} href="tel:+01066272505">{language == "en" ? "sameh muhammad" : "سامح محمد"}</a>
-                  <a style={{fontSize: 20}} href="tel:+01141606848">{language == "en" ? "amir talaat" : "امير طلعت"}</a>
-                  <a style={{fontSize: 20}} href="tel:+01021105085"> {language == "en" ? "saif ahmed" : "سيف احمد"} </a>
-                  <a style={{fontSize: 20}} href="tel:+01121859584">{language == "en" ? "zeyad hymen" : "زياد هيمن"}</a>
-                  <a style={{fontSize: 20}} href="tel:+">{language == "en" ? "basmala magdy" : "بسملة مجدي"}</a>
+                  <a style={{ fontSize: 20 }} href="tel:+01066272505">
+                    {language == "en" ? "sameh muhammad" : "سامح محمد"}
+                  </a>
+                  <a style={{ fontSize: 20 }} href="tel:+01141606848">
+                    {language == "en" ? "amir talaat" : "امير طلعت"}
+                  </a>
+                  <a style={{ fontSize: 20 }} href="tel:+01021105085">
+                    {" "}
+                    {language == "en" ? "saif ahmed" : "سيف احمد"}{" "}
+                  </a>
+                  <a style={{ fontSize: 20 }} href="tel:+01121859584">
+                    {language == "en" ? "zeyad hymen" : "زياد هيمن"}
+                  </a>
+                  <a style={{ fontSize: 20 }} href="tel:+">
+                    {language == "en" ? "basmala magdy" : "بسملة مجدي"}
+                  </a>
                 </div>
               </div>
               <div className="col">
-                <h2 style={{fontSize: 25}}>{language == "en" ? "Subsecribe for notifications" : "اشترك لوصول الاشعارات"}</h2>
+                <h2 style={{ fontSize: 25 }}>{language == "en" ? "Subsecribe for notifications" : "اشترك لوصول الاشعارات"}</h2>
                 <form className="form e-form" method="post">
                   <input type="text" className="e-input" name="Email" />
                   <input className="e-submit btn" type="submit" value={language == "en" ? "join" : "تاكيد"} />
