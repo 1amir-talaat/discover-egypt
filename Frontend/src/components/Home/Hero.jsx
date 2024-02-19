@@ -28,7 +28,7 @@ function Hero() {
         setActiveIndex(nextIndex);
         heroSwiper.slideTo(nextIndex);
       }
-    }, 5000); // Adjust autoplay interval as needed
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [heroSwiper, activeIndex]);
@@ -43,7 +43,6 @@ function Hero() {
     if (heroSwiper) {
       heroSwiper.on("slideChange", () => {
         const animatedElements = document.querySelectorAll(".hero-animated");
-        console.log(animatedElements);
         animatedElements.forEach((element) => {
           element.style.animation = "none";
           requestAnimationFrame(() => {
@@ -60,7 +59,7 @@ function Hero() {
   }, [heroSwiper]);
 
   return (
-    <div className="hero " style={{paddingTop:100}}>
+    <div className="hero " style={{ paddingTop: 100 }}>
       <div className="overlay">
         <img src={heroData[activeIndex].img} alt="" className="blur" />
         <div className="shodo"></div>
