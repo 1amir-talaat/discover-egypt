@@ -21,13 +21,13 @@ function App() {
             {/* Home page */}
             <Route index element={<Home />} />
             {/* sea magic  */}
-            <Route path="SeaMagic" element={<SeaMagic />}></Route>
+            <Route path="sea-magic" element={<SeaMagic />}></Route>
             {/* Nature and Adventure  */}
-            <Route path="NatureAndAdventure" element={<NatureAndAdventure />}></Route>
+            <Route path="nature-and-adventure" element={<NatureAndAdventure />}></Route>
             {/* Antiquities and Civilization */}
-            <Route path="AntiquitiesAndCivilization" element={<AntiquitiesAndCivilization />}></Route>
+            <Route path="antiquities-and-civilization" element={<AntiquitiesAndCivilization />}></Route>
             {/* About Egypt  */}
-            <Route path="AboutEgypt" element={<AboutEgypt />} />
+            <Route path="about-egypt" element={<AboutEgypt />} />
             {/* Travel Safety Tips */}
             <Route path="travel-safety-tips" element={<TravelSafetyTips />} />
           </Route>
