@@ -119,13 +119,14 @@ function transformPlacesData(places) {
       created_at: place.created_at,
       updated_on: place.updated_on,
       reviews: place.Reviews.map((review) => ({
-        // Map reviews to include user data
         id: review.id,
         review: review.review,
-        user: {
-          name: review.User.name,
-          email: review.User.email,
-        },
+        user: review.User
+          ? {
+              name: review.User.name,
+              email: review.User.email,
+            }
+          : null,
       })),
       images: place.PlacesImgs,
     };
@@ -148,10 +149,12 @@ function transformPlacesData(places) {
       reviews: place.Reviews.map((review) => ({
         id: review.id,
         review: review.review,
-        user: {
-          name: review.User.name,
-          email: review.User.email,
-        },
+        user: review.User
+          ? {
+              name: review.User.name,
+              email: review.User.email,
+            }
+          : null,
       })),
       images: place.PlacesImgs,
     };
