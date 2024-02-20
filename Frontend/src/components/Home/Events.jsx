@@ -84,7 +84,7 @@ function Events() {
         </div>
         <div className="event-info">
           <Bar />
-          <div className={` info d-flex flex-column  ${language == "en" ? "event-info-right" : ""}`}>
+          <div className={` info d-flex flex-column `}>
             <div className="info-data flex-grow-1">
               <h1>{data[activeIndex % data.length].title}</h1>
               <p className="p-info">{data[activeIndex % data.length].description}</p>
