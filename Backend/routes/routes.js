@@ -1,6 +1,8 @@
 import express from "express";
 import PlaceController from "../controllers/PlaceController.js";
 import ReviewController from "../controllers/ReviewController.js";
+import UserController from "../controllers/UserController.js";
+import authenticateMiddleware from "../middleware/authenticateMiddleware.js";
 
 const router = express.Router();
 
@@ -10,6 +12,12 @@ router.get("/city/:city", PlaceController.getPlacesByCity);
 router.get("/category/:category", PlaceController.getPlacesByCategory);
 router.get("/search/:keyword", PlaceController.searchPlaces);
 
-// review routes
-router.post("/review",ReviewController.CreateReview)
+// Review routes
+router.post("/review", ReviewController.createReview);
+
+// User routes
+router.get("/users", authenticateMiddleware, UserController.getAllUsers);
+router.post("/users/register", UserController.register);
+router.post("/users/login", UserController.login);
+
 export default router;
