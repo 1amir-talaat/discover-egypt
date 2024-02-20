@@ -37,7 +37,7 @@ function Categories() {
               {language == "en" ? "Antiquities and Civilization" : "الآثار والحضارة"}
             </h1>
             <a
-              href="/AntiquitiesAndCivilization"
+              href="/antiquities-and-civilization"
               className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}
             >
               {language == "en" ? "Explore More" : "أستكشف أكثر"}
@@ -54,7 +54,7 @@ function Categories() {
             <h1 className={`text-white position-absolute ${language === "en" ? "category-title-en" : "category-title-ar"} `}>
               {language == "en" ? "Nature and Adventure" : "الطبيعة والمغامرة"}
             </h1>
-            <a href="/NatureAndAdventure" className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}>
+            <a href="/nature-and-adventure" className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}>
               {language == "en" ? "Explore More" : "أستكشف أكثر"}
             </a>
           </div>
@@ -69,7 +69,7 @@ function Categories() {
             <h1 className={`text-white position-absolute ${language === "en" ? "category-title-en" : "category-title-ar"} `}>
               {language == "en" ? "Sea Magic" : "سحر البحر"}
             </h1>
-            <a href="/SeaMagic" className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}>
+            <a href="/sea-magic" className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}>
               {language == "en" ? "Explore More" : "أستكشف أكثر"}
             </a>
           </div>
