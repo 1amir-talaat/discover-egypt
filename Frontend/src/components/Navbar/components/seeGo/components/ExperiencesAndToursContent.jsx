@@ -27,7 +27,9 @@ function ExperiencesAndToursContent() {
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather/?q=${selectedCity}&appid=1b72642ef30dedb2d2cbe81165cca842`);
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather/?q=${selectedCity}&lang=fr&appid=1b72642ef30dedb2d2cbe81165cca842`
+        );
         console.log(response);
         setWeatherData(response.data);
       } catch (error) {
