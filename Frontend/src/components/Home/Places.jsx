@@ -8,7 +8,7 @@ function Places() {
     ar: [
       {
         title: "معلومات حول مصر",
-        path: "/about-egypt",
+        path: "/AboutEgypt",
         image: "https://www.visitsaudi.com/content/dam/messi/saudi-arabian-architecture.jpg",
       },
       {
@@ -25,7 +25,7 @@ function Places() {
     en: [
       {
         title: "About Egypt",
-        path: "/about-egypt",
+        path: "/AboutEgypt",
         image: "https://www.visitsaudi.com/content/dam/messi/saudi-arabian-architecture.jpg",
       },
       {
@@ -44,7 +44,7 @@ function Places() {
   return (
     <>
       <div className="container mt-5 mb-5">
-        <h1 className="mb-4" style={{ fontSize: 50 }}>
+        <h1 className="mb-4" style={{ fontSize: 42 }}>
           {language == "en" ? "Know Before You Go" : "تعرف على الأماكن قبل زيارتها"}
         </h1>
         <Swiper spaceBetween={40} slidesPerView={3} dir={language}>
@@ -56,9 +56,9 @@ function Places() {
                   <h2>{item.title}</h2>
                 </div>
                 <hr className="m-0 mb-1 m-auto experience-card-hr position-static" />
-                <button className="btn fw-bold " style={{ color: "rgb(83, 187, 123)" }}>
+                <a href={item.path} className="btn fw-bold " style={{ color: "rgb(83, 187, 123)" }}>
                   <h5>{language === "en" ? "Know more" : "اعرف اكثر"}</h5>
-                </button>
+                </a>
               </div>
             </SwiperSlide>
           ))}

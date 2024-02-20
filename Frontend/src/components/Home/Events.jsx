@@ -48,7 +48,7 @@ function Events() {
   return (
     <>
       <div className="container mt-5 mb-2">
-        <h1 style={{ fontSize: 50, marginTop: 100, marginBottom: 50 }}>{language == "en" ? "Exclusive offers and events" : "عروض وفعاليات حصرية"}</h1>
+        <h1 style={{ fontSize: 42, marginTop: 100, marginBottom: 50 }}>{language == "en" ? "Exclusive offers and events" : "عروض وفعاليات حصرية"}</h1>
       </div>
 
       <div className="events position-relative">

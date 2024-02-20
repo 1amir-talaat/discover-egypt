@@ -12,10 +12,9 @@ import AntiquitiesAndCivilization from "./components/Antiquities and Civilizatio
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
 function App() {
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   return (
     <div className={language == "en" ? "dir-en" : "dir-ar"}>
-      <button className="btn btn-warning" onClick={() => {toggleLanguage()}}>{language == "en"? "English" : "Arabic"}</button>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

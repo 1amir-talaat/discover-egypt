@@ -9,7 +9,7 @@
 }
 
 .experience-card-badge {
-  padding: 5px 10px 0px;
+  padding: 5px 10px;
   border-radius: 5px;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
@@ -17,16 +17,25 @@
   top: 15px;
 }
 
+.experience-card-badge h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card-body h4 {
+  font-family: "Markazi Text", serif !important;
+}
+
 .experience-card-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-top-left-radius: 15px; 
-  border-top-right-radius: 15px; 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
-.experience-card {  
-  border-radius: 15px; 
+.experience-card {
+  border-radius: 15px;
   transition: 0.8s ease;
 }
 .experience-card:hover {
