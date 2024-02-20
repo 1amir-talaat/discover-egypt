@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/Connection.js";
+import Review from "./Review.js"; // Import Review model before referencing it
 
 const User = sequelize.define("User", {
   id: {
@@ -49,6 +50,7 @@ const User = sequelize.define("User", {
     },
   },
 });
+
 
 (async () => {
   try {

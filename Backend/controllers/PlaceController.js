@@ -2,12 +2,13 @@ import { Op } from "sequelize";
 import Place from "../models/Place.js";
 import Review from "../models/Review.js";
 import PlacesImg from "../models/PlacesImg.js";
+import User from "../models/User.js";
 
 const PlaceController = {
   getAllPlaces: async (req, res) => {
     try {
       const places = await Place.findAll({
-        include: [{ model: Review }, { model: PlacesImg }],
+        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
       });
 
       const data = transformPlacesData(places);
@@ -117,7 +118,15 @@ function transformPlacesData(places) {
       location_url: place.location_url,
       created_at: place.created_at,
       updated_on: place.updated_on,
-      reviews: place.Reviews,
+      reviews: place.Reviews.map((review) => ({
+        // Map reviews to include user data
+        id: review.id,
+        review: review.review,
+        user: {
+          name: review.User.name,
+          email: review.User.email,
+        },
+      })),
       images: place.PlacesImgs,
     };
 
@@ -136,7 +145,14 @@ function transformPlacesData(places) {
       location_url: place.location_url,
       created_at: place.created_at,
       updated_on: place.updated_on,
-      reviews: place.Reviews,
+      reviews: place.Reviews.map((review) => ({
+        id: review.id,
+        review: review.review,
+        user: {
+          name: review.User.name,
+          email: review.User.email,
+        },
+      })),
       images: place.PlacesImgs,
     };
 
