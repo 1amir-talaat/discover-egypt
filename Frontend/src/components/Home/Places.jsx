@@ -47,7 +47,25 @@ function Places() {
         <h1 className="mb-4" style={{ fontSize: 42 }}>
           {language == "en" ? "Know Before You Go" : "تعرف على الأماكن قبل زيارتها"}
         </h1>
-        <Swiper spaceBetween={40} slidesPerView={3} dir={language}>
+        <Swiper
+          spaceBetween={40}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            1400: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+          }}
+          slidesPerView={3}
+          dir={language}
+        >
           {data[language].map((item, index) => (
             <SwiperSlide key={index}>
               <div className="card m-1 experience-card border-0 shadow w-100 position-relative mb-5">
