@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./Navbar.css";
 import logo from "../logo.png";
@@ -16,6 +16,30 @@ function Navbar() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [navType, setNavType] = useState(null);
+  const location = useLocation();
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    // Reset dropdown on location change
+    setActiveDropdown(null);
+    setDropdownVisible(false);
+  }, [location]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleDropdown = (dropdown) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
@@ -23,6 +47,7 @@ function Navbar() {
   };
 
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : ""}`;
+  const navbarClass = scrolling || location.pathname === "/" ? "navbar-home" : "";
 
   // eslint-disable-next-line react/prop-types
   const DropdownContent = ({ type }) => {
@@ -39,7 +64,6 @@ function Navbar() {
   };
 
   // eslint-disable-next-line react/prop-types
-  // eslint-disable-next-line react/prop-types
   const DropdownManue = ({ type }) => {
     let data = {
       en: [],
@@ -49,7 +73,7 @@ function Navbar() {
     switch (type) {
       case "See & Do":
         data = {
-          en: ["Explore All", "Activities & Attractions", "Food & Drink", "Experiences & Tours"],
+          en: ["Explore All", "Activities ", "Food & Drink", "Experiences & Tours"],
           ar: ["تصفح الكل", "الأنشطة والمعالم السياحية", "المأكولات والمشروبات", "المغامرات والجولات"],
         };
         break;
@@ -74,7 +98,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="position-relative">
+      <div className={`fixed-top navigation ${navbarClass}`}>
         <nav className="top-nav">
           <div className="container">
             <p>{language === "ar" ? "تواصل معنا" : "Contact us"}</p>
@@ -103,8 +127,8 @@ function Navbar() {
                 >
                   {language === "ar" ? "أساسيات السفر" : "Travel Essentials"}
                 </div>
-                <div className={`nav-link ${activeDropdown === "Saudi Calendar" ? "active" : ""}`}>
-                  {language === "ar" ? "تقويم الفعاليات" : "Saudi Calendar"}
+                <div className={`nav-link ${activeDropdown === "Egypt Calendar" ? "active" : ""}`}>
+                  {language === "ar" ? "تقويم الفعاليات" : "Egypt Calendar"}
                 </div>
               </div>
               <div className="nav-end">
@@ -114,7 +138,7 @@ function Navbar() {
                 <div className="nav-ico">
                   <LuUser size={21} />
                 </div>
-                <a href="#">{language == "ar" ? "تقديم طلب تأشيرة" : "Apply for eVisa"}</a>
+                <a href="#">{language === "ar" ? "تقديم طلب تأشيرة" : "Apply for eVisa"}</a>
               </div>
             </nav>
           </div>

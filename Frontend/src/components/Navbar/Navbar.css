@@ -1,6 +1,14 @@
+.navbar-home {
+  background-color: #fff;
+  transition: 0.5s ease;
+}
+.navigation {
+  transition: 0.5s ease;
+}
+
 a {
   text-decoration: none;
-  color: #000;
+  color: #ff0000;
 }
 
 .top-nav {
@@ -13,6 +21,9 @@ a {
   justify-content: space-between;
   transition: height 0.8s ease;
   height: 2.5rem;
+  color: #fff;
+}
+.navbar-home .top-nav .container {
   color: #767676;
 }
 
@@ -24,6 +35,9 @@ a {
   left: 0;
   width: 100%;
   position: absolute;
+  background-color: #e6e6e648;
+}
+.navbar-home .top-nav::after {
   background-color: #e6e6e6;
 }
 
@@ -45,6 +59,9 @@ a {
   align-items: center;
   display: flex;
   transition: height 0.8s ease;
+  color: #ffffff;
+}
+.navbar-home .nav {
   color: #303030;
 }
 
@@ -83,10 +100,13 @@ a {
   text-align: center;
   white-space: nowrap;
   word-break: normal;
-  color: rgba(81, 81, 81, 1);
+  color: rgb(255, 255, 255);
   font-size: 18px;
   transition: 0.4s;
   padding: 8px 20px;
+}
+.navbar-home .nav .nav-link {
+  color: rgba(81, 81, 81, 1);
 }
 
 .nav .nav-end {
@@ -114,7 +134,13 @@ a {
 }
 
 .nav .nav-end a:hover {
-  background-color: hsla(0, 0%, 22%, 0.1);
+  background-color: hsla(0, 0%, 22%, 0.384);
+  color: white;
+}
+
+.navbar-home .nav .nav-end a:hover {
+  background-color: hsla(0, 0%, 22%, 0.171);
+  color: #087e8c;
 }
 
 .nav .nav-ico {
@@ -125,7 +151,7 @@ a {
 .nav .nav-link:hover,
 .nav-ico:hover {
   transition: 0.3s;
-  color: rgba(61, 61, 61, 0.6);
+  color: rgb(172, 172, 172);
 }
 
 .nav .nav-link.active {
