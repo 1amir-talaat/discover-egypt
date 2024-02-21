@@ -37,8 +37,11 @@ function ExperiencesAndToursContent() {
       }
     };
 
-    fetchWeatherData();
-  }, [selectedCity]);
+    if (!weatherData || selectedCity !== "Cairo") {
+      fetchWeatherData();
+    }
+    
+  }, [selectedCity, weatherData]);
 
   function translateWeatherCondition(condition) {
     switch (condition) {
@@ -120,11 +123,11 @@ function ExperiencesAndToursContent() {
                 </div>
                 <div className="temp-min-max">
                   <div className="temp">
-                    <span>{Number(kelvinToCelsius(weatherData.main.temp_min))-3}°C</span>
+                    <span>{Number(kelvinToCelsius(weatherData.main.temp_min)) - 3}°C</span>
                     <TbTemperatureMinus />
                   </div>
                   <div className="temp">
-                    <span>{Number(kelvinToCelsius(weatherData.main.temp_max))+2}°C</span>
+                    <span>{Number(kelvinToCelsius(weatherData.main.temp_max)) + 2}°C</span>
                     <TbTemperaturePlus />
                   </div>
                 </div>

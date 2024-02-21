@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .top-nav {
   position: relative;
 }
@@ -310,14 +315,26 @@
   width: 22vw;
 }
 
-.article-card a .arrow {
+.dir-en a .arrow {
   rotate: 180deg;
   position: relative;
   right: 10px;
-  transition: 0.25s;
+  transition: 0.3s;
 }
 
-.article-card a:hover .arrow {
+.dir-ar a .arrow {
+  position: relative;
+  transition: 0.3s;
+  rotate: 0deg;
+  left: 10px;
+}
+
+.dir-ar a:hover .arrow {
+  right: unset;
+  left: 0px;
+}
+
+.dir-en a:hover .arrow {
   right: 0px;
 }
 
@@ -328,19 +345,36 @@
 }
 
 .article-card p:nth-child(2) {
-  font-size: 17px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px;
   color: #515151;
   margin-bottom: 2rem;
 }
 
-.article-card a {
+.article-card a,
+.activities-header a {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #087e8c;
-  border-top: 1px solid #e6e6e6;
   padding-top: 10px;
   text-decoration: none;
+}
+
+.article-card a {
+  border-top: 1px solid #e6e6e6;
+}
+
+.activities-header {
+  padding: 0 0 10px 0 !important;
+  align-items: center !important;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.activities-header h5 {
+  margin-bottom: 0;
 }
 
 .see-go {
@@ -467,4 +501,56 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.activities-body {
+  margin-top: 40px;
+}
+
+.activities-card-contianer {
+  border-radius: 10px;
+  padding: 0 10px !important;
+}
+
+.activities-body .activities-card {
+  height: 160px;
+  border-radius: 10px !important;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.activities-body .activities-card .shodo {
+  border-radius: 11px;
+}
+
+.activities-body .activities-card img {
+  object-fit: cover;
+  height: 100%;
+  object-position: 50% 38%;
+  border-radius: 10px !important;
+}
+
+.activities-body .activities-card:hover img {
+  transition: 0.3s;
+  filter: brightness(90%);
+}
+
+.activities-body .activities-card .activities-ico {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  padding: 10px;
+  z-index: 555;
+}
+
+.activities-body .activities-card h5 {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  color: #fff;
+  font-size: 1.484375vw;
+  z-index: 5555;
 }

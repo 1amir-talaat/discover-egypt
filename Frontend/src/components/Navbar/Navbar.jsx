@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 import logo from "../logo.png";
@@ -86,9 +87,9 @@ function Navbar() {
         <div className="navbar-contaner">
           <div className="container h-100">
             <nav className="nav">
-              <div className="logo">
+              <Link to={"/"} className="logo">
                 <img className={language === "ar" ? "logo-ar" : "logo-en"} src={logo} alt="" />
-              </div>
+              </Link>
               <div className="nav-links">
                 <div onClick={() => toggleDropdown("See & Do")} className={`nav-link ${activeDropdown === "See & Do" ? "active" : ""}`}>
                   {language === "ar" ? "معالم وأنشطة" : "See & Do"}
