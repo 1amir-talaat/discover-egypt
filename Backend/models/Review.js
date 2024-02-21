@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/Connection.js";
+import User from "./User.js";
 
 const Review = sequelize.define("Review", {
   id: {
@@ -8,26 +9,21 @@ const Review = sequelize.define("Review", {
     autoIncrement: true,
     allowNull: false,
   },
-  review_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   review: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  email: {
-    type: DataTypes.STRING,
+  user_id: {
+    type: DataTypes.INTEGER,
     allowNull: false,
-    validate: {
-      isEmail: true,
-    },
   },
   place_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
 });
+
+Review.belongsTo(User, { foreignKey: "user_id" });
 
 (async () => {
   try {

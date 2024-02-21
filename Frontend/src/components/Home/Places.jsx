@@ -13,7 +13,7 @@ function Places() {
       },
       {
         title: "نصائح السفر الآمن",
-        path: "/travil-tips",
+        path: "/travel-tips",
         image: "https://www.visitsaudi.com/content/dam/messi/a-family-walking-through-a-forest-of-palm-trees-in-saudi.jpg",
       },
       {
@@ -30,7 +30,7 @@ function Places() {
       },
       {
         title: "Safety Travel Tips",
-        path: "/travil-tips",
+        path: "/travel-tips",
         image: "https://www.visitsaudi.com/content/dam/messi/a-family-walking-through-a-forest-of-palm-trees-in-saudi.jpg",
       },
       {
@@ -47,7 +47,25 @@ function Places() {
         <h1 className="mb-4" style={{ fontSize: 42 }}>
           {language == "en" ? "Know Before You Go" : "تعرف على الأماكن قبل زيارتها"}
         </h1>
-        <Swiper spaceBetween={40} slidesPerView={3} dir={language}>
+        <Swiper
+          spaceBetween={40}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            1400: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+          }}
+          slidesPerView={3}
+          dir={language}
+        >
           {data[language].map((item, index) => (
             <SwiperSlide key={index}>
               <div className="card m-1 experience-card border-0 shadow w-100 position-relative mb-5">
@@ -56,9 +74,9 @@ function Places() {
                   <h2>{item.title}</h2>
                 </div>
                 <hr className="m-0 mb-1 m-auto experience-card-hr position-static" />
-                <button className="btn fw-bold " style={{ color: "rgb(83, 187, 123)" }}>
+                <a href={item.path} className="btn fw-bold " style={{ color: "rgb(83, 187, 123)" }}>
                   <h5>{language === "en" ? "Know more" : "اعرف اكثر"}</h5>
-                </button>
+                </a>
               </div>
             </SwiperSlide>
           ))}

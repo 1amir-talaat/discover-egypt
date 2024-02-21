@@ -7,10 +7,10 @@ ul li {
     list-style-type: none;
 }
 
+
 li a {
     text-decoration: none;
-    color: #303030;
-    font-family: Gilroy-SemiBold, Helvetica, Arial, sans-serif;
+ color: white !important;    font-family: Gilroy-SemiBold, Helvetica, Arial, sans-serif;
     margin-bottom: 30px;
     transition: 0.3s;
 }

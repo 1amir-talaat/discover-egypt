@@ -12,25 +12,24 @@ import AntiquitiesAndCivilization from "./components/Antiquities and Civilizatio
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
 function App() {
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   return (
     <div className={language == "en" ? "dir-en" : "dir-ar"}>
-      <button className="btn btn-warning" onClick={() => {toggleLanguage()}}>{language == "en"? "English" : "Arabic"}</button>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             {/* Home page */}
             <Route index element={<Home />} />
             {/* sea magic  */}
-            <Route path="SeaMagic" element={<SeaMagic />}></Route>
+            <Route path="sea-magic" element={<SeaMagic />}></Route>
             {/* Nature and Adventure  */}
-            <Route path="NatureAndAdventure" element={<NatureAndAdventure />}></Route>
+            <Route path="nature-and-adventure" element={<NatureAndAdventure />}></Route>
             {/* Antiquities and Civilization */}
-            <Route path="AntiquitiesAndCivilization" element={<AntiquitiesAndCivilization />}></Route>
+            <Route path="antiquities-and-civilization" element={<AntiquitiesAndCivilization />}></Route>
             {/* About Egypt  */}
-            <Route path="AboutEgypt" element={<AboutEgypt />} />
+            <Route path="about-egypt" element={<AboutEgypt />} />
             {/* Travel Safety Tips */}
-            <Route path="travel-safety-tips" element={<TravelSafetyTips />} />
+            <Route path="travel-tips" element={<TravelSafetyTips />} />
           </Route>
         </Routes>
       </BrowserRouter>
