@@ -22,6 +22,25 @@ const data = {
       image: "https://scth.scene7.com/is/image/scth/RamadaninJeddah2?defaultImage=RamadaninJeddah2",
     },
   ],
+  en: [
+    {
+      title: "Adventure",
+      image: "https://www.visitsaudi.com/content/dam/no-dynamic-media-folder/nav-images/adventurenavigation.png",
+    },
+    {
+      title: "Sea",
+      image: "https://www.visitsaudi.com/content/dam/home-page/sun-and-sea-desktop-full-image.jpg",
+    },
+    {
+      title: "Civilization",
+      image:
+        "https://cdn.alweb.com/thumbs/hadaarah/article/fit710x532/%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D8%A3%D8%A8%D8%B1%D8%B2-%D8%A7%D9%84%D8%A2%D8%AB%D8%A7%D8%B1-%D8%A7%D9%84%D9%81%D8%B1%D8%B9%D9%88%D9%86%D9%8A%D8%A9.jpg",
+    },
+    {
+      title: "Culture",
+      image: "https://scth.scene7.com/is/image/scth/RamadaninJeddah2?defaultImage=RamadaninJeddah2",
+    },
+  ],
 };
 
 function ActivitiesAndAttractionsContent() {
