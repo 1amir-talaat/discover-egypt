@@ -4,6 +4,7 @@
 }
 .navigation {
   transition: 0.5s ease;
+  z-index: 999999;
 }
 
 a {

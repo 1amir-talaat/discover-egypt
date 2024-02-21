@@ -13,7 +13,7 @@ import governorates from "../governorates.json";
 
 function ExperiencesAndToursContent() {
   const { language } = useLanguage();
-  const [selectedCity, setSelectedCity] = useState("Cairo");
+  const [selectedCity, setSelectedCity] = useState("cairo");
   const [weatherData, setWeatherData] = useState(null);
 
   const options = governorates[language].map((x, index) => {
@@ -37,10 +37,10 @@ function ExperiencesAndToursContent() {
       }
     };
 
-    if (!weatherData || selectedCity !== "Cairo") {
+    if (!weatherData || selectedCity.toLowerCase() !== "cairo") {
       fetchWeatherData();
     }
-    
+
   }, [selectedCity, weatherData]);
 
   function translateWeatherCondition(condition) {

@@ -11,7 +11,7 @@ function SeeGo({ type }) {
     case "Explore All":
       content = <ExperiencesAndToursContent />;
       break;
-    case "Activities & Attractions":
+    case "Activities":
       content = <ActivitiesAndAttractionsContent />;
       break;
     case "Food & Drink":

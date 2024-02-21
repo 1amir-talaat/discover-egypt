@@ -41,14 +41,14 @@ function ActivitiesAndAttractionsContent() {
             return (
               <div className="activities-card-contianer w-50" key={index}>
                 <div className="activities-card">
-                    <img className="w-100" src={d.image} alt="" />
-                    <div className="shodo"></div>
-                    <div className="activities-ico">
-                      <MdOutlineGroups size={25} />
-                    </div>
-                    <h5>{d.title}</h5>
+                  <img className="w-100" src={d.image} alt="" />
+                  <div className="shodo"></div>
+                  <div className="activities-ico">
+                    <MdOutlineGroups size={25} />
                   </div>
+                  <h5>{d.title}</h5>
                 </div>
+              </div>
             );
           })}
         </div>

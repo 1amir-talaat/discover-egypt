@@ -73,7 +73,7 @@ function Navbar() {
     switch (type) {
       case "See & Do":
         data = {
-          en: ["Explore All", "Activities ", "Food & Drink", "Experiences & Tours"],
+          en: ["Explore All", "Activities", "Food & Drink", "Experiences & Tours"],
           ar: ["تصفح الكل", "الأنشطة والمعالم السياحية", "المأكولات والمشروبات", "المغامرات والجولات"],
         };
         break;
