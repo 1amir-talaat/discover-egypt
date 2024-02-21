@@ -69,7 +69,7 @@ function Categories() {
             <h1 className={`text-white position-absolute ${language === "en" ? "category-title-en" : "category-title-ar"} `}>
               {language == "en" ? "Sea Magic" : "سحر البحر"}
             </h1>
-            <a href="/sea-magic" className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}>
+            <a href="/sea-magic" className={`btn position-absolute ${language == "en" ? "category-button-en" : "category-button-ar"} `}  >
               {language == "en" ? "Explore More" : "أستكشف أكثر"}
             </a>
           </div>
