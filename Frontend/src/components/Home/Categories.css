@@ -1,9 +1,11 @@
 .category-image {
-  filter: brightness(75%);
+  filter: brightness(60%);
+  transition: 0.8s ease;
 }
 .swiper-slide .test:hover .category-image {
-  transition: 0.3s ease;
-  filter: brightness(60%);
+  filter: brightness(75%);
+  transition: 0.8s ease;
+
 }
 .category-title-en {
   bottom: 120px;
