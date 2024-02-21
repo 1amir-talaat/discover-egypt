@@ -104,7 +104,7 @@ function Navbar() {
             <a href="/">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>
             <p className="change-lang" onClick={toggleLanguage} style={{ fontSize: 18 }}>
               <MdLanguage className="mx-1" />
-              <span>{language === "ar" ? "en" : "ar"}</span>
+              <span>{language === "ar" ? "English" : "عربي"}</span>
             </p>
           </div>
         </nav>
