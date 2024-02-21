@@ -29,7 +29,7 @@ function App() {
             {/* About Egypt  */}
             <Route path="about-egypt" element={<AboutEgypt />} />
             {/* Travel Safety Tips */}
-            <Route path="travel-safety-tips" element={<TravelSafetyTips />} />
+            <Route path="travel-tips" element={<TravelSafetyTips />} />
           </Route>
         </Routes>
       </BrowserRouter>

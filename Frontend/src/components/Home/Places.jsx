@@ -13,7 +13,7 @@ function Places() {
       },
       {
         title: "نصائح السفر الآمن",
-        path: "/travil-tips",
+        path: "/travel-tips",
         image: "https://www.visitsaudi.com/content/dam/messi/a-family-walking-through-a-forest-of-palm-trees-in-saudi.jpg",
       },
       {
@@ -30,7 +30,7 @@ function Places() {
       },
       {
         title: "Safety Travel Tips",
-        path: "/travil-tips",
+        path: "/travel-tips",
         image: "https://www.visitsaudi.com/content/dam/messi/a-family-walking-through-a-forest-of-palm-trees-in-saudi.jpg",
       },
       {

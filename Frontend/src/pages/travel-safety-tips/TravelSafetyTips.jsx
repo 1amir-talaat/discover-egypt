@@ -1,5 +1,6 @@
 import "./travel-safety-tips.css";
 import { useLanguage } from "../../context/LanguageContext";
+import Places from "../../components/Home/Places";
 
 function TravelSafetyTips() {
   const { language } = useLanguage();
@@ -18,7 +19,7 @@ function TravelSafetyTips() {
             : "The traveler within us is always planning that next trip. Across Egypt, hotels, restaurants, and tourist attractions are open and ready to be enjoyed. Of course, the best way to make the most of any trip is to stay up to speed on the latest health and travel advice, and to take practical precautions. So, whether you’re planning a luxury getaway or a cross-country road trip, here are some tips to make your Egyptian adventure worry- and stress-free."}
         </p>
         <img className="travel-img" src="./src/pages/travel-safety-tips/img/img-2.jpeg" alt="" />
-        <h1 className="mb-3 display-6">{language == "ar" ? "هل السعودية بلد آمنة؟" : "Is Saudi Safe?"}</h1>
+        <h1 className="mb-3 display-6">{language == "ar" ? "هل مصر بلد آمنة؟" : "Is Egypt Safe?"}</h1>
         <p>
           {language == "ar"
             ? "نعم، تنعم مصر بالأمن والأمان على أراضيها، بل تضمن لزائريها تجربة سفر مثيرة وفي نفس الوقت آمنة. في الوقت الحالي، فتحت مصر أبوابها على مصراعيها لاستقبال السائحين من كافة البلاد للاستمتاع بتجربة سفر خالية من أي تعقيدات، وفي ضوء الانفتاح الجديد، أعلنت مؤخرًا شركات الطيران المصرية عن تحليقها إلى وجهات دولية جديدة في عدة قارات خلال العام الجاري، وذلك بهدف تعزيز موقعها التنافسي على القطاع الدولي وربط العالم بمصر. في نفس السياق، ننصح بحترام القوانين والثقافة المحلية، بما في ذلك العادات والطقوس، ونشجع على التنبه لما يحيط بك ومراجعة الإرشادات والتعليمات التي تصدرها الحكومة المصرية من خلال منصاتها المختلفة."
@@ -31,7 +32,7 @@ function TravelSafetyTips() {
             : "Following government guidelines can provide the latest advice about travel to and within Egypt. The Egyptian Ministry of Health has a dedicated mobile app, Egypt, which offers current healthcare recommendations, as well as a hotline available at 105. You can also visit the ministry’s website for the most recent news on travel policies."}
         </p>
         <h1 className="mb-3 display-6">
-          {language == "ar" ? "كيف يمكن التصرف في حالة الطوارئ أثناء زيارة السعودية؟" : "What to Do in Case of Emergency When You’re in Saudi"}
+          {language == "ar" ? "كيف يمكن التصرف في حالة الطوارئ أثناء زيارة مصر" : "What to Do in Case of Emergency When You’re in Egypt"}
         </h1>
         <p>
           {language == "ar"
@@ -42,6 +43,7 @@ function TravelSafetyTips() {
       <div className="exploring container">
         <h1 className="mb-3 display-6">{language == "ar" ? "تعرف على المزيد" : "Keep Exploring"}</h1>
       </div>
+      <Places />
     </div>
   );
 }
