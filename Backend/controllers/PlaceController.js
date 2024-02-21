@@ -49,6 +49,9 @@ const PlaceController = {
       res.status(400).json({ error: error.message });
     }
   },
+  getPlaceById:async (req,res)=>{
+    
+  },
 
   searchPlaces: async (req, res) => {
     const { keyword } = req.params;
