@@ -16,17 +16,17 @@
 .usefulnumbers-container .row .card{
     padding: 0;
     width: 31%;
-    background-color: aqua;
+    background-color: rgb(232, 238, 238);
 }
 .usefulnumbers-container .row .card .card-title{
-    color: white;
     font-size: 25px;
     width: 100%;
     border-radius: 5px;
     height: 20%;
     padding: 10px 40px;
     margin-bottom: 25px;
-    background-color: blue;
+    color: black;
+    background-color: #ffc107;
 }
 .usefulnumbers-container .row .card .card-body {
     padding: 10px 40px;
@@ -35,10 +35,32 @@
     font-size: 21px;
     margin-top: -17px;
 }
-
-@media (max-width:780px) {
+@media (max-width:1000px) {
     .full-usefulnumbers-container{
-        margin: 100px 0 600px 0;
+        margin: 100px 0 250px 0;
+    }
+    .usefulnumbers-container .row .card .card-title{
+    font-size: 23px;
+    width: 100%;
+    border-radius: 5px;
+    height: 20%;
+    padding: 10px 40px;
+    margin-bottom: 25px;
+    color: black;
+    background-color: #ffc107;
+}
+.usefulnumbers-container .row .card{
+    height: 400px;
+}
+    
+}
+@media (max-width:800px) {
+    .full-usefulnumbers-container{
+        margin: 100px 0 700px 0;
+    }
+    
+    .usefulnumbers-container .row .card{
+        height: 250px;
     }
     
     .usefulnumbers-container h1{
@@ -49,7 +71,7 @@
         padding: 0;  
         width: 90%;
         margin: auto auto 50px auto;
-        background-color: aqua;
+        background-color: rgb(232, 238, 238);
     }
     
 }

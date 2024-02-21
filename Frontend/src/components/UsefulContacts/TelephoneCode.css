@@ -13,16 +13,16 @@
     border-radius: 5px;
     width: 50%;
     padding: 60px 0 60px 50px;
-    color: white;
-    background-color: #076aff;
+    color: black;
+    background-color: #ffc107;
 
 }
 .telephonecode-container .text-section-ar{
     border-radius: 5px;
     width: 50%;
     padding: 60px 50px 60px 0;
-    color: white;
-    background-color: #076aff;
+    color: black;
+    background-color: #ffc107;
 
 }
 .telephonecode-container .text-section-en h2,.telephonecode-container .text-section-ar h2{
@@ -49,6 +49,20 @@
     
 }
 
+@media (max-width:1000px) {
+    .telephonecode-container .text-section-en{
+        padding: 60px 0 60px 50px;        
+    }
+    .telephonecode-container .text-section-ar{      
+        padding: 60px 50px 60px 0;    
+    }
+    .telephonecode-container .img-section-en,.telephonecode-container .img-section-ar{
+        width: 45%;
+    }
+    .telephonecode-container .text-section-en,.telephonecode-container .text-section-ar{
+        width: 55%;
+    }
+}
 
 @media (max-width:780px) {
     .full-telephonecode-container{
@@ -60,15 +74,15 @@
         border-radius: 5px;
         width: 100%;
         padding: 60px 0 60px 50px;
-        color: white;
-        background-color: #076aff;
+        color: black;
+        background-color: #ffc107;
     }
     .telephonecode-container .text-section-ar{
         border-radius: 5px;
         width: 100%;
         padding: 60px 50px 60px 0;
-        color: white;
-        background-color: #076aff;
+        color: black;
+        background-color: #ffc107;
     }
     .telephonecode-container .img-section-en{
         width: 100%;

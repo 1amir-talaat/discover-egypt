@@ -11,16 +11,16 @@
 .emergencynumbers-container .text-section-en{
     border-radius: 5px;
     width: 50%;
-    padding: 60px 0 60px 100px;
-    color: white;
-    background-color: #076aff;
+    padding: 60px 0 60px 50px;
+    color: black;
+    background-color: #ffc107;
 }
 .emergencynumbers-container .text-section-ar{
     border-radius: 5px;
     width: 50%;
-    padding: 60px 100px 60px 0;
-    color: white;
-    background-color: #076aff;
+    padding: 60px 50px 60px 0;
+    color: black;
+    background-color: #ffc107;
 }
 .emergencynumbers-container .text-section-en h2,.emergencynumbers-container .text-section-ar h2{
     margin-bottom: 30px;
@@ -43,21 +43,35 @@
     border-radius: 5px; 
     
 }
+@media (max-width:1000px) {
+    .emergencynumbers-container .text-section-en{
+        padding: 60px 0 60px 50px;        
+    }
+    .emergencynumbers-container .text-section-ar{      
+        padding: 60px 50px 60px 0;    
+    }
+    .emergencynumbers-container .img-section-en,.emergencynumbers-container .img-section-ar{
+        width: 45%;
+    }
+    .emergencynumbers-container .text-section-en,.emergencynumbers-container .text-section-ar{
+        width: 55%;
+    }
+}
 
 @media (max-width:780px) {
     .emergencynumbers-container .text-section-en{
         border-radius: 5px;
         width: 100%;
-        padding: 60px 0 60px 100px;
-        color: white;
-        background-color: #076aff;
+        padding: 60px 0 60px 50px;
+        color: black;
+        background-color: #ffc107;
     }
     .emergencynumbers-container .text-section-ar{
         border-radius: 5px;
         width: 100%;
-        padding: 60px 100px 60px 0;
-        color: white;
-        background-color: #076aff;
+        padding: 60px 50px 60px 0;
+        color: black;
+        background-color: #ffc107;
     }
     .emergencynumbers-container .img-section-en{
         width: 100%;
