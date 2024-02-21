@@ -8,7 +8,10 @@
 
 a {
   text-decoration: none;
-  color: #ff0000;
+  color: #ffffff;
+}
+.navbar-home a {
+  color: #767676;
 }
 
 .top-nav {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import "./Navbar.css";
 import logo from "../logo.png";
@@ -101,7 +101,7 @@ function Navbar() {
       <div className={`fixed-top navigation ${navbarClass}`}>
         <nav className="top-nav">
           <div className="container">
-            <p>{language === "ar" ? "تواصل معنا" : "Contact us"}</p>
+            <a href="/">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>
             <p className="change-lang" onClick={toggleLanguage} style={{ fontSize: 18 }}>
               <MdLanguage className="mx-1" />
               <span>{language === "ar" ? "en" : "ar"}</span>
@@ -111,9 +111,9 @@ function Navbar() {
         <div className="navbar-contaner">
           <div className="container h-100">
             <nav className="nav">
-              <Link to={"/"} className="logo">
+              <a href="/" className="logo">
                 <img className={language === "ar" ? "logo-ar" : "logo-en"} src={logo} alt="" />
-              </Link>
+              </a>
               <div className="nav-links">
                 <div onClick={() => toggleDropdown("See & Do")} className={`nav-link ${activeDropdown === "See & Do" ? "active" : ""}`}>
                   {language === "ar" ? "معالم وأنشطة" : "See & Do"}
