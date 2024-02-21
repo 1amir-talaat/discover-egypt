@@ -8,7 +8,13 @@ const PlaceController = {
   getAllPlaces: async (req, res) => {
     try {
       const places = await Place.findAll({
-        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
       });
 
       const data = transformPlacesData(places);
@@ -25,7 +31,13 @@ const PlaceController = {
         where: {
           [Op.or]: [{ city_ar: city }, { city_en: city }],
         },
-        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
       });
 
       const data = transformPlacesData(places);
@@ -42,7 +54,13 @@ const PlaceController = {
         where: {
           category: category,
         },
-        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
       });
       const data = transformPlacesData(places);
       res.status(200).json(data);
@@ -50,19 +68,25 @@ const PlaceController = {
       res.status(400).json({ error: error.message });
     }
   },
-  getPlaceById:async (req,res)=>{
-    const id=req.params.id
+  getPlaceById: async (req, res) => {
+    const id = req.params.id;
     try {
-      const place= await Place.findAll({
-        where:{
-          id:id
+      const place = await Place.findAll({
+        where: {
+          id: id,
         },
-        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
-      })
-      const data=transformPlacesData(place)
-      res.status(200).json(data)
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
+      });
+      const data = transformPlacesData(place);
+      res.status(200).json(data);
     } catch (error) {
-      res.status(400).json({error:error.message})
+      res.status(400).json({ error: error.message });
     }
   },
 
@@ -70,7 +94,9 @@ const PlaceController = {
     const { keyword } = req.params;
 
     if (!keyword.trim()) {
-      return res.status(400).json({ message: "No keyword provided for search" });
+      return res
+        .status(400)
+        .json({ message: "No keyword provided for search" });
     }
 
     const lowerKeyword = keyword.toLowerCase();
@@ -93,20 +119,48 @@ const PlaceController = {
               { sub_category: { [Op.like]: `%${keyword}%` } },
               { location_url: { [Op.like]: `%${keyword}%` } },
               {
-                [Op.and]: [{ min_price: { [Op.lte]: keyword } }, { max_price: { [Op.gte]: keyword } }],
+                [Op.and]: [
+                  { min_price: { [Op.lte]: keyword } },
+                  { max_price: { [Op.gte]: keyword } },
+                ],
               },
             ],
           })),
         },
-        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
       });
 
       if (places.length === 0) {
-        return res.status(404).json({ message: "No places found for the specified keyword" });
+        return res
+          .status(404)
+          .json({ message: "No places found for the specified keyword" });
       }
 
       const data = transformPlacesData(places);
       res.status(200).json(data);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  },
+  getByPriceRange: async (req, res) => {
+    const minPrice = parseFloat(req.body.min_price) || 0;
+    const maxPrice = parseFloat(req.body.max_price) || Infinity;
+    try {
+      const places = await Place.findAll({
+        where: {
+          [Op.and]: [
+            { min_price: { [Op.gte]: minPrice ,[Op.lte]:maxPrice} },
+            { max_price: { [Op.lte]: maxPrice ,[Op.gte]:minPrice} },
+          ],
+        },
+      });
+      res.json(places);
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
