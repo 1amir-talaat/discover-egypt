@@ -25,7 +25,7 @@ const PlaceController = {
         where: {
           [Op.or]: [{ city_ar: city }, { city_en: city }],
         },
-        include: [{ model: Review }, { model: PlacesImg }],
+        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
       });
 
       const data = transformPlacesData(places);
@@ -42,7 +42,7 @@ const PlaceController = {
         where: {
           category: category,
         },
-        include: [{ model: Review }, { model: PlacesImg }],
+        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
       });
       const data = transformPlacesData(places);
       res.status(200).json(data);
@@ -51,7 +51,19 @@ const PlaceController = {
     }
   },
   getPlaceById:async (req,res)=>{
-    
+    const id=req.params.id
+    try {
+      const place= await Place.findAll({
+        where:{
+          id:id
+        },
+        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
+      })
+      const data=transformPlacesData(place)
+      res.status(200).json(data)
+    } catch (error) {
+      res.status(400).json({error:error.message})
+    }
   },
 
   searchPlaces: async (req, res) => {
@@ -86,7 +98,7 @@ const PlaceController = {
             ],
           })),
         },
-        include: [{ model: Review }, { model: PlacesImg }],
+        include: [{ model: Review, include: [{ model: User, attributes: ["name", "email"] }] }, { model: PlacesImg }],
       });
 
       if (places.length === 0) {
