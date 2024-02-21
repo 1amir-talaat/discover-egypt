@@ -74,6 +74,7 @@ a {
   margin-top: -18px;
   width: 100%;
   mix-blend-mode: multiply;
+  user-select: none;
 }
 
 .nav .logo-en {
