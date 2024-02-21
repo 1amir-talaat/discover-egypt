@@ -46,7 +46,7 @@ function Navbar() {
     setDropdownVisible(activeDropdown === dropdown ? false : true);
   };
 
-  const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : ""}`;
+  const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
   const navbarClass = scrolling || location.pathname === "/" ? "navbar-home" : "";
 
   // eslint-disable-next-line react/prop-types
@@ -98,7 +98,7 @@ function Navbar() {
 
   return (
     <>
-      <div className={`fixed-top navigation ${navbarClass}`}>
+      <div className={`fixed-top ${activeDropdown ? "bg-white" : ""} navigation ${navbarClass}`}>
         <nav className="top-nav">
           <div className="container">
             <a href="/">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>
