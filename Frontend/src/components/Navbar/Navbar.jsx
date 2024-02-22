@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { useLocation } from "react-router-dom";
 
@@ -10,6 +10,8 @@ import { MdLanguage } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import Manu from "./components/Manu";
 import SeeGo from "./components/seeGo/SeeGo";
+import PlanYourTrip from "./components/planYourTrip/planYourTrip";
+import TravelEssentials from "./components/travelEssentials/TravelEssentials";
 
 function Navbar() {
   const { language, toggleLanguage } = useLanguage();
@@ -44,12 +46,12 @@ function Navbar() {
     if (dropdownVisible) {
       timer = setTimeout(() => {
         setContentVisible(true);
-      }, 300);
+      }, 200);
     } else {
       setContentVisible(false);
     }
 
-    return () => clearTimeout(timer); // Cleanup timer on component unmount or state change
+    return () => clearTimeout(timer);
   }, [dropdownVisible]);
 
   const toggleDropdown = (dropdown) => {
@@ -66,9 +68,9 @@ function Navbar() {
       case "See & Do":
         return <SeeGo type={navType} />;
       case "Plan Your Trip":
-        return <div>Plan Your Trip Dropdown Content</div>;
+        return <PlanYourTrip />;
       case "Travel Essentials":
-        return <div>Travel Essentials Dropdown Content</div>;
+        return <TravelEssentials/>;
       default:
         return null;
     }
@@ -109,7 +111,7 @@ function Navbar() {
 
   return (
     <>
-      <div className={`fixed-top ${activeDropdown ? "bg-white" : ""} navigation ${navbarClass}`}>
+      <div className={`fixed-top ${activeDropdown ? "bg-white nav-dark" : ""} navigation ${navbarClass}`}>
         <nav className="top-nav">
           <div className="container">
             <a href="/">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>

@@ -65,6 +65,7 @@ a {
   transition: height 0.8s ease;
   color: #ffffff;
 }
+
 .navbar-home .nav {
   color: #303030;
 }
@@ -106,7 +107,7 @@ a {
   white-space: nowrap;
   word-break: normal;
   color: rgb(255, 255, 255);
-  font-size: 18px;
+  font-size: 17px;
   transition: 0.4s;
   padding: 8px 20px;
 }
@@ -119,6 +120,18 @@ a {
   justify-content: center;
   align-items: center;
   flex-grow: 0;
+}
+
+.nav-dark .nav-link {
+  color: #000;
+}
+
+.nav-dark .nav-ico {
+  color: #303030;
+}
+
+.nav-dark .navbar-home .top-nav .container {
+  color: #767676;
 }
 
 .nav .nav-end a {
@@ -167,7 +180,7 @@ a {
 .nav .nav-link.active::after {
   content: "";
   position: absolute;
-  bottom: -55%;
+  bottom: -60%;
   left: 50%;
   transform: translateX(-50%);
   border: solid transparent;
@@ -652,4 +665,41 @@ a {
   color: #087e8c;
   padding-top: 10px;
   text-decoration: none;
+}
+
+.number-wapper .number-card {
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-basis: 30%;
+  padding: 1.6rem 1.6rem 2.4rem;
+  height: 100%;
+  gap: 15px;
+  align-items: center;
+}
+
+.number-wapper .number-card .number-info .number {
+  color: #303030;
+  flex: 1;
+  margin-bottom: 0.2rem;
+  font-size: 1.3888888889vw;
+  font-weight: 600;
+}
+
+.number-wapper .number-card .number-ico {
+  fill: #087e8c;
+  color: #087e8c;
+  font-size: 25px;
+  margin: 0;
+}
+
+.number-wapper .number-card .number-info .sub-number-info {
+  color: #767676;
+  font-size: 0.9vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
