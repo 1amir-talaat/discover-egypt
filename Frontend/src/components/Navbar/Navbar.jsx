@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { useLocation } from "react-router-dom";
 
@@ -18,14 +18,12 @@ function Navbar() {
   const [navType, setNavType] = useState(null);
   const location = useLocation();
   const [scrolling, setScrolling] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false); // State to manage the visibility of content
 
   useEffect(() => {
-    // Reset dropdown on location change
     setActiveDropdown(null);
     setDropdownVisible(false);
-  }, [location]);
 
-  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setScrolling(true);
@@ -39,7 +37,20 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location]);
+
+  useEffect(() => {
+    let timer;
+    if (dropdownVisible) {
+      timer = setTimeout(() => {
+        setContentVisible(true);
+      }, 300);
+    } else {
+      setContentVisible(false);
+    }
+
+    return () => clearTimeout(timer); // Cleanup timer on component unmount or state change
+  }, [dropdownVisible]);
 
   const toggleDropdown = (dropdown) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
@@ -149,7 +160,7 @@ function Navbar() {
             <DropdownManue type={activeDropdown} />
           </div>
           <div className="contnet">
-            <DropdownContent type={activeDropdown} />
+            {contentVisible && <DropdownContent type={activeDropdown} />} {/* Render content based on visibility state */}
           </div>
         </div>
       </div>
