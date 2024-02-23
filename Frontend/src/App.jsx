@@ -7,6 +7,7 @@ import { useLanguage } from "./context/LanguageContext";
 import SeaMagic from "./components/Sea Magic/SeaMagic";
 import NatureAndAdventure from "./components/Nature And Adventure/NatureAndAdventure";
 import AntiquitiesAndCivilization from "./components/Antiquities and Civilization/AntiquitiesAndCivilization";
+import ComingSoon from "./components/ComingSoon/ComingSoon";
 
 //seif
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
@@ -30,6 +31,8 @@ function App() {
             <Route path="about-egypt" element={<AboutEgypt />} />
             {/* Travel Safety Tips */}
             <Route path="travel-tips" element={<TravelSafetyTips />} />
+            {/* Coming Soon */}
+            <Route path="coming-soon" element={<ComingSoon />} />
           </Route>
         </Routes>
       </BrowserRouter>

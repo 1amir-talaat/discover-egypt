@@ -1,0 +1,11 @@
+.coming-soon{
+  height: 80vh;
+}
+.time-left{
+  height: 100px;
+  width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(44, 44, 44, 0.404);
+}

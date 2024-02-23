@@ -60,7 +60,8 @@ function Navbar() {
   };
 
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
-  const navbarClass = scrolling || location.pathname === "/" ? "navbar-home" : "";
+  const navbarClass = scrolling || location.pathname === "/" || location.pathname === "/coming-soon" ? "navbar-home" : "";
+  const stickyNav = location.pathname === "/coming-soon" ? "sticky-top" : "fixed-top";
 
   // eslint-disable-next-line react/prop-types
   const DropdownContent = ({ type }) => {
@@ -111,7 +112,7 @@ function Navbar() {
 
   return (
     <>
-      <div className={`fixed-top ${activeDropdown ? "bg-white nav-dark" : ""} navigation ${navbarClass}`}>
+      <div className={`${stickyNav} ${activeDropdown ? "bg-white nav-dark" : ""} navigation ${navbarClass}`}>
         <nav className="top-nav">
           <div className="container">
             <a href="/">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>
