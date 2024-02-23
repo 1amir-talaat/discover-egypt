@@ -32,7 +32,7 @@ function App() {
             {/* Travel Safety Tips */}
             <Route path="travel-tips" element={<TravelSafetyTips />} />
             {/* Useful contacts */}
-            <Route path="useful-contacts" element={<UsefulContacts />}/>
+            <Route path="important-numbers" element={<UsefulContacts />}/>
           </Route>
         </Routes>
       </BrowserRouter>
