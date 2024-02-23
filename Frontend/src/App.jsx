@@ -7,6 +7,7 @@ import { useLanguage } from "./context/LanguageContext";
 import SeaMagic from "./components/Sea Magic/SeaMagic";
 import NatureAndAdventure from "./components/Nature And Adventure/NatureAndAdventure";
 import AntiquitiesAndCivilization from "./components/Antiquities and Civilization/AntiquitiesAndCivilization";
+import PlanYourTrip from "./components/PlanYourTrip/PlanYourTrip";
 import ComingSoon from "./components/ComingSoon/ComingSoon";
 import Error from "./components/Error/Error";
 
@@ -32,6 +33,8 @@ function App() {
             <Route path="about-egypt" element={<AboutEgypt />} />
             {/* Travel Safety Tips */}
             <Route path="travel-tips" element={<TravelSafetyTips />} />
+            {/* Plan Your Trip */}
+            <Route path="plan-your-trip" element={<PlanYourTrip />} />
             {/* Coming Soon */}
             <Route path="coming-soon" element={<ComingSoon />} />
             {/* Error */}

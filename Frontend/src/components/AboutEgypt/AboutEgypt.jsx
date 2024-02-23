@@ -14,6 +14,8 @@ import "swiper/css/effect-cards";
 import AboutData from "./AboutEgypt.json";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
+import Places from "../Home/Places";
+
 function AboutEgypt() {
   // swiper
   const [swiperRef, setSwiperRef] = useState(null);
@@ -66,9 +68,9 @@ function AboutEgypt() {
             {language == "en" ? "Traditions of Egypt" : "التقاليد المصرية"}
           </h1>
           {/* the content and image container  */}
-          <div className="d-flex traditinos">
+          <div className="d-flex traditinos mt-4">
             <img
-              src="https://images.pexels.com/photos/6782583/pexels-photo-6782583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://mishkahacademy.com/wp-content/uploads/2022/04/60-1-e1671190571742.jpg"
               alt=""
             />
             <div className="traditions-texts align-self-center ">
@@ -79,8 +81,8 @@ function AboutEgypt() {
                 </h4>
                 <p>
                   {language == "ar"
-                    ? "تتميز الهجة المصرية بتنوعها اللغوي وثراها الثقافي، حيث تعكس تاريخًا عريقًا وتنوعًا ثقافيًا غنيًا. تتضمن اللهجة المصرية مجموعة من العبارات والتعابير الشهيرة التي يستخدمها الناس في حياتهم اليومية، مما يمنحها طابعًا فريدًا وممتعًا. بفضل تراثها الغني، تعد الهجة المصرية مصدر إلهام للأدب والفن، وتعكس جوهر الثقافة المصرية بشكل لافت ومميز."
-                    : "The Egyptian dialect is known for its linguistic diversity and rich cultural heritage, reflecting a long history and a vibrant cultural tapestry. It includes a variety of famous phrases and expressions commonly used in everyday life, giving it a unique and enjoyable character. Thanks to its rich heritage, the Egyptian dialect serves as a source of inspiration for literature and art, vividly reflecting the essence of Egyptian culture."}
+                    ? "العربية هي اللغة الرسمية في مصر وهي اللغة الرئيسية المستخدمة في التعاملات والمعاملات العامة. وتُعدّ الإنجليزية لغة ثانية غير رسمية في مصر ويتحدثّها قسم كبير من السكان. وتعرض جميع لوحات السير المعلومات باللغتين العربية والإنجليزية."
+                    : "Arabic is the official language in Egypt and is the main language used in public dealings and transactions. English is a non-second language in Egypt and is spoken by a large portion of the population. All traffic signs display information in Arabic and English."}
                 </p>
               </div>
             </div>
@@ -97,7 +99,7 @@ function AboutEgypt() {
           data-aos-duration="1500"
         >
           {/* the content and image container  */}
-          <div className="d-flex traditinos">
+          <div className="d-flex traditinos mt-4">
             <div className="traditions-texts align-self-center ">
               <div className="container">
                 <h4 className="text-center">
@@ -112,7 +114,7 @@ function AboutEgypt() {
               </div>
             </div>
             <img
-              src="https://images.pexels.com/photos/2482317/pexels-photo-2482317.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="https://images.pexels.com/photos/15131499/pexels-photo-15131499/free-photo-of-interior-of-dendera-temple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt=""
             />
           </div>
@@ -146,7 +148,7 @@ function AboutEgypt() {
                     <img
                       style={
                         d.image ==
-                        "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg"
+                          "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg"
                           ? { objectPosition: "bottom" }
                           : {}
                       }
@@ -163,9 +165,8 @@ function AboutEgypt() {
         <div className="event-info">
           <Bar />
           <div
-            className={` info d-flex flex-column  ${
-              language == "en" ? "event-info-right" : ""
-            }`}
+            className={` info d-flex flex-column  ${language == "en" ? "event-info-right" : ""
+              }`}
           >
             <div className="info-data flex-grow-1">
               <h1>{data[activeIndex % data.length].title}</h1>
@@ -207,7 +208,7 @@ function AboutEgypt() {
             {language == "en" ? "Currency & Payments" : "العملة والمدفوعات"}
           </h1>
           {/* the content and image container  */}
-          <div className="d-flex traditinos">
+          <div className="d-flex traditinos mt-4">
             <img
               src="https://images.pexels.com/photos/5609738/pexels-photo-5609738.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt=""
@@ -272,102 +273,9 @@ function AboutEgypt() {
           </div>
         </div>
         {/* end cards*/}
-        {/* explore more  */}
-        <div className="row mt-5">
-          <h2 className="mt-4 mb-2">
-            {language == "en" ? "Keep exploring" : "استمر في الاستكشاف"}
-          </h2>
-          <div className="col-sm-12 col-md-4">
-            <div className="card experience-card border-0 shadow w-100 position-relative mb-5">
-              <img
-                className="card-img-top experience-card-image"
-                src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=600"
-                // alt={item.description}
-              />
-              <div className="card-body">
-                <div className="experience-card-badge">
-                  {/* <h5>{item.country}</h5> */}
-                </div>
-                <h4>
-                  {language == "en" ? "Travel Regulations" : "لوائح السفر"}
-                </h4>
-                <p style={{ color: "gray", fontSize: 20 }}>
-                  {/* {language === "en"
-                ? `Price Start From ${item.price} $`
-                : `السعر يبدأ من ${item.price * 4} جنيه`} */}
-                </p>
-              </div>
-              <hr className="experience-card-hr mt-4 ms-3" />
-              <button
-                className="btn fw-bold"
-                style={{ color: "rgb(83, 187, 123)" }}
-              >
-                <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
-              </button>
-            </div>
-          </div>
-          <div className="col-sm-12 col-md-4">
-            <div className="card experience-card border-0 shadow w-100 position-relative mb-5">
-              <img
-                className="card-img-top experience-card-image"
-                src="https://images.pexels.com/photos/6272245/pexels-photo-6272245.jpeg?auto=compress&cs=tinysrgb&w=600"
-                // alt={item.description}
-              />
-              <div className="card-body">
-                <div className="experience-card-badge">
-                  {/* <h5>{item.country}</h5> */}
-                </div>
-                <h4>
-                  {language == "en"
-                    ? "safety travel tips"
-                    : "نصائح السفر الآمن"}
-                </h4>
-                <p style={{ color: "gray", fontSize: 20 }}>
-                  {/* {language === "en"
-                ? `Price Start From ${item.price} $`
-                : `السعر يبدأ من ${item.price * 4} جنيه`} */}
-                </p>
-              </div>
-              <hr className="experience-card-hr mt-4 ms-3" />
-              <button
-                className="btn fw-bold"
-                style={{ color: "rgb(83, 187, 123)" }}
-              >
-                <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
-              </button>
-            </div>
-          </div>
-          <div className="col-sm-12 col-md-4">
-            <div className="card experience-card border-0 shadow w-100 position-relative mb-5">
-              <img
-                className="card-img-top experience-card-image"
-                src="https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=600"
-                // alt={item.description}
-              />
-              <div className="card-body">
-                <div className="experience-card-badge">
-                  {/* <h5>{item.country}</h5> */}
-                </div>
-                <h4>
-                  {language == "en" ? "Useful Contacts" : "اتصالات مفيدة"}
-                </h4>
-                <p style={{ color: "gray", fontSize: 20 }}>
-                  {/* {language === "en"
-                ? `Price Start From ${item.price} $`
-                : `السعر يبدأ من ${item.price * 4} جنيه`} */}
-                </p>
-              </div>
-              <hr className="experience-card-hr mt-4 ms-3" />
-              <button
-                className="btn fw-bold"
-                style={{ color: "rgb(83, 187, 123)" }}
-              >
-                <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* end explore more  */}
+
+        <Places />
+
       </div>
       {/* end currency and payments part */}
     </>
