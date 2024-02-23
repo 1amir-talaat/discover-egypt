@@ -4,19 +4,35 @@ import Home from "./pages/Home";
 import { useLanguage } from "./context/LanguageContext";
 import UsefulContacts from "./pages/UsefulContacts";
 
-function App() {
-  const { language,toggleLanguage } = useLanguage();
-  return (
-    <div className={language=="en"?"dir-en":"dir-ar" }>
-      <div className="bg-warning">
+// hyman
+import SeaMagic from "./components/Sea Magic/SeaMagic";
+import NatureAndAdventure from "./components/Nature And Adventure/NatureAndAdventure";
+import AntiquitiesAndCivilization from "./components/Antiquities and Civilization/AntiquitiesAndCivilization";
 
-      <button className="btn btn-warning" onClick={()=>toggleLanguage()}>{language=="ar"?"English":"Arabic"}</button>
-      </div>
+//seif
+import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
+import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
+function App() {
+  const { language } = useLanguage();
+  return (
+    <div className={language == "en" ? "dir-en" : "dir-ar"}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
+            {/* Home page */}
             <Route index element={<Home />} />
-            <Route path="useful-contacts" element={<UsefulContacts />} />
+            {/* sea magic  */}
+            <Route path="sea-magic" element={<SeaMagic />}></Route>
+            {/* Nature and Adventure  */}
+            <Route path="nature-and-adventure" element={<NatureAndAdventure />}></Route>
+            {/* Antiquities and Civilization */}
+            <Route path="antiquities-and-civilization" element={<AntiquitiesAndCivilization />}></Route>
+            {/* About Egypt  */}
+            <Route path="about-egypt" element={<AboutEgypt />} />
+            {/* Travel Safety Tips */}
+            <Route path="travel-tips" element={<TravelSafetyTips />} />
+            {/* Useful contacts */}
+            <Route path="useful-contacts" element={<UsefulContacts />}/>
           </Route>
         </Routes>
       </BrowserRouter>

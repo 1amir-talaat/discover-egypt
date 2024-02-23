@@ -1,9 +1,18 @@
 * {
-  font-family: "Markazi Text", serif;
+  font-family: Markazi-Text, Helvetica, Arial, sans-serif !important;
 }
-.dir-ar{
+.dir-ar {
   direction: rtl;
 }
-.dir-en{
+.dir-en {
   direction: ltr;
+}
+.card-body p,
+.card-body h2,
+.card-body h5 {
+  font-family: "Markazi Text", serif !important;
+}
+
+.card {
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem rgba(0, 0, 0, 0.08) !important;
 }

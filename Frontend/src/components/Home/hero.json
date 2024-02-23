@@ -1,46 +1,56 @@
 {
   "ar": [
     {
-      "title": "السعودية فوق ما تتخيل",
-      "description": "استمتع ميسي باكتشاف أماكن كثيرة في السعودية، والآن دورك تكتشف ما يفوق خيالك.",
-      "img": "https://scth.scene7.com/is/image/scth/messi-family-mob"
+      "title": "مهرجان الفنون الشعبية بالفسطاط",
+      "description": "يعد مهرجان الفنون الشعبية بالفسطاط فرصة لعرض وتسليط الضوء على التراث الشعبي المصري من خلال فعاليات فنية وحرفية تقام في أحياء التراث بالقاهرة.",
+      "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
     },
     {
-      "title": "موسم الرياض",
-      "description": "مهرجان ترفيهي عالمي يترقبه الجميع كل عام، تتنوع فعاليات موسم الرياض بين العروض الحماسية، والمطاعم والمقاهي، والحفلات الموسيقية وغيرها من المعارض والكرنفالات.",
-      "img": "https://scth.scene7.com/is/image/scth/riyadh-season-card"
+      "title": "مهرجان أبو سمبل للشمس",
+      "description": "يحدث هذا الحدث مرتين في السنة عندما تتوافق أشعة الشمس لتنير الحجر الداخلي لمعبد أبو سمبل، ويجذب السياح الذين يرغبون في مشاهدة هذه الظاهرة القديمة.",
+      "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
     },
     {
-      "title": "مكافآت ما لها مثيل!",
-      "description": "اكسب مكافآت رائعة واستمتع بالسياحة أو السفر أو اللي يناسب لايف ستايلك اليومي .. وأكثر في السعودية.",
-      "img": "https://scth.scene7.com/is/image/scth/rewards-homepage"
+      "title": "مهرجان الجاز بالقاهرة",
+      "description": "يجذب مهرجان الجاز بالقاهرة عشاق الموسيقى من جميع أنحاء العالم للاستمتاع بأداء موسيقى الجاز الراقية في أجواء فنية مميزة.",
+      "img": "https://static.lahamag.com/attachments/173/FB_IMG_1633797615066_339239_original.jpg"
     },
     {
-      "title": "الدليلة",
-      "description": "استمتع بجمال طبيعي ساحر مصحوب بتراث ثقافي باهر، بانتظارك مغامرات بين احضان الطبيعة متجددة.",
-      "img": "https://scth.scene7.com/is/image/scth/3-day-alula"
+      "title": "مهرجان القاهرة السينمائي الدولي",
+      "description": "يعد مهرجان القاهرة السينمائي الدولي مناسبة سنوية مهمة في عالم السينما، حيث يعرض أفلاما دولية ومصرية متنوعة ويجتذب صناع السينما وعشاقها من جميع أنحاء العالم.",
+      "img": "https://aljaras.com/wp-content/uploads/2018/11/45971457_262289091152425_3975700635763867648_n-445x630.jpg"
+    },
+    {
+      "title": "مهرجان القاهرة للأزياء",
+      "description": "يعد مهرجان القاهرة للأزياء واحدًا من أكبر المهرجانات في مجال الأزياء في الشرق الأوسط، حيث يعرض مصممون محليون وعالميون أحدث صيحات الموضة ويجذب عشاق الموضة والجمال.",
+      "img": "https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/326263613_578338783797881_7969484103311917616_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFtW0rxvXS6C9MiCuF1GsYPk04ycOrsK2qTTjJw6uwragydfrCS26d_i4jyA390lJA_oBa7QqGMl_mvAINV53m2&_nc_ohc=qL4k98pKCA4AX9CEYRp&_nc_ht=scontent.fcai19-4.fna&oh=00_AfC2wiTFr5i0S0-kDRbCs-lJgXbeWo-kZKQZtaCjKtxo9g&oe=65D6962E"
     }
   ],
   "en": [
     {
-      "title": "Saudi Arabia Beyond Your Imagination",
-      "description": "Enjoy Messi discovering many places in Saudi Arabia, and now it's your turn to discover what exceeds your imagination.",
-      "img": "https://scth.scene7.com/is/image/scth/messi-family-mob"
+      "title": "Fustat Folk Arts Festival",
+      "description": "The Fustat Folk Arts Festival provides an opportunity to showcase and highlight Egyptian folk heritage through artistic and craft activities held in heritage neighborhoods in Cairo.",
+      "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
     },
     {
-      "title": "Riyadh Season",
-      "description": "An international entertainment festival awaited by everyone every year, Riyadh Season's activities range from exciting shows, to restaurants and cafes, music concerts, and other exhibitions and carnivals.",
-      "img": "https://scth.scene7.com/is/image/scth/riyadh-season-card"
+      "title": "Abu Simbel Sun Festival",
+      "description": "This event occurs twice a year when sunlight aligns to illuminate the inner sanctum of the Abu Simbel temple, attracting tourists who wish to witness this ancient phenomenon.",
+      "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
     },
     {
-      "title": "Unprecedented Rewards!",
-      "description": "Earn amazing rewards and enjoy tourism, travel, or whatever suits your daily lifestyle.. and more in Saudi Arabia.",
-      "img": "https://scth.scene7.com/is/image/scth/rewards-homepage"
+      "title": "Cairo Jazz Festival",
+      "description": "The Cairo Jazz Festival attracts music enthusiasts from around the world to enjoy performances of fine jazz music in distinctive artistic atmospheres.",
+      "img": "https://static.lahamag.com/attachments/173/FB_IMG_1633797615066_339239_original.jpg"
     },
     {
-      "title": "AlUla",
-      "description": "Enjoy a charming natural beauty accompanied by a splendid cultural heritage, adventures await you amidst the rejuvenating embrace of nature.",
-      "img": "https://scth.scene7.com/is/image/scth/3-day-alula"
+      "title": "Cairo International Film Festival",
+      "description": "The Cairo International Film Festival is an important annual event in the world of cinema, showcasing a diverse range of international and Egyptian films and attracting filmmakers and enthusiasts from around the world.",
+      "img": "https://aljaras.com/wp-content/uploads/2018/11/45971457_262289091152425_3975700635763867648_n-445x630.jpg"
+    },
+    {
+      "title": "Cairo Fashion Festival",
+      "description": "The Cairo Fashion Festival is one of the largest fashion festivals in the Middle East, featuring local and international designers showcasing the latest fashion trends and attracting fashion enthusiasts and beauty lovers.",
+      "img": "https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/326263613_578338783797881_7969484103311917616_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFtW0rxvXS6C9MiCuF1GsYPk04ycOrsK2qTTjJw6uwragydfrCS26d_i4jyA390lJA_oBa7QqGMl_mvAINV53m2&_nc_ohc=qL4k98pKCA4AX9CEYRp&_nc_ht=scontent.fcai19-4.fna&oh=00_AfC2wiTFr5i0S0-kDRbCs-lJgXbeWo-kZKQZtaCjKtxo9g&oe=65D6962E"
     }
   ]
 }

@@ -17,4 +17,4 @@ const authenticateMiddleware = (req, res, next) => {
   });
 };
 
-export { authenticateMiddleware };
+export default authenticateMiddleware;

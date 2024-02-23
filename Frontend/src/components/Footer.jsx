@@ -1,128 +1,108 @@
-import React from "react";
+import logo from "./logo.png";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa6";
+import { CiCircleChevUp } from "react-icons/ci";
+import "./Footer.css";
+import img from "./footer.png";
 import { useLanguage } from "../context/LanguageContext";
 
 function Footer() {
-  // by basmala
-  const {language}=useLanguage();
+  const { language } = useLanguage();
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
-    language=="en"?
-    // Footer in English
-    <footer className="bg-dark text-center text-lg-start text-light ">
-      <div className="container p-4">
-        <div className="row">
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
-            <h5 className="text-uppercase">Footer Content</h5>
-            <p>
-              Example 
-            </p>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-4 ">
-            <h5 className="text-uppercase">Seasons & Events</h5>
-            <ul className="list-unstyled mb-0">
-              <li>
-                <a href="#!" className="text-light">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Link 3</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-4">
-            <h5 className="text-uppercase">Discover Egypt</h5>
-            <ul className="list-unstyled mb-0">
-              <li>
-                <a href="#!" className="text-light">See & Do</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light"> Plan Your Trip</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Travel Essentials</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-4">
-            <h5 className="text-uppercase">More Information</h5>
-            <ul className="list-unstyled mb-0">
-              <li>
-                <a href="#!" className="text-light"> About Egypt</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Link 3</a>
-              </li>
-            </ul>
+    <>
+      <footer>
+        <img src={img} style={{ width: "100%" }} alt="" />
+        <div className="container">
+        </div>
+        <div className="container-fuid second-foot text-white">
+          <div className="container">
+            <div className="row row-con">
+              <div className="row">
+                <div className="col-3 logo-col">
+                  <img src={logo} className="logo" />
+                </div>
+                <div className="col-3">
+                  <hr className="footer-sub-line" />
+                  <h2>{language == "ar" ? "الموسم والأحداث" : "season & Events"}</h2>
+                  <ul>
+                    <li>
+                      <a href="#" className={language == "en" ? "a-en" : "a-ar"}>
+                        {language == "en" ? "Pyramids Festival of Light" : "عرض الاهرامات للضوء"}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className={language == "en" ? "a-en" : "a-ar"}>
+                        {language == "en" ? "Abu Simbel Sun Festival" : "شمس أبو سمبل"}
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#" className={language == "en" ? "a-en" : "a-ar"}>
+                        {language == "en" ? "El Gouna Film Festival" : "مهرجان الجونه للافلام"}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-3">
+                  <hr className="footer-sub-line" />
+                  <h2>{language == "en" ? "Discover Egypt" : "اكتشف مصر"}</h2>
+                  <ul>
+                    <li>
+                      <a href="#" className={language == "en" ? "a-en" : "a-ar"}>
+                        {language == "en" ? "nature" : "الطبيعه"}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className={language == "en" ? "a-en" : "a-ar"}>
+                        {language == "en" ? "lakes" : "البحيرات"}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className={language == "en" ? "a-en" : "a-ar"}>
+                        {language == "en" ? "The nile" : "نهر النيل"}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-3">
+                  <hr className="footer-sub-line" />
+                  <h2>{language == "en" ? "Useful informations" : "معلومات مهمه"}</h2>
+                  <ul>
+                    <li>
+                      <a href="#" className={language == "en" ? "a-en" : "a-ar"}>
+                        {language == "en" ? "About Rgypt" : "مصر"}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className={language == "en" ? "a-en" : "a-ar"}>
+                        {language == "en" ? "important numbers" : "ارقام مهمه"}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col contact-y">
+                <div className="contact-bdy d-flex">
+                  <h3>{language == "en" ? "Contact with us:" : "تواصل معنا : "}</h3>
+                  <FaFacebookF className="i-cons" />
+                  <FaInstagram className="i-cons" />
+                  <FaXTwitter className="i-cons" />
+                  <FaYoutube className="i-cons" />
+                </div>
+                <CiCircleChevUp onClick={scrollToTop} className="scroll-to-up" />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="text-center p-3 bg-dark text-white">
-        &copy; {new Date().getFullYear()} Discover Egypt
-      </div>
-    </footer>
-    :
-    // Footer in Arabic
-    <footer className="bg-dark text-center text-lg-start text-light ">
-      <div className="container p-4">
-        <div className="row">
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
-            <h5 className="text-uppercase">Footer Content</h5>
-            <p>
-              Example 
-            </p>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-4 ">
-            <h5 className="text-uppercase">المواسم والأحداث</h5>
-            <ul className="list-unstyled mb-0">
-              <li>
-                <a href="#!" className="text-light">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Link 3</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-4">
-            <h5 className="text-uppercase">اكتشف مصر </h5>
-            <ul className="list-unstyled mb-0">
-              <li>
-                <a href="#!" className="text-light"> معالم وأنشطة </a>
-              </li>
-              <li>
-                <a href="#!" className="text-light"> خطط رحلتك  </a>
-              </li>
-              <li>
-                <a href="#!" className="text-light"> أساسيات السفر</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-4">
-            <h5 className="text-uppercase">معلومات أكثر </h5>
-            <ul className="list-unstyled mb-0">
-              <li>
-                <a href="#!" className="text-light"> عن مصر </a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" className="text-light">Link 3</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="text-center p-3 bg-dark text-white">
-        &copy; {new Date().getFullYear()} Discover Egypt
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
 

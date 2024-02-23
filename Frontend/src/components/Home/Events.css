@@ -20,13 +20,45 @@
 }
 .event-info {
   position: absolute;
-  bottom: 74px;
+  bottom: 0px;
   right: 10%;
   background-color: white;
-  width: 30rem;
+  width: 30vw;
   min-height: 25rem;
-  padding: 40px;
   z-index: 9999;
+  box-shadow: -0.1em 0 0 #fff;
+}
+
+.event-info h1 {
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.event-info p {
+  font-size: 20px;
+}
+
+.event-info .info {
+  padding: 40px;
+  padding-left: 60px;
+}
+
+@media (max-width: 1500px) {
+  .event-info {
+    width: 33vw;
+  }
+}
+
+@media (max-width: 1300px) {
+  .event-info {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  .event-info {
+    width: 50vw;
+  }
 }
 
 .event-info-right {
@@ -56,7 +88,6 @@
 }
 
 .events {
-  margin-top: 50px;
   cursor: move;
   touch-action: pan-y;
   user-select: none;
@@ -90,4 +121,40 @@
 .swiper-slide-next,
 .swiper-slide-prev {
   background-color: transparent !important;
+}
+
+.event-info .info-btn {
+  background-color: rgb(242, 242, 242);
+  color: #087e8c;
+  border-radius: 3.2rem;
+  padding: 5px 20px;
+  font-size: 18px;
+  border: none;
+  transition: 0.3s;
+}
+
+.event-info .info-btn:hover {
+  background-color: rgb(218, 216, 216);
+}
+
+.info-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.info-buttons button {
+  background-color: #087e8c;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 6px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-buttons .events-buttons {
+  display: flex;
 }

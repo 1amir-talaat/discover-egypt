@@ -11,17 +11,11 @@
 }
 
 .carousel-element {
-  height: 70vh;
+  height: 80dvh;
 }
 .carousel-header {
   color: #f7f7f7;
-  font-size: 3.125rem;
-  /* margin-top: 60px; */
-  position: sticky;
-  top: 0;
-}
-.flex-cont {
-  margin-top: 60px;
+  font-size: calc(5.71429px + 1.78571rem);
 }
 hr {
   color: #f7f7f7;
@@ -34,7 +28,6 @@ hr {
 }
 .carousel-buttons {
   text-align: center;
-  opacity: 0.8;
 }
 
 .carousel-buttons button {
@@ -51,18 +44,18 @@ hr {
 }
 .carousel-texts h3 {
   text-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.4);
-  font-size: 4.5rem;
+  font-size: 3.125rem;
 }
 .carousel-texts p {
   text-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.4);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .explore {
   box-sizing: border-box;
   border: 1px solid #f7f7f7;
   border-radius: 3.2rem;
   color: #fff;
-  padding: 0.5em;
+  padding: 8px 18px;
   background: transparent;
   display: flex;
   transition: 0.2s background;
@@ -101,7 +94,9 @@ button .arrow::before {
 }
 
 .explore:hover {
-  background-color: #78006e;
+  background-color: #087e8c;
+  /* color: black; */
+  transition: 0.4s;
 }
 
 button:hover .arrow {
@@ -113,23 +108,17 @@ button:hover .arrow:before {
 }
 .carousel-cont {
   position: absolute;
-  top: 35%;
+  top: 50%; /* Adjust the vertical position */
   left: 50%;
   transform: translate(-50%, -40%);
 }
-@media (min-width: 769px) {
-  .carousel-header {
-    margin-top: 2rem; /* Adjust as needed */
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .carousel-texts p {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow-y: hidden;
-    font-size: 1.1rem;
-    line-height: 1.2;
+    font-size: 1.1rem; /* Example adjustment */
+    line-height: 1.2; /* Example adjustment */
   }
   ::-webkit-scrollbar {
     display: none;
@@ -149,4 +138,8 @@ button:hover .arrow:before {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.flex-cont {
+  padding: 90px 0;
 }

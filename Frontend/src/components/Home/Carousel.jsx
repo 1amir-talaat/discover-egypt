@@ -7,10 +7,12 @@ import "swiper/css/pagination";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import "./Carousel.css";
 import { useLanguage } from "../../context/LanguageContext";
+
 function Carousel() {
   const { language } = useLanguage();
   // to handle prev and next buttons
   const [carouselSwiperRef, setCarouselSwiperRef] = useState(null);
+  console.log(language);
   const prevHandler = () => {
     carouselSwiperRef.slidePrev();
   };
@@ -18,7 +20,6 @@ function Carousel() {
   const nextHandler = () => {
     carouselSwiperRef.slideNext();
   };
-
   ///////////////////////////
   // for doing the text animation
   useEffect(() => {
@@ -47,13 +48,13 @@ function Carousel() {
       ? [
           {
             id: 1,
-            img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
+            img: "https://media.gettyimages.com/id/145167188/photo/egypt-cairo-view-of-city.jpg?s=612x612&w=0&k=20&c=x6ALHX35T3_3ZVxMUViI8axN-D5seAYT3dKeSSH2Ztg=",
             country: "cairo",
             desc: "Cairo is the capital and largest city of Egypt. The city's metropolitan area is the largest in the Middle East and the Arab world, and 15th-largest in the world",
           },
           {
             id: 2,
-            img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
+            img: "https://images.pexels.com/photos/15357310/pexels-photo-15357310/free-photo-of-people-near-citadel-of-qaitbay.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             country: "Alex",
             desc: "One of Egypt's largest cities, Alexandria is also its principal seaport and a major industrial centre. Alex lies on the Mediterranean Sea at the western edge of the Nile River delta,",
           },
@@ -65,7 +66,7 @@ function Carousel() {
           },
           {
             id: 4,
-            img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
+            img: "https://images.pexels.com/photos/1002812/pexels-photo-1002812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             country: "hurghada",
             desc: "hurghada's beautiful sandy beaches and turquoise crystalline waters and watersports fans will be a big fan of the many opportunities for diving and snorkelling here amongst the vibrant marine life",
           },
@@ -73,13 +74,13 @@ function Carousel() {
       : [
           {
             id: 1,
-            img: "https://images.adsttc.com/media/images/64a2/cdae/cb9c/464f/a63a/9764/large_jpg/cairo-architecture-city-guide-exploring-the-unique-architectural-blend-of-historical-and-contemporary-in-egypts-bustling-capital_23.jpg?1688391095",
+            img: "https://media.gettyimages.com/id/145167188/photo/egypt-cairo-view-of-city.jpg?s=612x612&w=0&k=20&c=x6ALHX35T3_3ZVxMUViI8axN-D5seAYT3dKeSSH2Ztg=",
             country: "القاهرة",
             desc: "القاهرة هي عاصمة مصر وأكبر مدنها. تعد المنطقة الحضرية للمدينة هي الأكبر في الشرق الأوسط والعالم العربي والمرتبة 15 على مستوى العالم",
           },
           {
             id: 2,
-            img: "https://www.osiristours.com/wp-content/uploads/2016/06/Alexandria-9-e1488051126787.jpg",
+            img: "https://images.pexels.com/photos/15357310/pexels-photo-15357310/free-photo-of-people-near-citadel-of-qaitbay.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             country: "الاسكندرية",
             desc: "تعتبر الإسكندرية إحدى أكبر مدن مصر، وهي أيضًا ميناء بحري رئيسي ومركز صناعي رئيسي. تقع المدينة على البحر الأبيض المتوسط ​​على الطرف الغربي لدلتا نهر النيل",
           },
@@ -91,7 +92,7 @@ function Carousel() {
           },
           {
             id: 4,
-            img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/48/07/d5.jpg",
+            img: "https://images.pexels.com/photos/1002812/pexels-photo-1002812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             country: "الغردقة",
             desc: "ستكون شواطئ الغردقة الرملية الجميلة والمياه البلورية الفيروزية وعشاق الرياضات المائية من أشد المعجبين بالفرص العديدة للغوص والغطس هنا وسط الحياة البحرية النابضة بالحياة.",
           },
@@ -115,11 +116,7 @@ function Carousel() {
                   {/* the content  */}
                   <div className="carousel-content">
                     {/* the carousel header  */}
-                    <h1 className="carousel-header ">
-                      {language == "en"
-                        ? "Winter Destinations in Egypt "
-                        : "وجهات الشتاء في مصر"}
-                    </h1>
+                    <h1 className="carousel-header ">{language == "en" ? "Winter Destinations in Egypt " : "وجهات الشتاء في مصر"}</h1>
                     <hr />
                     {/* end of the header  */}
                     {/* //////////////// */}

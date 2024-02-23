@@ -1,0 +1,190 @@
+.video-box {
+  position: relative;
+  justify-content: center;
+  min-height: 65vh;
+  text-align: center;
+}
+.video-box video {
+  filter: brightness(75%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.seamagic-image {
+  height: 650px !important;
+  filter: brightness(50%);
+}
+
+.seamagic-image:hover {
+  transition: 0.4s;
+  filter: brightness(40%);
+}
+
+.seamagic-title-en {
+  bottom: 230px;
+  left: 20px;
+}
+.seamagic-title-ar {
+  bottom: 230px;
+  right: 20px;
+}
+.seamagic-description-en {
+  font-size: 20px;
+  top: 430px;
+  left: 20px;
+}
+.seamagic-description-ar {
+  font-size: 20px;
+  top: 420px;
+  right: 20px;
+}
+.seamagic-button-en {
+  background-color: rgba(225, 225, 225, 0.4);
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 50px;
+  padding: 5px 30px;
+  transition: 0.5s ease;
+  bottom: 70px;
+  left: 20px;
+}
+.seamagic-button-ar {
+  background-color: rgba(225, 225, 225, 0.4);
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 50px;
+  padding: 5px 30px;
+  transition: 0.5s ease;
+  bottom: 70px;
+  right: 20px;
+}
+.seamagic-button-en:hover,
+.seamagic-button-ar:hover {
+  background-color: rgba(225, 225, 225, 0.2);
+  color: white;
+}
+
+.seamagic-activity {
+  background-color: rgba(97, 97, 97, 0.5);
+}
+
+.seamagic-card {
+  border-radius: 15px;
+  transition: 0.8s ease;
+}
+.seamagic-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
+}
+
+.beach-card-hr {
+  position: relative;
+  top: 35px;
+  border: none;
+  height: 1px;
+  background: rgb(73, 73, 73);
+  margin-bottom: 50px;
+}
+
+.beach-card-badge {
+  padding: 5px 10px 0px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 15px;
+}
+
+.beach-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: brightness(70%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.beach-card {
+  border-radius: 15px;
+  height: 531px;
+  transition: 0.8s ease;
+}
+.beach-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
+}
+
+.sea-card-hr {
+  position: relative;
+  top: 35px;
+  border: none;
+  height: 1px;
+  background: rgb(73, 73, 73);
+  margin-bottom: 50px;
+}
+
+.sea-card-badge {
+  padding: 5px 10px 0px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 15px;
+}
+
+.sea-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: brightness(70%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.sea-card {
+  border-radius: 15px;
+  height: 540px;
+  transition: 0.8s ease;
+}
+.sea-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
+}
+
+.underwater-card-hr {
+  position: relative;
+  top: 35px;
+  border: none;
+  height: 1px;
+  background: rgb(73, 73, 73);
+  margin-bottom: 50px;
+}
+
+.underwater-card-badge {
+  padding: 5px 10px 0px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 15px;
+}
+
+.underwater-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: brightness(70%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.underwater-card {
+  border-radius: 15px;
+  height: 580px;
+  transition: 0.8s ease;
+}
+.underwater-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
+}
