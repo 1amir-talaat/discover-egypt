@@ -59,8 +59,10 @@ function Navbar() {
     setDropdownVisible(activeDropdown === dropdown ? false : true);
   };
 
+  const validPaths = ["/sea-magic", "/nature-and-adventure", "/antiquities-and-civilization", "/about-egypt", "/travel-tips"];
+  var navbarClass = validPaths.includes(location.pathname) ? scrolling ? "navbar-home" : "" : "navbar-home";
+
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
-  const navbarClass = scrolling || location.pathname === "/" || location.pathname === "/coming-soon" ? "navbar-home" : "";
   const stickyNav = location.pathname === "/coming-soon" ? "sticky-top" : "fixed-top";
 
   // eslint-disable-next-line react/prop-types
@@ -71,7 +73,7 @@ function Navbar() {
       case "Plan Your Trip":
         return <PlanYourTrip />;
       case "Travel Essentials":
-        return <TravelEssentials/>;
+        return <TravelEssentials />;
       default:
         return null;
     }
