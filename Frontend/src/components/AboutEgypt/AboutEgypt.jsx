@@ -6,7 +6,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
 import SwiperCore from "swiper";
-import Bar from "../Bar";
+import Bar from "../Home/Bar";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/css";
 import "../Home/Events.css";

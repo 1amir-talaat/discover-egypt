@@ -3,7 +3,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { useLocation } from "react-router-dom";
 
 import "./Navbar.css";
-import logo from "../logo.png";
+import logo from "./logo.png";
 
 import { LuUser } from "react-icons/lu";
 import { MdLanguage } from "react-icons/md";
