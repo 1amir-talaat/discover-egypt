@@ -12,35 +12,31 @@ function HelpSupport() {
                     {language == "en" ? "Help & Support" : "المساعدة والدعم"}
                 </h1>
             </div>
-
             {/* the container of the page */}
             <div className="container mt-5">
                 {/* contact us container */}
                 <div className="contactus-container mt-5" id="contact-us">
                     <h1 className="mt-5 mb-3">{language == "en" ? "Contact Us" : "تواصل معنا"}</h1>
-                    <span className="text-secondary">{language == "en" ? "Send us a message, complaint or enquiry by filling the contact form below" : "تواصل معنا"}</span>
+                    <span className="text-secondary">{language == "en" ? "Send us a message, complaint or enquiry by filling the contact form below" : "أرسل لنا رسالة أو شكوى أو استفسار عن طريق تعبئة نموذج التواصل أدناه"}</span>
                     <form className="mb-5">
                         <div class="row">
                             <div class="form-group col-sm-6 col-md-6 col-lg-6">
-                                <label className="mt-4 mb-2" for="inputEmail4">{language == "en" ? "First Name" : ""}</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder={language == "en" ? "Enter First Name" : ""} />
+                                <label className="mt-4 mb-2" for="inputEmail4">{language == "en" ? "First Name" : "الاسم الأول"}</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder={language == "en" ? "Enter First Name" : "أدخل الاسم الأول"} />
                             </div>
                             <div class="form-group col-sm-6 col-md-6 col-lg-6">
-                                <label className="mt-4 mb-2" for="inputPassword4">{language == "en" ? "Last Name" : ""}</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder={language == "en" ? "Enter Last Name" : ""} />
+                                <label className="mt-4 mb-2" for="inputPassword4">{language == "en" ? "Last Name" : "اسم العائلة"}</label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder={language == "en" ? "Enter Last Name" : "أدخل اسم العائلة"} />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-6 col-md-6 col-lg-6">
-                                <label className="mt-4 mb-2" for="inputEmail4">{language == "en" ? "Email Address" : ""}</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder={language == "en" ? "Enter Email Address" : ""} />
+                                <label className="mt-4 mb-2" for="inputEmail4">{language == "en" ? "Email Address" : "عنوان البريد اللإلكتروني"}</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder={language == "en" ? "Enter Email Address" : "أدخل عنوان البريد الإلكتروني"} />
                             </div>
-
                             <div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
-
-                                <label className="mt-4 mb-2" for="inputState">{language == "en" ? "Phone Number" : ""}</label>
+                                <label className="mt-4 mb-2" for="inputState">{language == "en" ? "Phone Number" : "رقم الهاتف"}</label>
                                 <div className="row">
-
                                     <div className="col-2 col-sm-4 col-md-4 col-lg-3 ">
                                         <select id="inputState" class="form-control">
                                             <option selected>+02</option>
@@ -49,48 +45,38 @@ function HelpSupport() {
                                             <option>+355</option>
                                             <option>+213</option>
                                         </select>
-
-
                                     </div>
                                     <div className="col-6 col-sm-8 col-md-8 col-lg-6 ">
-                                        <input type="email" class="form-control" id="inputEmail4" placeholder={language == "en" ? "Enter Phone Number" : ""} />
-
-
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder={language == "en" ? "Enter Phone Number" : "أدخل رقم الهاتف"} />
                                     </div>
                                 </div>
-
-
                             </div>
-
-
                         </div>
                         <hr className="mt-4 text-secondary" />
                         <div class="row">
                             <div class="form-group col-lg-5">
-                                <label className="mt-2 mb-2" for="exampleFormControlSelect1">{language == "en" ? "Message Type" : ""}</label>
+                                <label className="mt-2 mb-2" for="exampleFormControlSelect1">{language == "en" ? "Message Type" : "نوع الرسالة"}</label>
                                 <select class="form-control" id="exampleFormControlSelect1">
-                                    <option selected>Complaint</option>
-                                    <option>Emergency</option>
-                                    <option>Enquiry</option>
-                                    <option>Out Of Scope</option>
-                                    <option>Suggestion</option>
+                                    <option selected>{language == "en" ? "Complaint" : "شكوي"}</option>
+                                    <option>{language == "en" ? "Emergency" : "حالة طوارئ"}</option>
+                                    <option>{language == "en" ? "Enquiry" : "استفسار"}</option>
+                                    <option> {language == "en" ? "Out Of Scope" : "أخري"} </option>
+                                    <option>{language == "en" ? "Suggestion" : "اقتراحات"}</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label className="mt-4 mb-2" for="exampleFormControlTextarea1">{language == "en" ? "Your Message" : ""}</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder={language == "en" ? "Enter your message here" : ""}></textarea>
+                                <label className="mt-4 mb-2" for="exampleFormControlTextarea1">{language == "en" ? "Your Message" : "الرسالة"}</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder={language == "en" ? "Enter your message here" : "يرجي إدخال رسالتك"}></textarea>
                             </div>
-
                         </div>
-
-                        <button type="submit" class="btn text-light mt-4 send-message-button" >Send Message</button>
+                        <button type="submit" class="btn text-light mt-4 send-message-button" >{language == "en" ? "Send Message" : "أرسل الرسالة"}</button>
                     </form>
                 </div>
                 {/* end of contact us container */}
                 {/* social links container */}
                 <div className="sociallinks-container mt-5" id="social-links">
-                    <h1 className="mt-5 mb-3">Social & Other Channels</h1>
+                    <h1 className="mt-5 mb-3">{language == "en" ? "Social & Other Channels" : "قنوات التواصل الاجتماعي"}</h1>
                     <hr className="text-secondary" />
                     <div className="row icons-row ">
                         <div className="col-5 col-sm-4 col-md-3 mt-5 text-align-center">
@@ -101,8 +87,7 @@ function HelpSupport() {
                                     </svg>
                                 </div>
                             </a>
-
-                            <p className="mt-3">Phone Call</p>
+                            <p className="mt-3">{language == "en" ? "Phone Call" : "الهاتف"}</p>
                         </div>
                         <div className="col-5 col-sm-4 col-md-3 mt-5 text-align-center">
                             <a href="#">
@@ -112,8 +97,7 @@ function HelpSupport() {
                                     </svg>
                                 </div>
                             </a>
-
-                            <p className="ms-2 mt-3">Email</p>
+                            <p className="ms-2 mt-3">{language == "en" ? "Email" : "البريد الإلكتروني"}</p>
                         </div>
                         <div className="col-5 col-sm-4 col-md-3 mt-5 text-align-center">
                             <a href="#">
@@ -123,8 +107,7 @@ function HelpSupport() {
                                     </svg>
                                 </div>
                             </a>
-
-                            <p className="mt-3">Facebook</p>
+                            <p className="mt-3">{language == "en" ? "Facebook" : "الفيسبوك"}</p>
                         </div>
                         <div className="col-5 col-sm-4 col-md-3 mt-5 text-align-center">
                             <a href="#">
@@ -134,8 +117,7 @@ function HelpSupport() {
                                     </svg>
                                 </div>
                             </a>
-
-                            <p className="ms-4 mt-3">X</p>
+                            <p className="ms-4 mt-3">{language == "en" ? "X" : "إكس"}</p>
                         </div>
                         <div className="col-5 col-sm-4 col-md-3 mt-5 text-align-center">
                             <a href="#">
@@ -145,8 +127,7 @@ function HelpSupport() {
                                     </svg>
                                 </div>
                             </a>
-
-                            <p className="mt-3">Instagram</p>
+                            <p className="mt-3">{language == "en" ? "Instagram" : "إنستجرام"}</p>
                         </div>
                         <div className="col-5 col-sm-4 col-md-3 mt-5 text-align-center">
                             <a href="#">
@@ -156,13 +137,13 @@ function HelpSupport() {
                                     </svg>
                                 </div>
                             </a>
-
-                            <p className="mt-3">WhatsApp</p>
+                            <p className="mt-3">{language == "en" ? "WhatsApp" : "الواتساب"}</p>
                         </div>
                     </div>
                 </div>
                 {/* end of social links container */}
             </div>
+            {/* end of the container of the page */}
         </>
     );
 }
