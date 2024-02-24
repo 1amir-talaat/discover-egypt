@@ -139,7 +139,9 @@ function Navbar() {
   };
 
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
-  const navbarClass = scrolling || location.pathname === "/" ? "navbar-home" : "";
+  const navbarClass = scrolling || (location.pathname === "/" || location.pathname == "/search-results") ? "navbar-home" : "";
+
+  console.log(location.pathname);
 
   // eslint-disable-next-line react/prop-types
   const DropdownContent = ({ type }) => {
@@ -219,6 +221,12 @@ function Navbar() {
     if (serachValue.trim() !== "") {
       navigation(`/search-results?search=${encodeURIComponent(serachValue)}`);
     }
+  };
+
+  const handleRecentSearchClick = (searchQuery) => {
+    setOnSearch(false);
+    setSearchValue(searchQuery);
+    navigation(`/search-results?search=${encodeURIComponent(searchQuery)}`);
   };
 
   return (
@@ -306,10 +314,10 @@ function Navbar() {
                   return (
                     <div className="search-history-item d-flex align-items-center justify-content-between gap-3" key={index}>
                       <FaHistory />
-                      <p className="flex-grow-1 m-0" style={{ fontSize: "14px" }}>
+                      <p className="flex-grow-1 m-0" style={{ fontSize: "14px" }} onClick={() => handleRecentSearchClick(search)}>
                         {search}
                       </p>
-                      <MdDeleteForever onClick={() => deleteFromSearchHistory(search)} size={22} color="#838383" />
+                      <MdDeleteForever onClick={() => deleteFromSearchHistory(index)} size={22} color="#838383" />
                     </div>
                   );
                 })

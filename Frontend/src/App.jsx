@@ -11,6 +11,7 @@ import AntiquitiesAndCivilization from "./components/Antiquities and Civilizatio
 //seif
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
+import SearchResults from "./components/search-results/SearchResults";
 function App() {
   const { language } = useLanguage();
   return (
@@ -30,6 +31,8 @@ function App() {
             <Route path="about-egypt" element={<AboutEgypt />} />
             {/* Travel Safety Tips */}
             <Route path="travel-tips" element={<TravelSafetyTips />} />
+            {/* search page */}
+            <Route path="/search-results" element={<SearchResults />} />
           </Route>
         </Routes>
       </BrowserRouter>
