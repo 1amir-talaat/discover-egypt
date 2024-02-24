@@ -1,14 +1,29 @@
 .sociallinks-container a div {
-    padding: 12px 12px 12px 13px;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
+  padding: 12px 12px 12px 13px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
 }
 
 .send-message-button {
-    background-color: #087e8c;
+  background-color: #087e8c;
 }
 
 .send-message-button:hover {
-    background-color: #33a1ad;
+  background-color: #33a1ad;
+}
+
+.img-dev h1 {
+  position: absolute;
+  bottom: 200px !important;
+  color: white;
+  font-size: 70px;
+}
+
+.dir-ar .img-dev h1 {
+  right: 50px;
+}
+
+.dir-en .img-dev h1 {
+  left: 50px;
 }
