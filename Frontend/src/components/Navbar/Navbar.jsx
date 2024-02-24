@@ -3,7 +3,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
-import logo from "../logo.png";
+import logo from "./logo.png";
 
 import { LuUser } from "react-icons/lu";
 import { MdLanguage } from "react-icons/md";
@@ -138,8 +138,11 @@ function Navbar() {
     setOnSearch(!onSearch);
   };
 
+  const validPaths = ["/sea-magic", "/nature-and-adventure", "/antiquities-and-civilization", "/about-egypt", "/travel-tips", "/plan-your-trip"];
+  var navbarClass = validPaths.includes(location.pathname) ? (scrolling ? "navbar-home" : "") : "navbar-home";
+
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
-  const navbarClass = scrolling || (location.pathname === "/" || location.pathname == "/search-results") ? "navbar-home" : "";
+  const stickyNav = location.pathname === "/coming-soon" ? "sticky-top" : "fixed-top";
 
   console.log(location.pathname);
 
@@ -232,7 +235,7 @@ function Navbar() {
   return (
     <>
       <div
-        className={`nav-contaioner fixed-top ${activeDropdown ? "bg-white nav-dark" : ""} navigation ${navbarClass} ${
+        className={`nav-contaioner ${stickyNav} ${activeDropdown ? "bg-white nav-dark" : ""} navigation ${navbarClass} ${
           onSearch == true ? "nav-search" : ""
         }`}
       >

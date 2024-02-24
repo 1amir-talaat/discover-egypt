@@ -6,7 +6,7 @@ import { FaYoutube } from "react-icons/fa6";
 import { CiCircleChevUp } from "react-icons/ci";
 import "./Footer.css";
 import img from "./footer.png";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../../context/LanguageContext";
 
 function Footer() {
   const { language } = useLanguage();

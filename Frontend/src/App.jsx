@@ -7,6 +7,9 @@ import { useLanguage } from "./context/LanguageContext";
 import SeaMagic from "./components/Sea Magic/SeaMagic";
 import NatureAndAdventure from "./components/Nature And Adventure/NatureAndAdventure";
 import AntiquitiesAndCivilization from "./components/Antiquities and Civilization/AntiquitiesAndCivilization";
+import PlanYourTrip from "./components/PlanYourTrip/PlanYourTrip";
+import ComingSoon from "./components/ComingSoon/ComingSoon";
+import Error from "./components/Error/Error";
 
 //seif
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
@@ -33,6 +36,12 @@ function App() {
             <Route path="travel-tips" element={<TravelSafetyTips />} />
             {/* search page */}
             <Route path="/search-results" element={<SearchResults />} />
+            {/* Plan Your Trip */}
+            <Route path="plan-your-trip" element={<PlanYourTrip />} />
+            {/* Coming Soon */}
+            <Route path="coming-soon" element={<ComingSoon />} />
+            {/* Error */}
+            <Route path="*" element={<Error />} />
           </Route>
         </Routes>
       </BrowserRouter>

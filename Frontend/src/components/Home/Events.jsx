@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
 import SwiperCore from "swiper";
 
-import Bar from "../Bar";
+import Bar from "./Bar";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
