@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate, useNavigation } from "react-router-dom";
 
 import "./Navbar.css";
 import logo from "../logo.png";
@@ -83,6 +83,7 @@ function Navbar() {
   const [onSearch, setOnSearch] = useState(false);
   const [serachValue, setSearchValue] = useState();
   const [searchHistory, setSearchHistory] = useState();
+  const navigation = useNavigate();
 
   useEffect(() => {
     setActiveDropdown(null);
@@ -164,6 +165,8 @@ function Navbar() {
     searchHistory.push(item);
 
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+
+    setSearchHistory(searchHistory);
   };
 
   const deleteFromSearchHistory = (index) => {
@@ -172,6 +175,8 @@ function Navbar() {
     searchHistory.splice(index, 1);
 
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+
+    setSearchHistory(searchHistory);
   };
 
   // eslint-disable-next-line react/prop-types
@@ -205,6 +210,15 @@ function Navbar() {
     }
 
     return <Manu type={setNavType} data={data} />;
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.value);
+    addToSearchHistory(serachValue);
+    if (serachValue.trim() !== "") {
+      navigation(`/search-results?search=${encodeURIComponent(serachValue)}`);
+    }
   };
 
   return (
@@ -262,13 +276,15 @@ function Navbar() {
         <div className={`search-wrapper mb-3 container ${onSearch == true ? "serach-show" : ""} `}>
           <div className="input-search">
             <IoSearch size={21} className="ico-search" />
-            <input
-              onChange={(e) => setSearchValue(e.target.value)}
-              type="text"
-              className="w-100"
-              placeholder={`${language == "ar" ? "بحث" : "search"} ....`}
-              maxLength="255"
-            />
+            <form className="w-100" onSubmit={handleSearchSubmit}>
+              <input
+                onChange={(e) => setSearchValue(e.target.value)}
+                type="text"
+                className="w-100"
+                placeholder={`${language == "ar" ? "بحث" : "search"} ....`}
+                maxLength="255"
+              />
+            </form>
           </div>
         </div>
         <div className={`search-dropdown ${onSearch == true ? "search-dropdown-show" : ""}`}>
