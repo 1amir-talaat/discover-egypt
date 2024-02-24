@@ -146,6 +146,7 @@ function Navbar() {
     "/travel-tips",
     "/plan-your-trip",
     "/help-support",
+    "/important-numbers"
   ];
   var navbarClass = validPaths.includes(location.pathname) ? (scrolling ? "navbar-home" : "") : "navbar-home";
 
