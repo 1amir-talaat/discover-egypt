@@ -59,7 +59,7 @@ function Navbar() {
     setDropdownVisible(activeDropdown === dropdown ? false : true);
   };
 
-  const validPaths = ["/sea-magic", "/nature-and-adventure", "/antiquities-and-civilization", "/about-egypt", "/travel-tips", "/plan-your-trip"];
+  const validPaths = ["/sea-magic", "/nature-and-adventure", "/antiquities-and-civilization", "/about-egypt", "/travel-tips", "/plan-your-trip", "/important-numbers"];
   var navbarClass = validPaths.includes(location.pathname) ? scrolling ? "navbar-home" : "" : "navbar-home";
 
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
