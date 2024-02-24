@@ -6,7 +6,7 @@ import Footer from "./Footer/Footer";
 function Layout() {
   const location = useLocation();
   const validPaths = ["/sea-magic", "/nature-and-adventure", "/antiquities-and-civilization", "/about-egypt", "/travel-tips", "/plan-your-trip"];
-  var outletStyles = validPaths.includes(location.pathname) ? {} : { paddingTop: 143 };
+  var outletStyles = validPaths.includes(location.pathname) ? {} : { paddingTop: 128 };
 
   return (
     <>
