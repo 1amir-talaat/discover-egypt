@@ -14,6 +14,7 @@ import Error from "./components/Error/Error";
 //seif
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
+import ImportantNumbers from "./components/ImportantNumbers/ImportantNumbers";
 function App() {
   const { language } = useLanguage();
   return (
@@ -37,6 +38,8 @@ function App() {
             <Route path="plan-your-trip" element={<PlanYourTrip />} />
             {/* Coming Soon */}
             <Route path="coming-soon" element={<ComingSoon />} />
+            {/* Important Numbers */}
+            <Route path="important-numbers" element={<ImportantNumbers />} />
             {/* Error */}
             <Route path="*" element={<Error />} />
           </Route>
