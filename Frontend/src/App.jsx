@@ -15,6 +15,7 @@ import Error from "./components/Error/Error";
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
 import ImportantNumbers from "./components/ImportantNumbers/ImportantNumbers";
+import HelpSupport from "./components/HelpSupport/HelpSupport";
 function App() {
   const { language } = useLanguage();
   return (
@@ -40,6 +41,8 @@ function App() {
             <Route path="coming-soon" element={<ComingSoon />} />
             {/* Important Numbers */}
             <Route path="important-numbers" element={<ImportantNumbers />} />
+            {/* Help and support */}
+            <Route path="help-support" element={<HelpSupport />} />
             {/* Error */}
             <Route path="*" element={<Error />} />
           </Route>
