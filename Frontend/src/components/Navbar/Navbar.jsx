@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { useLocation, useNavigate, useNavigation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
 import logo from "../logo.png";
@@ -314,7 +314,7 @@ function Navbar() {
                   );
                 })
               ) : (
-                <div className="text-center" style={{ fontSize: "25px" }}>
+                <div className="text-center" style={{ fontSize: "25px", color: "#99999" }}>
                   {language === "ar" ? "لا يوجد عناصر" : "No items available"}
                 </div>
               )}
