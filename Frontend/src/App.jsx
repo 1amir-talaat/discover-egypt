@@ -14,6 +14,7 @@ import Error from "./components/Error/Error";
 //seif
 import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
 import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
+import SearchResults from "./components/search-results/SearchResults";
 import ImportantNumbers from "./components/ImportantNumbers/ImportantNumbers";
 import HelpSupport from "./components/HelpSupport/HelpSupport";
 function App() {
@@ -35,6 +36,8 @@ function App() {
             <Route path="about-egypt" element={<AboutEgypt />} />
             {/* Travel Safety Tips */}
             <Route path="travel-tips" element={<TravelSafetyTips />} />
+            {/* search page */}
+            <Route path="/search-results" element={<SearchResults />} />
             {/* Plan Your Trip */}
             <Route path="plan-your-trip" element={<PlanYourTrip />} />
             {/* Coming Soon */}

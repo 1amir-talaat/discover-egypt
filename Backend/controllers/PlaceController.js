@@ -91,12 +91,12 @@ const PlaceController = {
   },
 
   searchPlaces: async (req, res) => {
-    const { keyword } = req.params;
+    const { keyword } = req.body;
+
+    console.log(keyword);
 
     if (!keyword.trim()) {
-      return res
-        .status(400)
-        .json({ message: "No keyword provided for search" });
+      return res.status(400).json({ message: "No keyword provided for search" });
     }
 
     const lowerKeyword = keyword.toLowerCase();
@@ -119,10 +119,7 @@ const PlaceController = {
               { sub_category: { [Op.like]: `%${keyword}%` } },
               { location_url: { [Op.like]: `%${keyword}%` } },
               {
-                [Op.and]: [
-                  { min_price: { [Op.lte]: keyword } },
-                  { max_price: { [Op.gte]: keyword } },
-                ],
+                [Op.and]: [{ min_price: { [Op.lte]: keyword } }, { max_price: { [Op.gte]: keyword } }],
               },
             ],
           })),
@@ -137,9 +134,7 @@ const PlaceController = {
       });
 
       if (places.length === 0) {
-        return res
-          .status(404)
-          .json({ message: "No places found for the specified keyword" });
+        return res.status(404).json({ message: "No places found for the specified keyword" });
       }
 
       const data = transformPlacesData(places);
@@ -154,10 +149,7 @@ const PlaceController = {
     try {
       const places = await Place.findAll({
         where: {
-          [Op.and]: [
-            { min_price: { [Op.gte]: minPrice ,[Op.lte]:maxPrice} },
-            { max_price: { [Op.lte]: maxPrice ,[Op.gte]:minPrice} },
-          ],
+          [Op.and]: [{ min_price: { [Op.gte]: minPrice, [Op.lte]: maxPrice } }, { max_price: { [Op.lte]: maxPrice, [Op.gte]: minPrice } }],
         },
       });
       res.json(places);
