@@ -27,3 +27,11 @@
   z-index: 999999;
   display: none;
 }
+
+.video-box {
+  width: 100%;
+}
+
+.video-box video {
+  width: 100%;
+}
