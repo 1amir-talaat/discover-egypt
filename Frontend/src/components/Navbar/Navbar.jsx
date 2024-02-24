@@ -138,7 +138,15 @@ function Navbar() {
     setOnSearch(!onSearch);
   };
 
-  const validPaths = ["/sea-magic", "/nature-and-adventure", "/antiquities-and-civilization", "/about-egypt", "/travel-tips", "/plan-your-trip", "/important-numbers","/help-support"];
+  const validPaths = [
+    "/sea-magic",
+    "/nature-and-adventure",
+    "/antiquities-and-civilization",
+    "/about-egypt",
+    "/travel-tips",
+    "/plan-your-trip",
+    "/help-support",
+  ];
   var navbarClass = validPaths.includes(location.pathname) ? (scrolling ? "navbar-home" : "") : "navbar-home";
 
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
