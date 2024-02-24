@@ -41,7 +41,7 @@ function ImportantNumbers() {
                                 <b>{language == "en" ? "Railway Police: " : " شرطة السكة الحديد: "}</b>145 <br />
                             </p>
                         </div>
-                        <img src="https://scth.scene7.com/is/image/scth/women-using-mobile" alt="" />
+                        <img src="https://imageio.forbes.com/specials-images/imageserve/63dd85f9589931f7cb19db01/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" alt="" />
                     </div>
                 </div>
                 {/* end of emergeny numbers part */}
@@ -89,7 +89,7 @@ function ImportantNumbers() {
                 {/* Telephone and code part */}
                 <div className="mt-5" data-aos={language == "ar" ? "fade-left" : "fade-right"} data-aos-duration="1500">
                     <div className="d-flex traditinos mt-4">
-                        <img src="https://scth.scene7.com/is/image/scth/Redsea%20Jeddah%201" alt="" />
+                        <img src="https://media.istockphoto.com/id/1127257348/photo/businessman-using-mobile-smartphone-and-connecting-cloud-computing-service-with-icon-customer.jpg?s=612x612&w=0&k=20&c=v0fqHJFrmlY1DAd4YQ4kGjCnv2QE9Ya37lXw6cS8Wwg=" alt="" />
                         <div className="traditions-texts align-self-center ">
                             <h4 className="text-center">
                                 {language == "en" ? "Telephone code and providers" : "مفتاح الخط وشركات الاتصالات"}
