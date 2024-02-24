@@ -13,7 +13,7 @@ router.post("/review", ReviewController.createReview);
 router.get("/places", PlaceController.getAllPlaces);
 router.get("/city/:city", PlaceController.getPlacesByCity);
 router.get("/category/:category", PlaceController.getPlacesByCategory);
-router.get("/search/:keyword", PlaceController.searchPlaces);
+router.post("/search/", PlaceController.searchPlaces);
 router.get("/palces/:id",PlaceController.getPlaceById)
 router.get("/price",PlaceController.getByPriceRange)
 // User routes
