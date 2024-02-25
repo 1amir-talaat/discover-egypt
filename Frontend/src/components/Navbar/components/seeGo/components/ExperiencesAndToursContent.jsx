@@ -13,7 +13,7 @@ import governorates from "../governorates.json";
 
 function ExperiencesAndToursContent() {
   const { language } = useLanguage();
-  const [selectedCity, setSelectedCity] = useState("Cairo");
+  const [selectedCity, setSelectedCity] = useState("cairo");
   const [weatherData, setWeatherData] = useState(null);
 
   const options = governorates[language].map((x, index) => {
@@ -27,7 +27,9 @@ function ExperiencesAndToursContent() {
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather/?q=${selectedCity}&appid=1b72642ef30dedb2d2cbe81165cca842`);
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather/?q=${selectedCity}&lang=ar&appid=1b72642ef30dedb2d2cbe81165cca842`
+        );
         console.log(response);
         setWeatherData(response.data);
       } catch (error) {
@@ -35,8 +37,11 @@ function ExperiencesAndToursContent() {
       }
     };
 
-    fetchWeatherData();
-  }, [selectedCity]);
+    if (!weatherData || selectedCity.toLowerCase() !== "cairo") {
+      fetchWeatherData();
+    }
+
+  }, [selectedCity, weatherData]);
 
   function translateWeatherCondition(condition) {
     switch (condition) {
@@ -118,11 +123,11 @@ function ExperiencesAndToursContent() {
                 </div>
                 <div className="temp-min-max">
                   <div className="temp">
-                    <span>{Number(kelvinToCelsius(weatherData.main.temp_min))-3}°C</span>
+                    <span>{Number(kelvinToCelsius(weatherData.main.temp_min)) - 3}°C</span>
                     <TbTemperatureMinus />
                   </div>
                   <div className="temp">
-                    <span>{Number(kelvinToCelsius(weatherData.main.temp_max))+2}°C</span>
+                    <span>{Number(kelvinToCelsius(weatherData.main.temp_max)) + 2}°C</span>
                     <TbTemperaturePlus />
                   </div>
                 </div>

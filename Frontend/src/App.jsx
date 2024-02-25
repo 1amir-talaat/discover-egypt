@@ -1,37 +1,48 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
 import { useLanguage } from "./context/LanguageContext";
+import Loader from "./components/Loader/Loader";
 
-// hyman
-import SeaMagic from "./components/Sea Magic/SeaMagic";
-import NatureAndAdventure from "./components/Nature And Adventure/NatureAndAdventure";
-import AntiquitiesAndCivilization from "./components/Antiquities and Civilization/AntiquitiesAndCivilization";
+// Lazy load components
+const Home = lazy(() => import("./pages/Home"));
+const SeaMagic = lazy(() => import("./components/Sea Magic/SeaMagic"));
+const NatureAndAdventure = lazy(() => import("./components/Nature And Adventure/NatureAndAdventure"));
+const AntiquitiesAndCivilization = lazy(() => import("./components/Antiquities and Civilization/AntiquitiesAndCivilization"));
+const AboutEgypt = lazy(() => import("./components/AboutEgypt/AboutEgypt"));
+const TravelSafetyTips = lazy(() => import("./pages/travel-safety-tips/TravelSafetyTips"));
+const SearchResults = lazy(() => import("./components/search-results/SearchResults"));
+const PlanYourTrip = lazy(() => import("./components/PlanYourTrip/PlanYourTrip"));
+const ComingSoon = lazy(() => import("./components/ComingSoon/ComingSoon"));
+const ImportantNumbers = lazy(() => import("./components/ImportantNumbers/ImportantNumbers"));
+const HelpSupport = lazy(() => import("./components/HelpSupport/HelpSupport"));
+const Error = lazy(() => import("./components/Error/Error"));
 
-//seif
-import AboutEgypt from "./components/AboutEgypt/AboutEgypt";
-import TravelSafetyTips from "./pages/travel-safety-tips/TravelSafetyTips";
 function App() {
   const { language } = useLanguage();
+
   return (
-    <div className={language == "en" ? "dir-en" : "dir-ar"}>
+    <div className={language === "en" ? "dir-en" : "dir-ar"}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            {/* Home page */}
-            <Route index element={<Home />} />
-            {/* sea magic  */}
-            <Route path="SeaMagic" element={<SeaMagic />}></Route>
-            {/* Nature and Adventure  */}
-            <Route path="NatureAndAdventure" element={<NatureAndAdventure />}></Route>
-            {/* Antiquities and Civilization */}
-            <Route path="AntiquitiesAndCivilization" element={<AntiquitiesAndCivilization />}></Route>
-            {/* About Egypt  */}
-            <Route path="AboutEgypt" element={<AboutEgypt />} />
-            {/* Travel Safety Tips */}
-            <Route path="travel-safety-tips" element={<TravelSafetyTips />} />
-          </Route>
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route element={<Layout />}>
+              {/* Define Home as the index route */}
+              <Route index element={<Home />} />
+              <Route path="sea-magic" element={<SeaMagic />} />
+              <Route path="nature-and-adventure" element={<NatureAndAdventure />} />
+              <Route path="antiquities-and-civilization" element={<AntiquitiesAndCivilization />} />
+              <Route path="about-egypt" element={<AboutEgypt />} />
+              <Route path="travel-tips" element={<TravelSafetyTips />} />
+              <Route path="/search-results" element={<SearchResults />} />
+              <Route path="plan-your-trip" element={<PlanYourTrip />} />
+              <Route path="coming-soon" element={<ComingSoon />} />
+              <Route path="important-numbers" element={<ImportantNumbers />} />
+              <Route path="help-support" element={<HelpSupport />} />
+              <Route path="*" element={<Error />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </div>
   );

@@ -11,7 +11,7 @@ function SeeGo({ type }) {
     case "Explore All":
       content = <ExperiencesAndToursContent />;
       break;
-    case "Activities & Attractions":
+    case "Activities":
       content = <ActivitiesAndAttractionsContent />;
       break;
     case "Food & Drink":
@@ -21,7 +21,7 @@ function SeeGo({ type }) {
       content = <ExperiencesAndToursContent />;
       break;
     default:
-      content = <div>No content available for this type</div>;
+      content = <ExperiencesAndToursContent />;
   }
 
   return <>{content}</>;

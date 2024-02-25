@@ -395,7 +395,7 @@ function SeaMagic() {
       <div className="container mt-5 mb-5">
         <div className="row mb-5">
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Sun and Sand Adventures in Egypt" : "مغامرات الشمس والرمال في مصر"}</h1>
-          <h4 style={{ fontSize: 21, color: "#333333" }}>
+          <h4 style={{ fontSize: 20, color: "rgb(62 62 62)" }}>
             {language == "en"
               ? "In addition to ancient wonders and captivating history, Egypt is not limited to mummies and pyramids only. Immerse yourself in the warm waters of the Red Sea teeming with colorful fish and coral reefs. Sail down the Nile River under a golden sunset. Enjoy relaxing on the sandy beaches, feeling the warm sun and calm waves. Kayak through hidden coves and lush mangroves. Fly on a kitesurf and feel the wind in your hair. This is Egypt, where sunny sands meet turquoise seas, providing an adventure playground beyond ancient wonders."
               : "وبالإضافة إلى العجائب القديمة والتاريخ الآسر، فإن مصر لا تقتصر على المومياوات والأهرامات فقط. انغمس في مياه البحر الأحمر الدافئة المليئة بالأسماك الملونة والشعاب المرجانية. الإبحار في نهر النيل تحت غروب الشمس الذهبي. استمتع بالاسترخاء على الشواطئ الرملية، والشعور بالشمس الدافئة والأمواج الهادئة. استمتع بقوارب الكاياك عبر الخلجان المخفية وأشجار المانغروف الخضراء. قم بالطيران على متن طائرة ورقية واشعر بالرياح وهي تداعب شعرك. هذه هي مصر، حيث تجتمع الرمال المشمسة مع البحار الفيروزية، مما يوفر ملعبًا للمغامرات يفوق العجائب القديمة."}

@@ -2,12 +2,19 @@ import { Op } from "sequelize";
 import Place from "../models/Place.js";
 import Review from "../models/Review.js";
 import PlacesImg from "../models/PlacesImg.js";
+import User from "../models/User.js";
 
 const PlaceController = {
   getAllPlaces: async (req, res) => {
     try {
       const places = await Place.findAll({
-        include: [{ model: Review }, { model: PlacesImg }],
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
       });
 
       const data = transformPlacesData(places);
@@ -24,7 +31,13 @@ const PlaceController = {
         where: {
           [Op.or]: [{ city_ar: city }, { city_en: city }],
         },
-        include: [{ model: Review }, { model: PlacesImg }],
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
       });
 
       const data = transformPlacesData(places);
@@ -41,7 +54,13 @@ const PlaceController = {
         where: {
           category: category,
         },
-        include: [{ model: Review }, { model: PlacesImg }],
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
       });
       const data = transformPlacesData(places);
       res.status(200).json(data);
@@ -49,9 +68,32 @@ const PlaceController = {
       res.status(400).json({ error: error.message });
     }
   },
+  getPlaceById: async (req, res) => {
+    const id = req.params.id;
+    try {
+      const place = await Place.findAll({
+        where: {
+          id: id,
+        },
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
+      });
+      const data = transformPlacesData(place);
+      res.status(200).json(data);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  },
 
   searchPlaces: async (req, res) => {
-    const { keyword } = req.params;
+    const { keyword } = req.body;
+
+    console.log(keyword);
 
     if (!keyword.trim()) {
       return res.status(400).json({ message: "No keyword provided for search" });
@@ -82,7 +124,13 @@ const PlaceController = {
             ],
           })),
         },
-        include: [{ model: Review }, { model: PlacesImg }],
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+          { model: PlacesImg },
+        ],
       });
 
       if (places.length === 0) {
@@ -91,6 +139,20 @@ const PlaceController = {
 
       const data = transformPlacesData(places);
       res.status(200).json(data);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  },
+  getByPriceRange: async (req, res) => {
+    const minPrice = parseFloat(req.body.min_price) || 0;
+    const maxPrice = parseFloat(req.body.max_price) || Infinity;
+    try {
+      const places = await Place.findAll({
+        where: {
+          [Op.and]: [{ min_price: { [Op.gte]: minPrice, [Op.lte]: maxPrice } }, { max_price: { [Op.lte]: maxPrice, [Op.gte]: minPrice } }],
+        },
+      });
+      res.json(places);
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
@@ -117,7 +179,16 @@ function transformPlacesData(places) {
       location_url: place.location_url,
       created_at: place.created_at,
       updated_on: place.updated_on,
-      reviews: place.Reviews,
+      reviews: place.Reviews.map((review) => ({
+        id: review.id,
+        review: review.review,
+        user: review.User
+          ? {
+              name: review.User.name,
+              email: review.User.email,
+            }
+          : null,
+      })),
       images: place.PlacesImgs,
     };
 
@@ -136,7 +207,16 @@ function transformPlacesData(places) {
       location_url: place.location_url,
       created_at: place.created_at,
       updated_on: place.updated_on,
-      reviews: place.Reviews,
+      reviews: place.Reviews.map((review) => ({
+        id: review.id,
+        review: review.review,
+        user: review.User
+          ? {
+              name: review.User.name,
+              email: review.User.email,
+            }
+          : null,
+      })),
       images: place.PlacesImgs,
     };
 

@@ -269,22 +269,22 @@ function AntiquitiesAndCivilization() {
                   <div className="card text-start antiquities-card border-0 shadow ">
                     <img className="card-img-top h-100 w-100" src={item.image} alt="Title" />
                     <div className="card-body">
-                      <h3 className="card-title">{item.place_name}</h3>
-                      <p className="card-text" style={{ fontSize: 17, color: "#333333" }}>
+                      <h3 className={`card-title ${language === "ar" ? "text-end" : ""}`}>{item.place_name}</h3>
+                      <p className={`card-text ${language === "ar" ? "text-end" : ""}`} style={{ fontSize: 17, color: "#333333" }}>
                         {item.description}
                       </p>
                       <hr className="beach-card-hr " />
-                      <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
+                      <button className={`btn fw-bold ${language === "ar" ? "text-end" : ""}`} style={{ color: "rgb(83, 187, 123)" }}>
                         <h5>{language === "en" ? "Learn More" : "أكتشف أكثر"}</h5>
                       </button>
                     </div>
                   </div>
-                </div>
+                </div >
               </>
             );
           })}
         </div>
-      </div>
+      </div >
       <Places />
     </>
   );
