@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import { useLanguage } from "./context/LanguageContext";
 import Loader from "./components/Loader/Loader";
+import City from "./components/CityPage/City";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
@@ -34,11 +35,12 @@ function App() {
               <Route path="antiquities-and-civilization" element={<AntiquitiesAndCivilization />} />
               <Route path="about-egypt" element={<AboutEgypt />} />
               <Route path="travel-tips" element={<TravelSafetyTips />} />
-              <Route path="/search-results" element={<SearchResults />} />
+              <Route path="search-results" element={<SearchResults />} />
               <Route path="plan-your-trip" element={<PlanYourTrip />} />
               <Route path="coming-soon" element={<ComingSoon />} />
               <Route path="important-numbers" element={<ImportantNumbers />} />
               <Route path="help-support" element={<HelpSupport />} />
+              <Route path="city" element={<City />} />
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>
