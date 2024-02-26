@@ -1,4 +1,4 @@
-import Review from "../models/Review.js";
+import { Review, User, Place } from "../models/index.js";
 
 const ReviewController = {
   createReview: async (req, res) => {

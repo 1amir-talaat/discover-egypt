@@ -1,8 +1,5 @@
 import { Op } from "sequelize";
-import Place from "../models/Place.js";
-import Review from "../models/Review.js";
-import PlacesImg from "../models/PlacesImg.js";
-import User from "../models/User.js";
+import { Place, PlacesImg, Review,User } from "../models/index.js";
 
 const PlaceController = {
   getAllPlaces: async (req, res) => {

@@ -1,7 +1,9 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/Connection.js";
 import User from "./User.js";
+import Place from "./Place.js";
 
+// Define the Review model
 const Review = sequelize.define("Review", {
   id: {
     type: DataTypes.INTEGER,
@@ -34,4 +36,5 @@ Review.belongsTo(User, { foreignKey: "user_id" });
   }
 })();
 
+// Export the Review model
 export default Review;

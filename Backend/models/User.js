@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/Connection.js";
-import Review from "./Review.js"; // Import Review model before referencing it
 
 const User = sequelize.define("User", {
   id: {
@@ -50,15 +49,5 @@ const User = sequelize.define("User", {
     },
   },
 });
-
-
-(async () => {
-  try {
-    await User.sync({ force: false });
-    console.log("User model synced with database");
-  } catch (err) {
-    console.error("Error syncing User model with database:", err);
-  }
-})();
 
 export default User;

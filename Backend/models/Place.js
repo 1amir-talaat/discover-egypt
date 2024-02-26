@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/Connection.js";
-import Review from "./Review.js";
 import PlacesImg from "./PlacesImg.js";
+import Review from "./Review.js";
 
 const Place = sequelize.define("Place", {
   id: {
@@ -68,8 +68,8 @@ const Place = sequelize.define("Place", {
   },
 });
 
-Place.hasMany(Review, { foreignKey: "place_id" });
 Place.hasMany(PlacesImg, { foreignKey: "place_id" });
+Place.hasMany(Review, { foreignKey: "place_id" });
 
 (async () => {
   try {
