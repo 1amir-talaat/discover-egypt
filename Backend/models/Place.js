@@ -17,6 +17,10 @@ const Place = sequelize.define("Place", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  image: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
   title_en: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -64,10 +68,6 @@ const Place = sequelize.define("Place", {
   updated_on: {
     type: DataTypes.DATE,
     allowNull: false,
-  },
-  image: {
-    type: DataTypes.STRING,
-    allowNull: true,
   },
 });
 

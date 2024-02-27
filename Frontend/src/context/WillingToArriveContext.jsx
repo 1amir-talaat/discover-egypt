@@ -32,14 +32,21 @@ const WillingToArriveProvider = ({ children }) => {
   useEffect(() => {
     const fetchWillingToArriveItems = async () => {
       try {
-        if (user) {
-          // Check if user is logged in
-          const response = await api.get(`/willing-to-arrive/${user.id}`);
-          dispatchWillingToArrive({
-            type: "SET_WILLING_TO_ARRIVE",
-            payload: response.data,
-          });
-        }
+        // if (user) {
+        // Check if user is logged in
+        const response = await api.get(`/willing-to-arrive/2`);
+        dispatchWillingToArrive({
+          type: "SET_WILLING_TO_ARRIVE",
+          payload: response.data,
+        });
+        console.log(response);
+
+        // }else{
+        //   dispatchWillingToArrive({
+        //     type: "SET_WILLING_TO_ARRIVE",
+        //     payload: [],
+        //   });
+        // }
       } catch (error) {
         console.error("Error fetching Willing to Arrive items:", error);
       }
