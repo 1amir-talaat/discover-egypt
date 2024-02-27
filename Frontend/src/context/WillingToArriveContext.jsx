@@ -52,7 +52,7 @@ const WillingToArriveProvider = ({ children }) => {
     };
 
     fetchWillingToArriveItems();
-  }, [user]);
+  }, [user, language]);
 
   const addToWillingToArrive = async (placeId) => {
     try {
@@ -77,7 +77,7 @@ const WillingToArriveProvider = ({ children }) => {
   const removeFromWillingToArrive = async (placeId) => {
     try {
       await api.delete("/willing-to-arrive", {
-        data: { userId: user.id, placeId },
+        data: { userId: 2, placeId },
       });
       dispatchWillingToArrive({
         type: "REMOVE_FROM_WILLING_TO_ARRIVE",
