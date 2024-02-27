@@ -54,12 +54,56 @@ const WillingToArriveController = {
   getWillingToArriveByUser: async (req, res) => {
     const { userId } = req.params;
     try {
+      // Retrieve items from the database including associated places
       const items = await WillingToArrive.findAll({
         where: { userId },
         include: Place,
       });
 
-      res.status(200).json(items);
+      // Transform the data to match the desired structure for both Arabic and English
+      const transformedItems = {
+        ar: items.map((item) => ({
+          id: item.id,
+          userId: item.userId,
+          place: {
+            id: item.Place.id,
+            city: item.Place.city_ar,
+            title: item.Place.title_ar,
+            desc: item.Place.desc_ar,
+            min_price: item.Place.min_price,
+            max_price: item.Place.max_price,
+            place_name: item.Place.place_name,
+            category: item.Place.category,
+            sub_category: item.Place.sub_category,
+            location_url: item.Place.location_url,
+            created_at: item.Place.created_at,
+            updated_on: item.Place.updated_on,
+            image: item.Place.image,
+          },
+        })),
+        en: items.map((item) => ({
+          id: item.id,
+          userId: item.userId,
+          place: {
+            id: item.Place.id,
+            city: item.Place.city_en,
+            title: item.Place.title_en,
+            desc: item.Place.desc_en,
+            min_price: item.Place.min_price,
+            max_price: item.Place.max_price,
+            place_name: item.Place.place_name,
+            category: item.Place.category,
+            sub_category: item.Place.sub_category,
+            location_url: item.Place.location_url,
+            created_at: item.Place.created_at,
+            updated_on: item.Place.updated_on,
+            image: item.Place.image,
+          },
+        })),
+      };
+
+      // Return the transformed data
+      res.status(200).json(transformedItems);
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
