@@ -8,7 +8,12 @@ const PlaceController = {
         include: [
           {
             model: Review,
-            include: [{ model: User, attributes: ["name", "email"] }],
+            include: [
+              {
+                model: User,
+                attributes: ["name", "email"],
+              },
+            ],
           },
         ],
       });
@@ -189,6 +194,7 @@ function transformPlacesData(places) {
             }
           : null,
       })),
+      // Ensure that 'place.image' is used to access the image field
       image: place.image,
     };
 

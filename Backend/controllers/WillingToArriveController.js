@@ -56,7 +56,7 @@ const WillingToArriveController = {
     try {
       const items = await WillingToArrive.findAll({
         where: { userId },
-        include: { include: [Place] },
+        include: Place,
       });
 
       res.status(200).json(items);
