@@ -12,7 +12,7 @@ function Carousel() {
   const { language } = useLanguage();
   // to handle prev and next buttons
   const [carouselSwiperRef, setCarouselSwiperRef] = useState(null);
-  console.log(language);
+  // console.log(language);
   const prevHandler = () => {
     carouselSwiperRef.slidePrev();
   };

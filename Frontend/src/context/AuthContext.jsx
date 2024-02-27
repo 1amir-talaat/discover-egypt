@@ -30,7 +30,7 @@ const authReducer = (state, action) => {
   }
 };
 
-const axiosBase = axios.create({
+const api = axios.create({
   baseURL: "http://localhost:5000",
 });
 
@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axiosBase.post("/users/login", { email, password });
+      const response = await api.post("/users/login", { email, password });
       const { user, token } = response.data;
       dispatch({ type: "LOGIN", payload: { user, token } });
     } catch (error) {
@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const response = await axiosBase.post("/users/register", { name, email, password });
+      const response = await api.post("/users/register", { name, email, password });
       const { user, token } = response.data;
       dispatch({ type: "LOGIN", payload: { user, token } });
     } catch (error) {

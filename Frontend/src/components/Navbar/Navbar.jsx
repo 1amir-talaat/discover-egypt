@@ -153,7 +153,7 @@ function Navbar() {
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
   const stickyNav = location.pathname === "/coming-soon" ? "sticky-top" : "fixed-top";
 
-  console.log(location.pathname);
+  // console.log(location.pathname);
 
   // eslint-disable-next-line react/prop-types
   const DropdownContent = ({ type }) => {
