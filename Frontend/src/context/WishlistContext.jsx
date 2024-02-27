@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import { useAuth } from "./AuthContext";
-
+import PropTypes from "prop-types";
 const WishlistContext = createContext();
 
 const wishlistReducer = (state, action) => {
@@ -43,8 +43,14 @@ const WishlistProvider = ({ children }) => {
   const addToWishlist = async (productId, loader) => {
     try {
       loader(true);
-      const response = await api.post("/wishlist/add", { userId: user.id, productId });
-      dispatchWishlist({ type: "ADD_TO_WISHLIST", payload: response.data.wishlistItem });
+      const response = await api.post("/wishlist/add", {
+        userId: user.id,
+        productId,
+      });
+      dispatchWishlist({
+        type: "ADD_TO_WISHLIST",
+        payload: response.data.wishlistItem,
+      });
       loader(false);
     } catch (error) {
       console.error("Error adding to wishlist:", error);
@@ -55,7 +61,9 @@ const WishlistProvider = ({ children }) => {
   const removeFromWishlist = async (productId, loader) => {
     try {
       loader(true);
-      await api.delete(`/wishlist/remove/${productId}`, { data: { userId: user.id } });
+      await api.delete(`/wishlist/remove/${productId}`, {
+        data: { userId: user.id },
+      });
       dispatchWishlist({ type: "REMOVE_FROM_WISHLIST", payload: productId });
       loader(false);
     } catch (error) {
@@ -64,7 +72,16 @@ const WishlistProvider = ({ children }) => {
     }
   };
 
-  return <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist }}>{children}</WishlistContext.Provider>;
+  return (
+    <WishlistContext.Provider
+      value={{ wishlist, addToWishlist, removeFromWishlist }}
+    >
+      {children}
+    </WishlistContext.Provider>
+  );
+};
+WishlistProvider.propTypes = {
+  children: PropTypes.node.isRequired, // Ensure children is a valid React node
 };
 
 const useWishlist = () => {
