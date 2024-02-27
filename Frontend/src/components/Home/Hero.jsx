@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import { useEffect, useState } from "react";
 import data from "./hero.json";
-import "swiper/swiper-bundle.css";
+import "swiper/css";
+import "swiper/css/effect-cards";
 import "./hero.css";
 
 function Hero() {
@@ -11,7 +12,7 @@ function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [heroSwiper, setHeroSwiper] = useState(null);
 
-  const heroData = data[language] || []; 
+  const heroData = data[language] || [];
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.realIndex);
@@ -71,12 +72,18 @@ function Hero() {
             <div className="hero-text-content">
               {heroData.length > 0 && (
                 <>
-                  <h1 className="hero-text-title">{heroData[activeIndex].title}</h1>
-                  <p className="hero-text-description">{heroData[activeIndex].description}</p>
+                  <h1 className="hero-text-title">
+                    {heroData[activeIndex].title}
+                  </h1>
+                  <p className="hero-text-description">
+                    {heroData[activeIndex].description}
+                  </p>
                 </>
               )}
             </div>
-            <a className="hero-btn">{language === "ar" ? "اعرف اكثر" : "learn more"}</a>
+            <a className="hero-btn">
+              {language === "ar" ? "اعرف اكثر" : "learn more"}
+            </a>
           </div>
           <div className="hero-slider">
             <Swiper
@@ -100,7 +107,11 @@ function Hero() {
         </div>
         <div className="tab-area">
           {heroData.map((d, index) => (
-            <div key={index} className={`tab-item ${activeIndex === index ? "active" : ""}`} onClick={() => handleTabClick(index)}>
+            <div
+              key={index}
+              className={`tab-item ${activeIndex === index ? "active" : ""}`}
+              onClick={() => handleTabClick(index)}
+            >
               <div className="tab-title">{d.title}</div>
             </div>
           ))}
