@@ -1,5 +1,5 @@
 import { Op } from "sequelize";
-import { Place, PlacesImg, Review,User } from "../models/index.js";
+import { Place, Review, User } from "../models/index.js";
 
 const PlaceController = {
   getAllPlaces: async (req, res) => {
@@ -10,7 +10,6 @@ const PlaceController = {
             model: Review,
             include: [{ model: User, attributes: ["name", "email"] }],
           },
-          { model: PlacesImg },
         ],
       });
 
@@ -33,7 +32,6 @@ const PlaceController = {
             model: Review,
             include: [{ model: User, attributes: ["name", "email"] }],
           },
-          { model: PlacesImg },
         ],
       });
 
@@ -56,7 +54,6 @@ const PlaceController = {
             model: Review,
             include: [{ model: User, attributes: ["name", "email"] }],
           },
-          { model: PlacesImg },
         ],
       });
       const data = transformPlacesData(places);
@@ -68,19 +65,18 @@ const PlaceController = {
   getPlaceById: async (req, res) => {
     const id = req.params.id;
     try {
-      const place = await Place.findAll({
-        where: {
-          id: id,
-        },
+      const place = await Place.findByPk(id, {
         include: [
           {
             model: Review,
             include: [{ model: User, attributes: ["name", "email"] }],
           },
-          { model: PlacesImg },
         ],
       });
-      const data = transformPlacesData(place);
+      if (!place) {
+        return res.status(404).json({ message: "Place not found" });
+      }
+      const data = transformPlaceData(place);
       res.status(200).json(data);
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -126,7 +122,6 @@ const PlaceController = {
             model: Review,
             include: [{ model: User, attributes: ["name", "email"] }],
           },
-          { model: PlacesImg },
         ],
       });
 
@@ -140,6 +135,7 @@ const PlaceController = {
       res.status(400).json({ error: error.message });
     }
   },
+
   getByPriceRange: async (req, res) => {
     const minPrice = parseFloat(req.body.min_price) || 0;
     const maxPrice = parseFloat(req.body.max_price) || Infinity;
@@ -148,8 +144,15 @@ const PlaceController = {
         where: {
           [Op.and]: [{ min_price: { [Op.gte]: minPrice, [Op.lte]: maxPrice } }, { max_price: { [Op.lte]: maxPrice, [Op.gte]: minPrice } }],
         },
+        include: [
+          {
+            model: Review,
+            include: [{ model: User, attributes: ["name", "email"] }],
+          },
+        ],
       });
-      res.json(places);
+      const data = transformPlacesData(places);
+      res.status(200).json(data);
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
@@ -186,36 +189,12 @@ function transformPlacesData(places) {
             }
           : null,
       })),
-      images: place.PlacesImgs,
+      image: place.image,
     };
 
     data.ar.push(transformedPlace);
 
-    const transformedPlaceEn = {
-      id: place.id,
-      city: place.city_en,
-      title: place.title_en,
-      desc: place.desc_en,
-      min_price: place.min_price,
-      max_price: place.max_price,
-      place_name: place.place_name,
-      category: place.category,
-      sub_category: place.sub_category,
-      location_url: place.location_url,
-      created_at: place.created_at,
-      updated_on: place.updated_on,
-      reviews: place.Reviews.map((review) => ({
-        id: review.id,
-        review: review.review,
-        user: review.User
-          ? {
-              name: review.User.name,
-              email: review.User.email,
-            }
-          : null,
-      })),
-      images: place.PlacesImgs,
-    };
+    const transformedPlaceEn = { ...transformedPlace, city: place.city_en, title: place.title_en, desc: place.desc_en };
 
     data.en.push(transformedPlaceEn);
   });

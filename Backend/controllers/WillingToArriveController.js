@@ -1,9 +1,4 @@
-import {
-  WillingToArrive,
-  User,
-  Place,
-  PlacesImg,
-} from "../models/index.js";
+import { WillingToArrive, User, Place } from "../models/index.js";
 
 const WillingToArriveController = {
   // Add a new item to the "Willing to Arrive" list
@@ -24,9 +19,7 @@ const WillingToArriveController = {
         placeId,
       });
 
-      res
-        .status(201)
-        .json({ message: "Added to Willing to Arrive list", willingToArrive });
+      res.status(201).json({ message: "Added to Willing to Arrive list", willingToArrive });
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
@@ -45,9 +38,7 @@ const WillingToArriveController = {
       });
 
       if (!willingToArrive) {
-        return res
-          .status(404)
-          .json({ message: "Item not found in Willing to Arrive list" });
+        return res.status(404).json({ message: "Item not found in Willing to Arrive list" });
       }
 
       // Delete the entry
@@ -65,7 +56,7 @@ const WillingToArriveController = {
     try {
       const items = await WillingToArrive.findAll({
         where: { userId },
-        include: [{ model: Place, include: [PlacesImg] }],
+        include: { include: [Place] },
       });
 
       res.status(200).json(items);
