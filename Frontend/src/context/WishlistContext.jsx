@@ -37,7 +37,7 @@ const WillingToArriveProvider = ({ children }) => {
     };
 
     fetchWillingToArriveItems();
-  }, []);
+  }, [user]);
 
   const addToWillingToArrive = async (placeId) => {
     try {
