@@ -1,4 +1,4 @@
-import { WillingToArrive, User, Place } from "../models/index.js";
+import { WillingToArrive, User, Place, PlaceImgModel } from "../models/index.js";
 
 const WillingToArriveController = {
   // Add a new item to the "Willing to Arrive" list
@@ -56,7 +56,7 @@ const WillingToArriveController = {
     try {
       const items = await WillingToArrive.findAll({
         where: { userId },
-        include: [Place], // Include place details in the response
+        include: [{ model: Place, include: [PlaceImgModel] }],
       });
 
       res.status(200).json(items);
@@ -65,7 +65,5 @@ const WillingToArriveController = {
     }
   },
 };
-
-
 
 export default WillingToArriveController;
