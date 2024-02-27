@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { useAuth } from "./AuthContext";
+import { useLanguage } from "./LanguageContext";
 
 const WillingToArriveContext = createContext();
 
@@ -24,10 +25,8 @@ const api = axios.create({
 
 const WillingToArriveProvider = ({ children }) => {
   const { user } = useAuth();
-  const [willingToArrive, dispatchWillingToArrive] = useReducer(
-    willingToArriveReducer,
-    []
-  );
+  const { language } = useLanguage();
+  const [willingToArrive, dispatchWillingToArrive] = useReducer(willingToArriveReducer, []);
 
   useEffect(() => {
     const fetchWillingToArriveItems = async () => {
@@ -37,7 +36,7 @@ const WillingToArriveProvider = ({ children }) => {
         const response = await api.get(`/willing-to-arrive/2`);
         dispatchWillingToArrive({
           type: "SET_WILLING_TO_ARRIVE",
-          payload: response.data,
+          payload: response.data[language],
         });
         console.log(response);
 
@@ -106,9 +105,7 @@ const WillingToArriveProvider = ({ children }) => {
 const useWillingToArrive = () => {
   const context = useContext(WillingToArriveContext);
   if (!context) {
-    throw new Error(
-      "useWillingToArrive must be used within a WillingToArriveProvider"
-    );
+    throw new Error("useWillingToArrive must be used within a WillingToArriveProvider");
   }
   return context;
 };
