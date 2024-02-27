@@ -32,6 +32,9 @@ const ImportantNumbers = lazy(() =>
 const HelpSupport = lazy(() => import("./components/HelpSupport/HelpSupport"));
 const Error = lazy(() => import("./components/Error/Error"));
 const City = lazy(() => import("./components/CityPage/City"));
+const WillingToArrive = lazy(() =>
+  import("./components/Willing to arrive/WillingToArrive")
+);
 function App() {
   const { language } = useLanguage();
 
@@ -60,6 +63,7 @@ function App() {
               <Route path="important-numbers" element={<ImportantNumbers />} />
               <Route path="help-support" element={<HelpSupport />} />
               <Route path="city" element={<City />} />
+              <Route path="willing-to-arrive" element={<WillingToArrive />} />
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>
