@@ -3,22 +3,35 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import { useLanguage } from "./context/LanguageContext";
 import Loader from "./components/Loader/Loader";
-import City from "./components/CityPage/City";
+
+import "swiper/css";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
 const SeaMagic = lazy(() => import("./components/Sea Magic/SeaMagic"));
-const NatureAndAdventure = lazy(() => import("./components/Nature And Adventure/NatureAndAdventure"));
-const AntiquitiesAndCivilization = lazy(() => import("./components/Antiquities and Civilization/AntiquitiesAndCivilization"));
+const NatureAndAdventure = lazy(() =>
+  import("./components/Nature And Adventure/NatureAndAdventure")
+);
+const AntiquitiesAndCivilization = lazy(() =>
+  import("./components/Antiquities and Civilization/AntiquitiesAndCivilization")
+);
 const AboutEgypt = lazy(() => import("./components/AboutEgypt/AboutEgypt"));
-const TravelSafetyTips = lazy(() => import("./pages/travel-safety-tips/TravelSafetyTips"));
-const SearchResults = lazy(() => import("./components/search-results/SearchResults"));
-const PlanYourTrip = lazy(() => import("./components/PlanYourTrip/PlanYourTrip"));
+const TravelSafetyTips = lazy(() =>
+  import("./pages/travel-safety-tips/TravelSafetyTips")
+);
+const SearchResults = lazy(() =>
+  import("./components/search-results/SearchResults")
+);
+const PlanYourTrip = lazy(() =>
+  import("./components/PlanYourTrip/PlanYourTrip")
+);
 const ComingSoon = lazy(() => import("./components/ComingSoon/ComingSoon"));
-const ImportantNumbers = lazy(() => import("./components/ImportantNumbers/ImportantNumbers"));
+const ImportantNumbers = lazy(() =>
+  import("./components/ImportantNumbers/ImportantNumbers")
+);
 const HelpSupport = lazy(() => import("./components/HelpSupport/HelpSupport"));
 const Error = lazy(() => import("./components/Error/Error"));
-
+const City = lazy(() => import("./components/CityPage/City"));
 function App() {
   const { language } = useLanguage();
 
@@ -31,8 +44,14 @@ function App() {
               {/* Define Home as the index route */}
               <Route index element={<Home />} />
               <Route path="sea-magic" element={<SeaMagic />} />
-              <Route path="nature-and-adventure" element={<NatureAndAdventure />} />
-              <Route path="antiquities-and-civilization" element={<AntiquitiesAndCivilization />} />
+              <Route
+                path="nature-and-adventure"
+                element={<NatureAndAdventure />}
+              />
+              <Route
+                path="antiquities-and-civilization"
+                element={<AntiquitiesAndCivilization />}
+              />
               <Route path="about-egypt" element={<AboutEgypt />} />
               <Route path="travel-tips" element={<TravelSafetyTips />} />
               <Route path="search-results" element={<SearchResults />} />
