@@ -23,9 +23,7 @@ function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (heroSwiper) {
-        const nextIndex = (activeIndex + 1) % heroSwiper.slides.length;
-        setActiveIndex(nextIndex);
-        heroSwiper.slideTo(nextIndex);
+        heroSwiper.slideNext();
       }
     }, 5000);
 
