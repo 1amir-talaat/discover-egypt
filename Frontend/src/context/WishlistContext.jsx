@@ -1,17 +1,18 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import PropTypes from "prop-types";
 import axios from "axios";
 import { useAuth } from "./AuthContext";
-import PropTypes from "prop-types";
-const WishlistContext = createContext();
 
-const wishlistReducer = (state, action) => {
+const WillingToArriveContext = createContext();
+
+const willingToArriveReducer = (state, action) => {
   switch (action.type) {
-    case "SET_WISHLIST":
+    case "SET_WILLING_TO_ARRIVE":
       return action.payload;
-    case "ADD_TO_WISHLIST":
+    case "ADD_TO_WILLING_TO_ARRIVE":
       return [...state, action.payload];
-    case "REMOVE_FROM_WISHLIST":
-      return state.filter((item) => item.productId !== action.payload);
+    case "REMOVE_FROM_WILLING_TO_ARRIVE":
+      return state.filter((item) => item.placeId !== action.payload);
     default:
       return state;
   }
@@ -21,75 +22,61 @@ const api = axios.create({
   baseURL: "http://localhost:5000",
 });
 
-const WishlistProvider = ({ children }) => {
+const WillingToArriveProvider = ({ children }) => {
   const { user } = useAuth();
-  const [wishlist, dispatchWishlist] = useReducer(wishlistReducer, []);
+  const [willingToArrive, dispatchWillingToArrive] = useReducer(willingToArriveReducer, []);
 
   useEffect(() => {
-    const fetchWishlistItems = async () => {
+    const fetchWillingToArriveItems = async () => {
       try {
-        const response = await api.get(`/wishlist/items/${user.id}`);
-        dispatchWishlist({ type: "SET_WISHLIST", payload: response.data });
+        const response = await api.get(`/willing-to-arrive/${user.id}`);
+        dispatchWillingToArrive({ type: "SET_WILLING_TO_ARRIVE", payload: response.data });
       } catch (error) {
-        console.error("Error fetching wishlist items:", error);
+        console.error("Error fetching Willing to Arrive items:", error);
       }
     };
 
-    if (user) {
-      fetchWishlistItems();
-    }
-  }, [user]);
+    fetchWillingToArriveItems();
+  }, []);
 
-  const addToWishlist = async (productId, loader) => {
+  const addToWillingToArrive = async (placeId) => {
     try {
-      loader(true);
-      const response = await api.post("/wishlist/add", {
-        userId: user.id,
-        productId,
-      });
-      dispatchWishlist({
-        type: "ADD_TO_WISHLIST",
-        payload: response.data.wishlistItem,
-      });
-      loader(false);
+      const response = await api.post("/willing-to-arrive", { userId: user.id, placeId });
+      dispatchWillingToArrive({ type: "ADD_TO_WILLING_TO_ARRIVE", payload: response.data.willingToArrive });
     } catch (error) {
-      console.error("Error adding to wishlist:", error);
+      console.error("Error adding to Willing to Arrive:", error);
       throw error;
     }
   };
 
-  const removeFromWishlist = async (productId, loader) => {
+  WillingToArriveProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
+
+  const removeFromWillingToArrive = async (placeId) => {
     try {
-      loader(true);
-      await api.delete(`/wishlist/remove/${productId}`, {
-        data: { userId: user.id },
-      });
-      dispatchWishlist({ type: "REMOVE_FROM_WISHLIST", payload: productId });
-      loader(false);
+      await api.delete("/willing-to-arrive", { data: { userId: user.id, placeId } });
+      dispatchWillingToArrive({ type: "REMOVE_FROM_WILLING_TO_ARRIVE", payload: placeId });
     } catch (error) {
-      console.error("Error removing item from wishlist:", error);
+      console.error("Error removing item from Willing to Arrive:", error);
       throw error;
     }
   };
 
   return (
-    <WishlistContext.Provider
-      value={{ wishlist, addToWishlist, removeFromWishlist }}
-    >
+    <WillingToArriveContext.Provider value={{ willingToArrive, addToWillingToArrive, removeFromWillingToArrive }}>
       {children}
-    </WishlistContext.Provider>
+    </WillingToArriveContext.Provider>
   );
 };
-WishlistProvider.propTypes = {
-  children: PropTypes.node.isRequired, // Ensure children is a valid React node
-};
 
-const useWishlist = () => {
-  const context = useContext(WishlistContext);
+const useWillingToArrive = () => {
+  const context = useContext(WillingToArriveContext);
   if (!context) {
-    throw new Error("useWishlist must be used within a WishlistProvider");
+    throw new Error("useWillingToArrive must be used within a WillingToArriveProvider");
   }
   return context;
 };
 
-export { WishlistProvider, useWishlist };
+export { WillingToArriveProvider, useWillingToArrive };
+
