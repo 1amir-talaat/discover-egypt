@@ -12,14 +12,20 @@ function NatureAndAdventure() {
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/category/Civilization")
-      .then(response => { setPlaces(response.data); })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/category/Civilization");
+        const data = await response.json();
+        setPlaces(data[language]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  console.log(places.ar);
+    fetchData();
+  }, [language]);
+
+  console.log(places);
 
   return (
     <>
@@ -40,7 +46,7 @@ function NatureAndAdventure() {
         <div className="row">
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Discover the Nature of Egypt" : "اكتشف الطبيعة في مصر    "}</h1>
 
-          <Card data={places.language} />
+          <Card data={places} />
         </div>
       </div>
       <Places />
