@@ -10,3 +10,20 @@
 .antiquities-card:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
 }
+
+.video-box {
+  position: relative;
+  justify-content: center;
+  min-height: 65vh;
+  text-align: center;
+}
+.video-box video {
+  filter: brightness(75%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}

@@ -13,6 +13,8 @@ function Layout() {
     "/travel-tips",
     "/plan-your-trip",
     "/help-support",
+    "/important-numbers"
+
   ];
   var outletStyles = validPaths.includes(location.pathname) ? {} : { paddingTop: 128 };
 
