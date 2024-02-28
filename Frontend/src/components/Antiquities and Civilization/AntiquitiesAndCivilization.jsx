@@ -10,58 +10,6 @@ function AntiquitiesAndCivilization() {
     language == "en"
       ? [
         {
-          id: 1,
-          place_name: "Pyramids of Giza",
-          description:
-            "Visit the iconic Pyramids of Giza, including the Great Pyramid, the Pyramid of Khafre, the Pyramid of Menkaure, and the Sphinx.",
-          image: "https://images.pexels.com/photos/3522880/pexels-photo-3522880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 2,
-          place_name: "Luxor",
-          description:
-            "Explore the Karnak Temple Complex, Luxor Temple, the Valley of the Kings, and the Valley of the Queens in this ancient city.",
-          image:
-            "https://images.pexels.com/photos/18934723/pexels-photo-18934723/free-photo-of-sphinxes-in-karnak-temple-complex-in-luxor-egypt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 3,
-          place_name: "The Egyptian Museum",
-          description: "Discover ancient Egyptian artifacts, including the treasures of Tutankhamun, at the Egyptian Museum in Cairo.",
-          image: "https://images.pexels.com/photos/4353815/pexels-photo-4353815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 4,
-          place_name: "Abu Simbel Temples",
-          description: "Marvel at the twin temples of Abu Simbel, built during the reign of Pharaoh Ramesses II, near the border with Sudan.",
-          image: "https://images.pexels.com/photos/5488754/pexels-photo-5488754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 5,
-          place_name: "Philae Temple",
-          description: "Visit the beautiful Philae Temple, dedicated to the goddess Isis, located on an island in the Nile River near Aswan.",
-          image:
-            "https://images.pexels.com/photos/15131476/pexels-photo-15131476/free-photo-of-ruins-of-philae-temple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 6,
-          place_name: "Saqqara",
-          description: "See the Step Pyramid of Djoser, one of the earliest colossal stone buildings in Egypt, in the ancient city of Saqqara.",
-          image: "https://images.pexels.com/photos/14210392/pexels-photo-14210392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 8,
-          place_name: "Abydos",
-          description: "Visit the Temple of Seti I and the Osireion in the ancient city of Abydos, located in Upper Egypt.",
-          image: "https://cdn.britannica.com/14/126714-050-147457C7/Temple-of-Seti-I-Abydos-Egypt.jpg?w=740&h=416&c=crop",
-        },
-        {
-          id: 9,
-          place_name: "Dendera Temple Complex",
-          description: "Admire the well-preserved Greco-Roman architecture and stunning astronomical ceiling of the Dendera Temple Complex.",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dendera_7_977.PNG/1280px-Dendera_7_977.PNG",
-        },
-        {
           id: 11,
           place_name: "Temple of Edfu",
           description: "Discover the well-preserved Temple of Edfu, dedicated to the falcon god Horus, on the west bank of the Nile River.",
@@ -131,56 +79,6 @@ function AntiquitiesAndCivilization() {
         },
       ]
       : [
-        {
-          id: 1,
-          place_name: "أهرامات الجيزة",
-          description: "زوروا الأهرامات الشهيرة في الجيزة، بما في ذلك الهرم الأكبر، وهرم خفرع، وهرم منقرع، وتمثال أبو الهول.",
-          image: "https://images.pexels.com/photos/3522880/pexels-photo-3522880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 2,
-          place_name: "الأقصر",
-          description: "استكشف معبد كرنك، ومعبد الأقصر، ووادي الملوك، ووادي الملكات في هذه المدينة القديمة.",
-          image:
-            "https://images.pexels.com/photos/18934723/pexels-photo-18934723/free-photo-of-sphinxes-in-karnak-temple-complex-in-luxor-egypt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 3,
-          place_name: "المتحف المصري",
-          description: "اكتشف القطع الأثرية المصرية القديمة، بما في ذلك كنوز توت عنخ آمون، في المتحف المصري بالقاهرة.",
-          image: "https://images.pexels.com/photos/4353815/pexels-photo-4353815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 4,
-          place_name: "معابد أبو سمبل",
-          description: "تعجزد على معابدي أبو سمبل، التي بناها الفرعون رمسيس الثاني، بالقرب من الحدود مع السودان.",
-          image: "https://images.pexels.com/photos/5488754/pexels-photo-5488754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 5,
-          place_name: "معبد فيلة",
-          description: "زور معبد فيلة الجميل، المكرس لآلهة آيزيس، الواقع على جزيرة في نهر النيل بالقرب من أسوان.",
-          image:
-            "https://images.pexels.com/photos/15131476/pexels-photo-15131476/free-photo-of-ruins-of-philae-temple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 6,
-          place_name: "سقارة",
-          description: "انظر إلى هرم جوزر، واحدة من أقدم المباني الضخمة في مصر القديمة، في مدينة سقارة القديمة.",
-          image: "https://images.pexels.com/photos/14210392/pexels-photo-14210392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-          id: 8,
-          place_name: "أبيدوس",
-          description: "قم بزيارة معبد سيتي الأول والأوسيريون في مدينة أبيدوس القديمة، الواقعة في صعيد مصر.",
-          image: "https://cdn.britannica.com/14/126714-050-147457C7/Temple-of-Seti-I-Abydos-Egypt.jpg?w=740&h=416&c=crop",
-        },
-        {
-          id: 9,
-          place_name: "معبد دندرة",
-          description: "أعجب بالعمارة الهيلينية الرومانية المحفوظة جيدًا والسقف الفلكي الرائع لمعبد دندرة.",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dendera_7_977.PNG/1280px-Dendera_7_977.PNG",
-        },
         {
           id: 11,
           place_name: "معبد إدفو",
