@@ -7,7 +7,7 @@ function TravelSafetyTips() {
   return (
     <div className="travel-safety-tips">
       <div className={`landing d-flex align-items-center ${language != "ar" ? "landing-en" : ""}`}>
-        <h1 className="container">{language == "ar" ? "نصائح حول السفر الآمن إلى مصر" : "Health and safety travel tips"}</h1>zz
+        <h1 className="container fw-bold" style={{marginTop:300}}>{language == "ar" ? "نصائح حول السفر الآمن إلى مصر" : "Health and safety travel tips"}</h1>
         <div className="shadow-1"></div>
         <div className="shadow-2"></div>
       </div>
