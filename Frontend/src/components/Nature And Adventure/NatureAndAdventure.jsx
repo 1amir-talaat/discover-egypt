@@ -177,6 +177,8 @@ function NatureAndAdventure() {
         },
       ];
 
+
+
   return (
     <>
       <div className="video-box">
@@ -196,7 +198,7 @@ function NatureAndAdventure() {
         <div className="row">
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Discover the Nature of Egypt" : "اكتشف الطبيعة في مصر    "}</h1>
 
-          <Card data={AntiquitiesAndCivilizationPlaces}/>
+          <Card data={AntiquitiesAndCivilizationPlaces} />
         </div>
       </div>
       <Places />

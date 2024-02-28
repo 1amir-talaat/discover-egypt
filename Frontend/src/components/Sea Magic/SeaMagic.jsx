@@ -9,8 +9,10 @@ function SeaMagic() {
   const langDirection = language == "en" ? "ltr" : "rtl";
 
 
+  
 
-  const testing_data =
+
+  const static_data =
     language == "en"
       ? [
         {
@@ -412,7 +414,7 @@ function SeaMagic() {
             key={langDirection}
             className="ms-3 mt-3"
           >
-            {testing_data.map((item, index) => (
+            {static_data.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="test w-100 position-relative seamagic-card">
                   <div className="seamagic-best-for position-absolute z-1">
