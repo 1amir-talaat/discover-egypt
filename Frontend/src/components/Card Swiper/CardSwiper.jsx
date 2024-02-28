@@ -41,10 +41,10 @@ function CardSwiper({ data }) {
             <div className="card cardy border-0 shadow w-100 position-relative mb-5">
               {user && (
                 <div className="add-to-wishlist">
-                  {willingToArrive.some((i) => i.placeId === item.placeId) ? (
-                    <FaHeart onClick={() => removeFromWillingToArrive(item.placeId)} />
+                  {willingToArrive.some((i) => i.id === item.id) ? (
+                    <FaHeart onClick={() => removeFromWillingToArrive(item.id)} />
                   ) : (
-                    <FaRegHeart onClick={() => addToWillingToArrive(item.placeId)} />
+                    <FaRegHeart onClick={() => addToWillingToArrive(item.id)} />
                   )}
                 </div>
               )}
@@ -53,8 +53,8 @@ function CardSwiper({ data }) {
                 <p style={{ color: "gray", fontSize: 20 }}>
                   {item.price === "مجاناً" || item.price === "Free" ? item.price : language === "en" ? `$${item.price}` : `${item.price * 15} جنيه`}
                 </p>
-                <h2>{item.activity_name}</h2>
-                <h5>{item.description}</h5>
+                <h2>{item.title}</h2>
+                <h5>{item.desc}</h5>
               </div>
               <hr />
               <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
