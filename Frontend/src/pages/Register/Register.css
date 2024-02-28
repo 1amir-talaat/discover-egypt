@@ -1,0 +1,13 @@
+.register-icon-div {
+    border-radius: 5px;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.register-button {
+    background-color: #087e8c;
+}
+
+.register-button:hover {
+    background-color: #33a1ad;
+}

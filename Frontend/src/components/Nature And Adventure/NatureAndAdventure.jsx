@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { useLanguage } from "../../context/LanguageContext";
 import Places from "../Home/Places";
 import heroVideo from "./video/NatureAndAdventure.mp4";
