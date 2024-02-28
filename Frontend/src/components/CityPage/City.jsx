@@ -1,9 +1,29 @@
 import { useState, useEffect } from "react";
 import "./City.css";
 import { useLanguage } from "../../context/LanguageContext";
-
+import { useAuth } from "../../context/AuthContext";
 function City() {
   const { language } = useLanguage();
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+  const { user } = useAuth();
+  console.log(user)
+  const handleCommentChange = (e) => {
+    setNewComment(e.target.value);
+  };
+  const handleAddComment = () => {
+    if (newComment.trim() !== "") {
+      const updatedComments = [...comments, newComment];
+      setComments(updatedComments);
+      setNewComment("");
+    }
+  };
+  const handleDeleteComment = (index) => {
+    const updatedComments = [...comments];
+    updatedComments.splice(index, 1);
+    setComments(updatedComments);
+  };
+
   const dummy_data =
     language === "en"
       ? {
@@ -29,9 +49,8 @@ function City() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200 && window.scrollY<660) {
+      if (window.scrollY > 200 && window.scrollY < 660) {
         setIsSticky(true);
-        console.log(window.scrollY);
       } else {
         setIsSticky(false);
       }
@@ -97,13 +116,45 @@ function City() {
         </div>
         <div className="my-4 overview-city">
           <h3>{language === "en" ? "Add Comment" : "اضف تعليق"}</h3>
-          <input
-            type="text"
-            className="form-control"
-            placeholder={
-              language === "en" ? "Add your comment here" : "اضف تعليقك هنا"
-            }
-          />
+          <div className="input-group">
+            <input
+              type="text"
+              className="form-control"
+              value={newComment}
+              onChange={handleCommentChange}
+              placeholder={
+                language === "en" ? "Add your comment here" : "اضف تعليقك هنا"
+              }
+            />
+            <div className="input-group-append">
+              <button
+                className="btn btn-primary"
+                type="button"
+                onClick={handleAddComment}
+              >
+                {language === "en" ? "Add" : "اضافة"}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="comments-section">
+          <h3>{language === "en" ? "Comments" : "التعليقات"}</h3>
+          <ul className="list-group">
+            {comments.map((comment, index) => (
+              <li
+                key={index}
+                className="list-group-item d-flex justify-content-between"
+              >
+                <span>{comment}</span>
+                <button
+                  className="btn btn-sm btn-danger"
+                  onClick={() => handleDeleteComment(index)}
+                >
+                  {language === "en" ? "Delete" : "حذف"}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </>
