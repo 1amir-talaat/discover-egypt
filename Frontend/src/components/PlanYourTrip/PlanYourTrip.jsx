@@ -4,7 +4,9 @@ import Places from "../Home/Places";
 import "./PlanYourTrip.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import "../AboutEgypt/AboutEgypt.css";
+import "../Home/Events.css";
+  
 function PlanYourTrip() {
   const { language } = useLanguage();
   useEffect(() => {
