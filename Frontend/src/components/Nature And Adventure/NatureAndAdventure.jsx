@@ -2,7 +2,7 @@ import Places from "../Home/Places";
 import { useLanguage } from "../../context/LanguageContext";
 import heroVideo from "./video/NatureAndAdventure.mp4";
 import "./NatureAndAdventure.css";
-import Card from "../Card copy/Card";
+import Card from "../Card/Card";
 
 function NatureAndAdventure() {
   const { language } = useLanguage();
