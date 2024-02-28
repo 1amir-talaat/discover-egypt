@@ -4,6 +4,8 @@ import Places from "../Home/Places";
 import "./ImportantNumbers.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../AboutEgypt/AboutEgypt.css";
+
 
 function ImportantNumbers() {
     const { language } = useLanguage();
