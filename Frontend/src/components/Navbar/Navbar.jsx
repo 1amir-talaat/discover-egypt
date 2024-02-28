@@ -146,7 +146,7 @@ function Navbar() {
     "/travel-tips",
     "/plan-your-trip",
     "/help-support",
-    "/important-numbers"
+    "/important-numbers",
   ];
   var navbarClass = validPaths.includes(location.pathname) ? (scrolling ? "navbar-home" : "") : "navbar-home";
 
@@ -174,25 +174,31 @@ function Navbar() {
   });
 
   const addToSearchHistory = (item) => {
-    const searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
-
-    searchHistory.push(item);
-
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-
-    setSearchHistory(searchHistory);
+    if (item.trim() !== "") {
+      let searchHistory;
+      const searchHistoryFromLocalStorage = localStorage.getItem("searchHistory");
+      try {
+        searchHistory = JSON.parse(searchHistoryFromLocalStorage) || [];
+      } catch (error) {
+        searchHistory = [];
+      }
+      searchHistory.push(item);
+      localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+      setSearchHistory(searchHistory);
+    }
   };
 
   const deleteFromSearchHistory = (index) => {
-    const searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+    let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
-    searchHistory.splice(index, 1);
-
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-
-    setSearchHistory(searchHistory);
+    if (!Array.isArray(searchHistory)) {
+      searchHistory = [];
+    } else {
+      searchHistory.splice(index, 1);
+      localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+      setSearchHistory(searchHistory);
+    }
   };
-
   // eslint-disable-next-line react/prop-types
   const DropdownManue = ({ type }) => {
     let data = {
@@ -314,7 +320,8 @@ function Navbar() {
                 <h5 className="m-0">{language === "ar" ? "بحثت مؤخرا" : "Recently Searched"}</h5>
                 <p
                   onClick={() => {
-                    localStorage.setItem("searchHistory", []);
+                    localStorage.setItem("searchHistory", "[]");
+                    setSearchHistory([])
                   }}
                   className="m-0"
                 >

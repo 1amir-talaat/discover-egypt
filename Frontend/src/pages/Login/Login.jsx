@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(formData.email, formData.password);
-      history("/dashboard");
+      history("/");
     } catch (error) {
       setError(error);
     }
