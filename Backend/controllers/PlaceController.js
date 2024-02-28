@@ -162,6 +162,33 @@ const PlaceController = {
       res.status(400).json({ error: error.message });
     }
   },
+
+  addPlace: async (req, res) => {
+    const { city_ar, city_en, title_ar, title_en, desc_ar, desc_en, min_price, max_price, place_name, category, sub_category, location_url, image } =
+      req.body;
+
+    try {
+      const newPlace = await Place.create({
+        city_ar,
+        city_en,
+        title_ar,
+        title_en,
+        desc_ar,
+        desc_en,
+        min_price,
+        max_price,
+        place_name,
+        category,
+        sub_category,
+        location_url,
+        image,
+      });
+
+      res.status(201).json({ message: "Place added successfully", place: newPlace });
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  },
 };
 
 function transformPlacesData(places) {

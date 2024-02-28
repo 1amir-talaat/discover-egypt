@@ -13,17 +13,40 @@
   background-color: #33a1ad;
 }
 
-.img-dev h1 {
+.image-container {
+  height: 70vh;
+  position: relative;
+}
+.image-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important ;
+  filter: brightness(0.7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  background-size: cover;
+  /* position: relative; */
+}
+
+.image-text-en {
   position: absolute;
-  bottom: 200px !important;
+  bottom: 20%;
+  left: 15%;
   color: white;
-  font-size: 70px;
+  font-size: 80px;
+  font-weight: 700;
 }
 
-.dir-ar .img-dev h1 {
-  right: 50px;
+.image-text-ar {
+  position: absolute;
+  bottom: 20%;
+  right: 300px;
+  color: white;
+  font-size: 80px;
+  font-weight: 700;
 }
 
-.dir-en .img-dev h1 {
-  left: 50px;
+.contactus-container input,select{
+  height: 45px;
 }

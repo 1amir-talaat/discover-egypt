@@ -2,6 +2,7 @@ import Places from "../Home/Places";
 import { useLanguage } from "../../context/LanguageContext";
 import heroVideo from "./video/NatureAndAdventure.mp4";
 import "./NatureAndAdventure.css";
+import Card from "../Card/Card";
 
 function NatureAndAdventure() {
   const { language } = useLanguage();
@@ -195,27 +196,7 @@ function NatureAndAdventure() {
         <div className="row">
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Discover the Nature of Egypt" : "اكتشف الطبيعة في مصر    "}</h1>
 
-          {AntiquitiesAndCivilizationPlaces.map((item) => {
-            return (
-              <>
-                <div className="col-lg-4 col-md-6 col-sm-8 mt-3 ">
-                  <div className="card text-start antiquities-card border-0 shadow ">
-                    <img className="card-img-top h-100 w-100" src={item.image} alt="Title" />
-                    <div className="card-body">
-                    <h3 className={`card-title ${language === "ar" ? "text-end" : ""}`}>{item.place_name}</h3>
-                      <p className={`card-text ${language === "ar" ? "text-end" : ""}`} style={{ fontSize: 17, color: "#333333" }}>
-                        {item.description}
-                      </p>
-                      <hr className="beach-card-hr " />
-                      <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
-                        <h5>{language === "en" ? "Learn More" : "أكتشف أكثر"}</h5>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </>
-            );
-          })}
+          <Card data={AntiquitiesAndCivilizationPlaces}/>
         </div>
       </div>
       <Places />

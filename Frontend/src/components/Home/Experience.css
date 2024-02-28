@@ -1,6 +1,6 @@
 .experience-card-hr {
   position: relative;
-  top: 35px;
+  top: 55px;
   width: 90%;
   border: none;
   height: 1px;
@@ -22,13 +22,17 @@
   font-size: 1rem;
 }
 
+.experience-card h5{
+  font-size: 1rem;
+}
+
 .card-body h4 {
   font-family: "Markazi Text", serif !important;
 }
 
 .experience-card-image {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
