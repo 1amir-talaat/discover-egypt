@@ -12,6 +12,7 @@ router.post("/review", ReviewController.createReview);
 
 // Places routes
 router.get("/places", PlaceController.getAllPlaces);
+router.post("/places", PlaceController.addPlace);
 router.get("/city/:city", PlaceController.getPlacesByCity);
 router.get("/category/:category", PlaceController.getPlacesByCategory);
 router.post("/search/", PlaceController.searchPlaces);
