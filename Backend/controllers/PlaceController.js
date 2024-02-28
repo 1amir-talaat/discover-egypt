@@ -81,7 +81,7 @@ const PlaceController = {
       if (!place) {
         return res.status(404).json({ message: "Place not found" });
       }
-      const data = transformPlaceData(place);
+      const data = transformPlacesData([place]);
       res.status(200).json(data);
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -104,7 +104,7 @@ const PlaceController = {
     try {
       const places = await Place.findAll({
         where: {
-          [Op.and]: keywords.map((keyword) => ({
+          [Op.or]: keywords.map((keyword) => ({
             [Op.or]: [
               { city_ar: { [Op.like]: `%${keyword}%` } },
               { city_en: { [Op.like]: `%${keyword}%` } },
@@ -142,12 +142,11 @@ const PlaceController = {
   },
 
   getByPriceRange: async (req, res) => {
-    const minPrice = parseFloat(req.body.min_price) || 0;
-    const maxPrice = parseFloat(req.body.max_price) || Infinity;
+    const { min_price, max_price } = req.body;
     try {
       const places = await Place.findAll({
         where: {
-          [Op.and]: [{ min_price: { [Op.gte]: minPrice, [Op.lte]: maxPrice } }, { max_price: { [Op.lte]: maxPrice, [Op.gte]: minPrice } }],
+          [Op.and]: [{ min_price: { [Op.gte]: min_price } }, { max_price: { [Op.lte]: max_price } }],
         },
         include: [
           {
@@ -221,7 +220,6 @@ function transformPlacesData(places) {
             }
           : null,
       })),
-      // Ensure that 'place.image' is used to access the image field
       image: place.image,
     };
 

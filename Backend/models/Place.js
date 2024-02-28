@@ -55,19 +55,19 @@ const Place = sequelize.define("Place", {
   },
   sub_category: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   location_url: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   created_at: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   updated_on: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
 });
 
