@@ -45,7 +45,7 @@ function App() {
               <Route path="coming-soon" element={<ComingSoon />} />
               <Route path="important-numbers" element={<ImportantNumbers />} />
               <Route path="help-support" element={<HelpSupport />} />
-              <Route path="city" element={<City />} />
+              <Route path="place-details/:id" element={<City />} />
               <Route path="willing-to-arrive" element={<WillingToArrive />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
