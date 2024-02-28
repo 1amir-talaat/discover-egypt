@@ -1,25 +1,27 @@
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import "./HelpSupport.css";
+import Places from "../Home/Places";
+
 function HelpSupport() {
   const { language } = useLanguage();
   return (
     <>
       {/* Hero's image and title  */}
       <div className="image-container ">
-        <div className="img-dev position-relative">
-          <img
-            src="https://img.freepik.com/free-photo/confident-call-center-operator-talking-with-client_74855-4059.jpg?size=626&ext=jpg&ga=GA1.1.921307657.1671265933&semt=sph"
-            style={{ objectFit: "cover", width: "100%", height: "600px", objectPosition: "top" }}
-            alt=""
-          />
-          <h1 className="position-absolute display-3 text-white container">{language == "en" ? "Help & Support" : "المساعدة والدعم"}</h1>
-        </div>
+        <img
+          src="https://www.nextiva.com/blog/wp-content/uploads/sites/2/customer-service-tips-feature-image.png?resize=768,432"
+          style={{ objectFit: "cover", width: "100%", height: "600px", objectPosition: "top" }}
+          alt=""
+        />
+        <h1 className={language == "en" ? "image-text-en" : "image-text-ar"}>
+          {language == "en" ? "Help & Support" : "المساعدة والدعم"}
+        </h1>
       </div>
       {/* the container of the page */}
       <div className="container mt-5">
         {/* contact us container */}
-        <div className="contactus-container mt-5" id="contact-us">
+        <div className="contactus-container p-5 pt-3 pb-3 rounded shadow" id="contact-us">
           <h1 className="mt-5 mb-3">{language == "en" ? "Contact Us" : "تواصل معنا"}</h1>
           <span className="text-secondary">
             {language == "en"
@@ -74,7 +76,7 @@ function HelpSupport() {
                   </div>
                   <div className="col-6 col-sm-8 col-md-8 col-lg-6 ">
                     <input
-                      type="email"
+                      type="text"
                       className="form-control"
                       id="inputEmail4"
                       placeholder={language == "en" ? "Enter Phone Number" : "أدخل رقم الهاتف"}
@@ -105,7 +107,7 @@ function HelpSupport() {
                 <textarea
                   className="form-control"
                   id="exampleFormControlTextarea1"
-                  rows="6"
+                  rows="4"
                   placeholder={language == "en" ? "Enter your message here" : "يرجي إدخال رسالتك"}
                 ></textarea>
               </div>
@@ -119,7 +121,7 @@ function HelpSupport() {
         {/* social links container */}
         <div className="sociallinks-container mt-5" id="social-links">
           <h1 className="mt-5 mb-3">{language == "en" ? "Social & Other Channels" : "قنوات التواصل الاجتماعي"}</h1>
-          <hr className="text-secondary" />
+          <hr className="text-secondary " />
           <div className="row icons-row ">
             <div className="col-5 col-sm-4 col-md-3 mt-5 text-align-center">
               <a href="#">
@@ -189,6 +191,7 @@ function HelpSupport() {
         {/* end of social links container */}
       </div>
       {/* end of the container of the page */}
+      <Places />
     </>
   );
 }

@@ -221,8 +221,8 @@ function Navbar() {
         break;
       case "Travel Essentials":
         data = {
-          en: ["Explore All", "About Saudi", "Safety Travel Tips", "Useful Contacts", "Travel Regulations"],
-          ar: ["تصفح الكل", "معلومات حول السعودية", "نصائح السفر الآمن", "أرقام مفيدة", "إرشادات ومتطلبات السفر"],
+          en: ["Explore All", "About Egypt", "Safety Travel Tips", "Useful Contacts", "Travel Regulations"],
+          ar: ["تصفح الكل", "معلومات حول مصر", "نصائح السفر الآمن", "أرقام مفيدة", "إرشادات ومتطلبات السفر"],
         };
         break;
       default:
@@ -250,13 +250,12 @@ function Navbar() {
   return (
     <>
       <div
-        className={`nav-contaioner ${stickyNav} ${activeDropdown ? "bg-white nav-dark" : ""} navigation ${navbarClass} ${
-          onSearch == true ? "nav-search" : ""
-        }`}
+        className={`nav-contaioner ${stickyNav} ${activeDropdown ? "bg-white nav-dark" : ""} navigation ${navbarClass} ${onSearch == true ? "nav-search" : ""
+          }`}
       >
         <nav className="top-nav">
           <div className="container">
-            <a href="/">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>
+            <a href="/help-support">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>
             <p className="change-lang" onClick={toggleLanguage} style={{ fontSize: 18 }}>
               <MdLanguage className="mx-1" />
               <span>{language === "ar" ? "English" : "عربي"}</span>
@@ -293,7 +292,6 @@ function Navbar() {
                 <div className="nav-ico">
                   <LuUser size={21} />
                 </div>
-                <a href="#">{language === "ar" ? "تقديم طلب تأشيرة" : "Apply for eVisa"}</a>
               </div>
             </nav>
           </div>

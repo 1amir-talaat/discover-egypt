@@ -14,9 +14,9 @@ function ComingSoon() {
 
 
 
-          <h1 className='text-danger fw-bold' style={{ fontSize: language === "en" ? 70 : 100 }} > { language == "en" ? "Coming Soon" : "تحت التطوير"}</h1>
-      </div>
-    </div >
+          <h1 className='text-danger fw-bold' style={{ fontSize: language === "en" ? 70 : 100 }} > {language == "en" ? "Coming Soon" : "تحت التطوير"}</h1>
+        </div>
+      </div >
       <Places />
     </>
   );

@@ -15,3 +15,8 @@
     z-index: -1;
   }
   
+  .antiquities-card img {
+    width: 100% !important;
+    height: 250px !important;
+    filter: brightness(80%);
+  }

@@ -8,7 +8,7 @@ function Categories() {
 
   return (
     <div className="container mt-5 ">
-      <h1 className="mb-4" style={{ fontSize: 42 }}>
+      <h1 className="mb-4" style={{ fontSize: 42, marginTop:100 }}>
         {language == "en" ? "Discover Egypt in a Variety of Ways" : "اكتشف مصر بعدة طرق"}
       </h1>
       <Swiper
