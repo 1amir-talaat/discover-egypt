@@ -1,11 +1,19 @@
 .cardy img {
   width: 100% !important;
-  height: 250px !important;
+  height: 200px !important;
   filter: brightness(80%);
+  transition: 0.5s ease;
 }
 
+.cardy{
+  min-height: 450px;
+  transition: 0.5s ease;
+  margin-bottom: 50px !important;
+}
 .cardy:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
+  transition: 1s ease;
+
 }
 
 

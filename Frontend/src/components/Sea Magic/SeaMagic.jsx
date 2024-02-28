@@ -3,6 +3,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import heroVideo from "./video/SeaMagic.mp4";
 import "./SeaMagic.css";
 import CardSwiper from "../Card Swiper/CardSwiper";
+import { useEffect, useState } from "react";
 
 function SeaMagic() {
   const { language } = useLanguage();
@@ -112,263 +113,52 @@ function SeaMagic() {
         },
       ];
 
-  const beaches =
-    language == "en"
-      ? [
-        {
-          id: 1,
-          activity_name: "Fjord Bay, Taba",
-          description: "Beautiful bay with crystal-clear waters and stunning scenery.",
-          price: 10,
-          image: "https://www.worldbeachguide.com/photos/large/fyord-bay-taba.webp",
-        },
-        {
-          id: 2,
-          activity_name: "Ras Abu Galoum, Dahab",
-          description: "Remote and pristine beach perfect for snorkeling and diving.",
-          price: "Free",
-          image: "https://bluebeachclub.com/wp-content/uploads/2017/02/Abu-Galum.jpg",
-        },
-        {
-          id: 3,
-          activity_name: "Nuweiba, Gulf of Aqaba",
-          description: "Tranquil beach with serene views of the Gulf of Aqaba.",
-          price: 5,
-          image: "https://media-cdn.tripadvisor.com/media/photo-s/19/fe/91/ee/77-title-c2-a0nuwebia.jpg",
-        },
-        {
-          id: 4,
-          activity_name: "Ras Um Sid, Sharm El Sheikh",
-          description: "Scenic beach known for its coral reefs and marine life.",
-          price: "Free",
-          image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/19/a1/e6/ras-um-sid-view-from.jpg?w=1200&h=-1&s=1",
-        },
-        {
-          id: 5,
-          activity_name: "Sharm El Luli, Nature's Haven",
-          description: "Secluded beach with turquoise waters and abundant marine life.",
-          price: "Free",
-          image: "https://images.trvl-media.com/lodging/12000000/11580000/11572800/11572720/1f2e3b62.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-        },
-        {
-          id: 7,
-          activity_name: "Hurghada Beach, Red Sea Coast",
-          description: "Popular beach destination with vibrant nightlife and water sports.",
-          price: "Free",
-          image: "https://mediaim.expedia.com/destination/1/3208131f06b5973425f78d0ba40b8880.jpg",
-        },
-        {
-          id: 13,
-          activity_name: "Golden Beach, Cairo Governorate",
-          description: "Popular beach destination with golden sands and clear waters.",
-          price: "Free",
-          image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/99/90/dd/nile-river.jpg?w=1200&h=-1&s=1",
-        },
-        {
-          id: 14,
-          activity_name: "Palm Beach, Suez Governorate",
-          description: "Relaxing beach surrounded by palm trees in the Suez Governorate.",
-          price: 20,
-          image: "https://lh5.googleusercontent.com/p/AF1QipOTC7_5ALc9JDSYg66ljorVfARQmjEt71CRe9sW=s1600",
-        },
-        {
-          id: 15,
-          activity_name: "El Ein Bay Beach, Suez Governorate",
-          description: "Tranquil beach with calm waters, ideal for families.",
-          price: 15,
-          image: "https://lh5.googleusercontent.com/p/AF1QipOAYaKy3yuiqoDzc6p0XuNIUAYgxZPMbVLHHSxo=s1600",
-        },
-      ]
-      : [
-        {
-          id: 1,
-          activity_name: "خليج فْيُورْد، طابا",
-          description: "خليج جميل بمياهه الصافية والمناظر الخلابة.",
-          price: 10,
-          image: "https://www.worldbeachguide.com/photos/large/fyord-bay-taba.webp",
-        },
-        {
-          id: 2,
-          activity_name: "رَأس أبُو جَلوم، دهب",
-          description: "شاطئ نائي ونقي مثالي للغطس والغوص.",
-          price: "مجاناً",
-          image: "https://bluebeachclub.com/wp-content/uploads/2017/02/Abu-Galum.jpg",
-        },
-        {
-          id: 3,
-          activity_name: "نُويبع، الخليج العقبة",
-          description: "شاطئ هادئ مع مناظر هادئة لخليج العقبة.",
-          price: 5,
-          image: "https://media-cdn.tripadvisor.com/media/photo-s/19/fe/91/ee/77-title-c2-a0nuwebia.jpg",
-        },
-        {
-          id: 4,
-          activity_name: "رَأس أُم سِيد، شرم الشيخ",
-          description: "شاطئ متناغم معروف بالشعاب المرجانية والحياة البحرية.",
-          price: "مجاناً",
-          image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/19/a1/e6/ras-um-sid-view-from.jpg?w=1200&h=-1&s=1",
-        },
-        {
-          id: 5,
-          activity_name: "شرم اللولي، ملاذ الطبيعة",
-          description: "شاطئ معزول بمياهه الزرقاء والحياة البحرية الغنية.",
-          price: "مجاناً",
-          image: "https://images.trvl-media.com/lodging/12000000/11580000/11572800/11572720/1f2e3b62.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-        },
-        {
-          id: 7,
-          activity_name: "شاطئ الغردقة، ساحل البحر الأحمر",
-          description: "وجهة شاطئية شهيرة مع حياة ليلية نابضة بالحياة ورياضات مائية.",
-          price: "مجاناً",
-          image: "https://mediaim.expedia.com/destination/1/3208131f06b5973425f78d0ba40b8880.jpg",
-        },
-        {
-          id: 8,
-          activity_name: "شاطئ دهب، البلو هول والمنارة",
-          description: "بلدة شاطئية مسترخية معروفة بمواقع الغوص الخاصة بها وجوهرتها الهادئة.",
-          price: "مجاناً",
-          image: "https://deih43ym53wif.cloudfront.net/large_blue-hole-dahab-egypt-shutterstock_1269467029_6260deeb0c.jpeg",
-        },
-        {
-          id: 13,
-          activity_name: "شاطئ الذهبي، محافظة القاهرة",
-          description: "وجهة شاطئية شهيرة برمالها الذهبية ومياهها الزرقاء الواضحة.",
-          price: "مجاناً",
-          image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/99/90/dd/nile-river.jpg?w=1200&h=-1&s=1",
-        },
-        {
-          id: 14,
-          activity_name: "شاطئ النخيل، محافظة السويس",
-          description: "شاطئ مريح محاط بأشجار النخيل في محافظة السويس.",
-          price: 20,
-          image: "https://lh5.googleusercontent.com/p/AF1QipOTC7_5ALc9JDSYg66ljorVfARQmjEt71CRe9sW=s1600",
-        },
-        {
-          id: 15,
-          activity_name: "شاطئ العين البيضاء، محافظة السويس",
-          description: "شاطئ هادئ بمياهه الهادئة، مثالي للعائلات.",
-          price: 15,
-          image: "https://lh5.googleusercontent.com/p/AF1QipOAYaKy3yuiqoDzc6p0XuNIUAYgxZPMbVLHHSxo=s1600",
-        },
-      ];
+  const [beaches, setBeaches] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/category/beach");
+        const data = await response.json();
+        setBeaches(data[language]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  const sea =
-    language == "en"
-      ? [
-        {
-          id: 1,
-          activity_name: "Luxor-Aswan Nile Cruise",
-          description:
-            "Experience the majestic Nile River aboard a traditional cruise ship, passing by ancient temples and picturesque landscapes.",
-          price: 500,
-          image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/77/97/65.jpg",
-        },
-        {
-          id: 2,
-          activity_name: "Red Sea Diving Safari",
-          description: "Embark on an adventure in the Red Sea aboard a diving safari ship, exploring vibrant coral reefs and diverse marine life.",
-          price: 800,
-          image: "https://extradivers-worldwide.com/images/DynArtwork/zoom-rse-aussen-1_19789.jpg",
-        },
-        {
-          id: 3,
-          activity_name: "Alexandria Port Day Trip",
-          description:
-            "Discover the charm of Alexandria on a day trip from Cairo, exploring ancient ruins, museums, and the Mediterranean coastline.",
-          price: 300,
-          image: "https://apa.gov.eg/wp-content/uploads/2022/12/slider-three-2048x1366.jpg",
-        },
-        {
-          id: 4,
-          activity_name: "Sinai Peninsula Cruise",
-          description: "Sail along the coast of the Sinai Peninsula, visiting historic landmarks, pristine beaches, and enjoying water activities.",
-          price: 700,
-          image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/f2/63/f2.jpg",
-        },
-      ]
-      : [
-        {
-          id: 1,
-          activity_name: "رحلة نيلية من الأقصر إلى أسوان",
-          description: "استمتع بنهر النيل الساحر على متن سفينة نيلية تقليدية، واستمتع بمرور الآثار القديمة والمناظر الطبيعية الخلابة.",
-          price: 500,
-          image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/77/97/65.jpg",
-        },
-        {
-          id: 2,
-          activity_name: "سفاري الغوص في البحر الأحمر",
-          description: "انطلق في مغامرة في البحر الأحمر على متن سفينة سفاري للغوص، استكشاف الشعاب المرجانية الحية والحياة البحرية المتنوعة.",
-          price: 800,
-          image: "https://extradivers-worldwide.com/images/DynArtwork/zoom-rse-aussen-1_19789.jpg",
-        },
-        {
-          id: 3,
-          activity_name: "رحلة يومية إلى ميناء الإسكندرية",
-          description: "اكتشف سحر الإسكندرية في رحلة يومية من القاهرة، استكشاف الآثار القديمة والمتاحف وسواحل البحر الأبيض المتوسط.",
-          price: 300,
-          image: "https://apa.gov.eg/wp-content/uploads/2022/12/slider-three-2048x1366.jpg",
-        },
-        {
-          id: 4,
-          activity_name: "رحلة بحرية في شبه جزيرة سيناء",
-          description: "انطلق على طول ساحل شبه جزيرة سيناء، زيارة المعالم التاريخية والشواطئ النظيفة والاستمتاع بالأنشطة المائية.",
-          price: 700,
-          image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/f2/63/f2.jpg",
-        },
-      ];
+    fetchData();
+  }, [language]);
 
-  const underwater =
-    language == "en"
-      ? [
-        {
-          id: 1,
-          activity_name: "Snorkeling in Ras Mohammed National Park",
-          description:
-            "Discover the beauty of Ras Mohammed National Park's underwater scenery through snorkeling, encountering diverse marine life and stunning coral formations.",
-          price: 50,
-          image: "https://cdn.getyourguide.com/img/location/5952616233df8.jpeg/62.webp",
-        },
-        {
-          id: 2,
-          activity_name: "Submarine Adventure in Hurghada",
-          description:
-            "Embark on a unique submarine adventure in Hurghada, diving deep below the surface to observe the underwater world without getting wet.",
-          price: 150,
-          image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/9a/fd/ca.jpg",
-        },
-        {
-          id: 3,
-          activity_name: "Underwater Photography in Dahab",
-          description:
-            "Capture the mesmerizing beauty of Dahab's underwater landscapes through underwater photography sessions, guided by experienced instructors.",
-          price: 80,
-          image: "https://www.weseektravel.com/wp-content/uploads/2022/05/diving-dahab-blue-hole-1-720x540.jpg",
-        },
-      ]
-      : [
-        {
-          id: 1,
-          activity_name: "الغطس في حديقة رأس محمد الوطنية",
-          description:
-            "اكتشف جمال الطبيعة البحرية لحديقة رأس محمد الوطنية من خلال الغطس، واستمتع بمشاهدة مختلف أنواع الحياة البحرية وتكوينات الشعاب المرجانية الرائعة.",
-          price: 50,
-          image: "https://cdn.getyourguide.com/img/location/5952616233df8.jpeg/62.webp",
-        },
-        {
-          id: 2,
-          activity_name: "مغامرة الغواصة في الغردقة",
-          description: "انطلق في مغامرة فريدة على متن غواصة في الغردقة، وانغمس في عمق البحر لمشاهدة عالم البحار دون الحاجة للبلل.",
-          price: 150,
-          image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/9a/fd/ca.jpg",
-        },
-        {
-          id: 3,
-          activity_name: "تصوير تحت الماء في دهب",
-          description: "التقط جمال المناظر الطبيعية تحت الماء في دهب من خلال جلسات التصوير تحت الماء، بإرشاد من مدربين متمرسين.",
-          price: 80,
-          image: "https://www.weseektravel.com/wp-content/uploads/2022/05/diving-dahab-blue-hole-1-720x540.jpg",
-        },
-      ];
+  const [sea, setSea] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/category/sea");
+        const data = await response.json();
+        setSea(data[language]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [language]);
+  
+  const [underwater, setUnderwater] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/category/Underwater");
+        const data = await response.json();
+        setUnderwater (data[language]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [language]);
+
+  
 
   return (
     <>
@@ -441,19 +231,19 @@ function SeaMagic() {
         </div>
 
         {/* Beaches // الشواطئ */}
-        <div className="row mt-5" style={{marginTop:100}}>
+        <div className="row mt-5" style={{ marginTop: 100 }}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Beaches" : "الشواطئ"}</h1>
-          <CardSwiper data={beaches}  />
+          <CardSwiper data={beaches} />
         </div>
 
         {/* sea // البحر */}
-        <div className="row mt-5" style={{marginTop:100}}>
+        <div className="row mt-5" style={{ marginTop: 100 }}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Sea" : "البحر"}</h1>
-          <CardSwiper data={sea}  />
+          <CardSwiper data={sea} />
         </div>
 
         {/* Underwater // تحت المياه */}
-        <div className="row mt-5" style={{marginTop:100}}>
+        <div className="row mt-5" style={{ marginTop: 100 }}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Underwater" : "قاع البحر"}</h1>
           <CardSwiper data={underwater} />
         </div>
