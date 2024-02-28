@@ -40,7 +40,7 @@ function NatureAndAdventure() {
         <div className="row">
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Discover the Nature of Egypt" : "اكتشف الطبيعة في مصر    "}</h1>
 
-          <Card data={places[language]} />
+          <Card data={places.language} />
         </div>
       </div>
       <Places />
