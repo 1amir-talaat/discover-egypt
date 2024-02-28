@@ -8,10 +8,6 @@ function SeaMagic() {
   const { language } = useLanguage();
   const langDirection = language == "en" ? "ltr" : "rtl";
 
-
-  
-
-
   const static_data =
     language == "en"
       ? [
