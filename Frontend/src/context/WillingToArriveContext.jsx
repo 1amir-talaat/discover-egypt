@@ -31,21 +31,20 @@ const WillingToArriveProvider = ({ children }) => {
   useEffect(() => {
     const fetchWillingToArriveItems = async () => {
       try {
-        // if (user) {
-        // Check if user is logged in
-        const response = await api.get(`/willing-to-arrive/2`);
+        if (user) {
+        const response = await api.get(`/willing-to-arrive/${user.id}`);
         dispatchWillingToArrive({
           type: "SET_WILLING_TO_ARRIVE",
           payload: response.data[language],
         });
         console.log(response);
 
-        // }else{
-        //   dispatchWillingToArrive({
-        //     type: "SET_WILLING_TO_ARRIVE",
-        //     payload: [],
-        //   });
-        // }
+        }else{
+          dispatchWillingToArrive({
+            type: "SET_WILLING_TO_ARRIVE",
+            payload: [],
+          });
+        }
       } catch (error) {
         console.error("Error fetching Willing to Arrive items:", error);
       }
@@ -77,8 +76,9 @@ const WillingToArriveProvider = ({ children }) => {
   const removeFromWillingToArrive = async (placeId) => {
     try {
       await api.delete("/willing-to-arrive", {
-        data: { userId: 2, placeId },
+        data: { userId: user.id, placeId },
       });
+
       dispatchWillingToArrive({
         type: "REMOVE_FROM_WILLING_TO_ARRIVE",
         payload: placeId,

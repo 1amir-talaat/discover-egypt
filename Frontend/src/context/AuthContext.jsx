@@ -55,6 +55,7 @@ const AuthProvider = ({ children }) => {
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
+    window.location.reload();
   };
 
   const register = async (name, email, password) => {

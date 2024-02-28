@@ -1,4 +1,3 @@
-// import React from 'react'
 import { useWillingToArrive } from "../../context/WillingToArriveContext";
 import { useLanguage } from "../../context/LanguageContext";
 
@@ -28,7 +27,7 @@ function WillingToArrive() {
                     <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
                   </button>
                 </div>
-                <Delete placeId={item.id} />
+                <Delete placeId={5} />
               </div>
             </>
           );
