@@ -1,7 +1,7 @@
 import Places from "../Home/Places";
 import { useLanguage } from "../../context/LanguageContext";
 import heroVideo from "./video/NatureAndAdventure.mp4";
-import "./NatureAndAdventure  .css";
+import "./NatureAndAdventure.css";
 
 function NatureAndAdventure() {
   const { language } = useLanguage();

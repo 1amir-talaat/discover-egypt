@@ -443,19 +443,19 @@ function SeaMagic() {
         </div>
 
         {/* Beaches // الشواطئ */}
-        <div className="row mt-5">
+        <div className="row mt-5" style={{marginTop:100}}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Beaches" : "الشواطئ"}</h1>
           <Card data={beaches}  />
         </div>
 
         {/* sea // البحر */}
-        <div className="row mt-5">
+        <div className="row mt-5" style={{marginTop:100}}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Sea" : "البحر"}</h1>
           <Card data={sea}  />
         </div>
 
         {/* Underwater // تحت المياه */}
-        <div className="row mt-5">
+        <div className="row mt-5" style={{marginTop:100}}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Underwater" : "قاع البحر"}</h1>
           <Card data={underwater} />
         </div>
