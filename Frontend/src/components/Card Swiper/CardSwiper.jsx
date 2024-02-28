@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useLanguage } from "../../context/LanguageContext";
-import "./Crad.css";
+import "./CardSwiper.css"
 
 import { useWillingToArrive } from "../../context/WillingToArriveContext";
 import { useAuth } from "../../context/AuthContext";
@@ -8,7 +8,7 @@ import { useAuth } from "../../context/AuthContext";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 
-function Card({ data }) {
+function CardSwiper({ data }) {
   const { language } = useLanguage();
   const langDirection = language == "en" ? "ltr" : "rtl";
   const { willingToArrive, addToWillingToArrive, removeFromWillingToArrive } = useWillingToArrive();
@@ -68,4 +68,4 @@ function Card({ data }) {
   );
 }
 
-export default Card;
+export default CardSwiper;

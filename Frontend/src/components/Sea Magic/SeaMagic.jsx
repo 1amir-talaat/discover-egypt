@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useLanguage } from "../../context/LanguageContext";
 import heroVideo from "./video/SeaMagic.mp4";
 import "./SeaMagic.css";
-import Card from "../Card/Card";
+import CardSwiper from "../Card Swiper/CardSwiper";
 
 function SeaMagic() {
   const { language } = useLanguage();
@@ -445,19 +445,19 @@ function SeaMagic() {
         {/* Beaches // الشواطئ */}
         <div className="row mt-5" style={{marginTop:100}}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Beaches" : "الشواطئ"}</h1>
-          <Card data={beaches}  />
+          <CardSwiper data={beaches}  />
         </div>
 
         {/* sea // البحر */}
         <div className="row mt-5" style={{marginTop:100}}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Sea" : "البحر"}</h1>
-          <Card data={sea}  />
+          <CardSwiper data={sea}  />
         </div>
 
         {/* Underwater // تحت المياه */}
         <div className="row mt-5" style={{marginTop:100}}>
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Underwater" : "قاع البحر"}</h1>
-          <Card data={underwater} />
+          <CardSwiper data={underwater} />
         </div>
       </div>
     </>
