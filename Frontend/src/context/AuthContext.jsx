@@ -62,6 +62,7 @@ const AuthProvider = ({ children }) => {
     try {
       const response = await api.post("/users/register", { name, email, password });
       const { user, token } = response.data;
+      console.log(response);
       dispatch({ type: "LOGIN", payload: { user, token } });
     } catch (error) {
       console.error("Registration failed:", error);
