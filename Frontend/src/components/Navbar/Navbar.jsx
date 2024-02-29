@@ -153,7 +153,7 @@ function Navbar() {
     "/help-support",
     "/important-numbers",
   ];
-  var navbarClass = validPaths.includes(location.pathname) ? (scrolling ? "navbar-home" : "") : "navbar-home";
+  var navbarClass = validPaths.includes(location.pathname) ? (scrolling ? "navbar-home" : "trans-nav") : "navbar-home";
 
   const dropdownClass = `dropdown-nav ${dropdownVisible ? "visible transition dropdown-show" : "dropdown-hide"}`;
   const stickyNav = location.pathname === "/coming-soon" ? "sticky-top" : "fixed-top";
@@ -210,6 +210,7 @@ function Navbar() {
       en: [],
       ar: [],
     };
+    let path = [];
 
     switch (type) {
       case "See & Do":
@@ -217,32 +218,35 @@ function Navbar() {
           en: ["Explore All", "Activities", "Food & Drink", "Experiences & Tours"],
           ar: ["تصفح الكل", "الأنشطة والمعالم السياحية", "المأكولات والمشروبات", "المغامرات والجولات"],
         };
+        path = ["coming-soon", null, null, null];
         break;
       case "Plan Your Trip":
         data = {
           en: ["Explore All", "Trip Planner", "Transportation", "Road Trip Guide"],
           ar: ["تصفح الكل", "مخطط الرحلات", "وسائل النقل", "دليل الرحلات بالسيارة"],
         };
+        path = ["plan-your-trip", "plan-your-trip", "coming-soon", "coming-soon"];
         break;
       case "Travel Essentials":
         data = {
-          en: ["Explore All", "About Saudi", "Safety Travel Tips", "Useful Contacts", "Travel Regulations"],
-          ar: ["تصفح الكل", "معلومات حول السعودية", "نصائح السفر الآمن", "أرقام مفيدة", "إرشادات ومتطلبات السفر"],
+          en: ["About Egypt", "Safety Travel Tips", "Useful Contacts"],
+          ar: ["معلومات حول مصر", "نصائح السفر الآمن", "أرقام مفيدة"],
         };
+        path = ["about-egypt", "travel-tips", "important-numbers"];
         break;
       default:
         break;
     }
 
-    return <Manu type={setNavType} data={data} />;
+    return <Manu type={setNavType} data={data} path={path} />;
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     addToSearchHistory(serachValue);
     if (serachValue.trim() !== "") {
-      navigation(`/search-results?search=${encodeURIComponent(serachValue)}`);
+      navigation("/coming-soon");
+      // navigation(`/search-results?search=${encodeURIComponent(serachValue)}`);
     }
   };
 
@@ -287,16 +291,16 @@ function Navbar() {
                 >
                   {language === "ar" ? "أساسيات السفر" : "Travel Essentials"}
                 </div>
-                <div className={`nav-link ${activeDropdown === "Egypt Calendar" ? "active" : ""}`}>
+                <a href="/coming-soon" className={`nav-link ${activeDropdown === "Egypt Calendar" ? "active" : ""}`}>
                   {language === "ar" ? "تقويم الفعاليات" : "Egypt Calendar"}
-                </div>
+                </a>
               </div>
               <div className="nav-end">
                 <div className="nav-ico" onClick={toggleSearch}>
                   <IoSearch size={21} />
                 </div>
                 {user ? (
-                  <div className="nav-ico" onClick={logout}>
+                  <div className="nav-ico nav-logout" onClick={logout}>
                     <Logout />
                   </div>
                 ) : (
@@ -304,11 +308,10 @@ function Navbar() {
                     <LuUser size={21} />
                   </Link>
                 )}
-                {user && (
-                  <a className="apply" href="/willing-to-arrive">
-                    {language === "ar" ? "ارغب بزيارته" : "Willing to Arrive"}
-                  </a>
-                )}
+
+                <a className="apply" href="/willing-to-arrive">
+                  {language === "ar" ? "ارغب بزيارته" : "Willing to Arrive"}
+                </a>
               </div>
             </nav>
           </div>
@@ -361,7 +364,7 @@ function Navbar() {
                 </div>
               )}
             </div>
-            <div className="search-recomendation p-3 px-5">
+            <div className="search-recomendation p-3 px-5 ">
               <h5 className="mb-4">{language === "ar" ? "رائج ومميز" : "Popular and Featured"}</h5>
               <div className="recomendation-items d-flex gap-3 ">
                 {data[language].map((item) => {

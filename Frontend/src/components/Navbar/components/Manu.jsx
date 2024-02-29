@@ -1,6 +1,6 @@
 import { useLanguage } from "../../../context/LanguageContext";
 
-function Manu({ data, type }) {
+function Manu({ data, type, path }) {
   const { language } = useLanguage();
 
   const langData = data[language];
@@ -11,13 +11,15 @@ function Manu({ data, type }) {
         {langData.map((d, id) => {
           return (
             <p style={{ width: "100%" }} key={id}>
-              <span
-                onMouseOver={() => {
-                  type(data.en[id]);
-                }}
-              >
-                {d}
-              </span>
+              <a href={path[id] ? `/${path[id]}` : ""}>
+                <span
+                  onMouseOver={() => {
+                    type(data.en[id]);
+                  }}
+                >
+                  {d}
+                </span>
+              </a>
             </p>
           );
         })}
