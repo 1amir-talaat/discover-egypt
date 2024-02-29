@@ -23,11 +23,7 @@ function Events() {
 
   let data = eventsData[language];
 
-  // console.log(progress);
-
   const handleSlideChange = (swiper) => {
-    // console.log(swiper.slides.length);
-
     setActiveIndex(swiper.realIndex);
     updateProgress(swiper.realIndex, swiper.slides.length);
   };
