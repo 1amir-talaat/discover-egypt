@@ -900,11 +900,17 @@ a {
   fill: rgba(0, 0, 0, 0.881);
 }
 
-.navbar-home .sign:hover svg path {
+.navbar-home .nav-logout:hover .Logout .sign svg path {
   transition: 0.3s;
   fill: rgba(0, 0, 0, 0.561);
 }
 
-.nav-dark .sign svg path {
-  fill: white;
+.trans-nav .sign svg path {
+  fill: #eee !important;
+  transition: 0.3s;
+}
+
+.trans-nav .nav-logout:hover .sign svg path {
+  transition: 0.3s;
+  fill: rgba(206, 206, 206, 0.561) !important;
 }
