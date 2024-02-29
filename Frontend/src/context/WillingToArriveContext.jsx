@@ -32,14 +32,12 @@ const WillingToArriveProvider = ({ children }) => {
     const fetchWillingToArriveItems = async () => {
       try {
         if (user) {
-        const response = await api.get(`/willing-to-arrive/${user.id}`);
-        dispatchWillingToArrive({
-          type: "SET_WILLING_TO_ARRIVE",
-          payload: response.data[language],
-        });
-        console.log(response);
-
-        }else{
+          const response = await api.get(`/willing-to-arrive/${user.id}`);
+          dispatchWillingToArrive({
+            type: "SET_WILLING_TO_ARRIVE",
+            payload: response.data[language],
+          });
+        } else {
           dispatchWillingToArrive({
             type: "SET_WILLING_TO_ARRIVE",
             payload: [],
@@ -83,6 +81,24 @@ const WillingToArriveProvider = ({ children }) => {
         type: "REMOVE_FROM_WILLING_TO_ARRIVE",
         payload: placeId,
       });
+
+      try {
+        if (user) {
+          const response = await api.get(`/willing-to-arrive/${user.id}`);
+          dispatchWillingToArrive({
+            type: "SET_WILLING_TO_ARRIVE",
+            payload: response.data[language],
+          });
+        } else {
+          dispatchWillingToArrive({
+            type: "SET_WILLING_TO_ARRIVE",
+            payload: [],
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching Willing to Arrive items:", error);
+      }
+      
     } catch (error) {
       console.error("Error removing item from Willing to Arrive:", error);
       throw error;

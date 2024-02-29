@@ -5,7 +5,7 @@
   transition: 0.5s ease;
 }
 
-.cardy{
+.cardy {
   min-height: 450px;
   transition: 0.5s ease;
   margin-bottom: 50px !important;
@@ -13,9 +13,7 @@
 .cardy:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px !important;
   transition: 1s ease;
-
 }
-
 
 .cardy .add-to-wishlist {
   position: absolute;
@@ -24,4 +22,9 @@
   z-index: 100;
   color: white;
   cursor: pointer;
+}
+.cardy .fw-bold h5 a {
+  width: 100%;
+  height: 100%;
+  color: #087e8c !important;
 }

@@ -58,7 +58,9 @@ function CardSwiper({ data }) {
               </div>
               <hr />
               <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
-                <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
+                <h5>
+                  <a href={"/place-details/" + item.id}>{language === "en" ? "Book Now" : "أحجز الآن"}</a>
+                </h5>
               </button>
             </div>
           </SwiperSlide>

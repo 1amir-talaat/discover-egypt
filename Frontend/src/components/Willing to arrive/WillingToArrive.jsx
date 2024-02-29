@@ -27,7 +27,7 @@ function WillingToArrive() {
                     <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
                   </button>
                 </div>
-                <Delete placeId={5} />
+                <Delete placeId={item.place.id} />
               </div>
             </>
           );
