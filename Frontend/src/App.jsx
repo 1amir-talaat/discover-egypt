@@ -1,10 +1,11 @@
 import { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import { useLanguage } from "./context/LanguageContext";
 import Loader from "./components/Loader/Loader";
-
 import "swiper/css";
+
+import { useAuth } from "./context/AuthContext";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
@@ -18,7 +19,7 @@ const PlanYourTrip = lazy(() => import("./components/PlanYourTrip/PlanYourTrip")
 const ComingSoon = lazy(() => import("./components/ComingSoon/ComingSoon"));
 const ImportantNumbers = lazy(() => import("./components/ImportantNumbers/ImportantNumbers"));
 const HelpSupport = lazy(() => import("./components/HelpSupport/HelpSupport"));
-const Error = lazy(() => import("./components/Error/Error"));
+const ErrorPage = lazy(() => import("./components/Error/Error"));
 const City = lazy(() => import("./components/CityPage/City"));
 const WillingToArrive = lazy(() => import("./components/Willing to arrive/WillingToArrive"));
 const Login = lazy(() => import("./pages/Login/Login"));
@@ -26,15 +27,16 @@ const Register = lazy(() => import("./pages/Register/Register"));
 
 function App() {
   const { language } = useLanguage();
+  const { user } = useAuth();
 
   return (
-    <div className={language === "en" ? "dir-en" : "dir-ar"}>
-      <BrowserRouter>
+    <div className={`dir-${language}`}>
+      <Router>
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route element={<Layout />}>
               {/* Define Home as the index route */}
-              <Route index element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="sea-magic" element={<SeaMagic />} />
               <Route path="nature-and-adventure" element={<NatureAndAdventure />} />
               <Route path="antiquities-and-civilization" element={<AntiquitiesAndCivilization />} />
@@ -47,13 +49,14 @@ function App() {
               <Route path="help-support" element={<HelpSupport />} />
               <Route path="place-details/:id" element={<City />} />
               <Route path="willing-to-arrive" element={<WillingToArrive />} />
+              <Route path="willing-to-arrive" element={user ? <WillingToArrive /> : <Navigate to="/login" />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
-              <Route path="*" element={<Error />} />
+              <Route path="*" element={<ErrorPage />} />
             </Route>
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
