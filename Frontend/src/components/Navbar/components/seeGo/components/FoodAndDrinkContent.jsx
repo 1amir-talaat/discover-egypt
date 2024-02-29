@@ -52,7 +52,7 @@ function FoodAndDrinkContent() {
                 <img className="w-100" src={d.image} alt={d.title} />
               </div>
               <h5>{d.title}</h5>
-              <a href="#">
+              <a href="/coming-soon">
                 <span>{language == "ar" ? "اعرف أكثر" : "Learn More"}</span>
                 <IoIosArrowBack className="arrow" />
               </a>

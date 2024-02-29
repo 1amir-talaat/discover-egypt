@@ -58,7 +58,7 @@ function ActivitiesAndAttractionsContent() {
       <div className="activities">
         <div className="activities-header d-flex align-items-center justify-content-between py-3">
           <h5>{language == "ar" ? "التصفح حسب الفئة" : "Browse by categories"}</h5>
-          <a href="#" className="gap-4">
+          <a href="/coming-soon" className="gap-4">
             <span>{language == "ar" ? "اعرف أكثر" : "Learn More"}</span>
             <IoIosArrowBack className="arrow" />
           </a>
