@@ -88,9 +88,8 @@ function City() {
               <img src={place[0].image} alt="" />
             </div>
             <div
-              className={`mx-auto sticky-card-container ${
-                isSticky ? "position-fixed" : ""
-              }`}
+              className={`mx-auto sticky-card-container ${isSticky ? "position-fixed" : ""
+                }`}
               style={{
                 top: "80px",
                 [language === "en" ? "right" : "left"]:

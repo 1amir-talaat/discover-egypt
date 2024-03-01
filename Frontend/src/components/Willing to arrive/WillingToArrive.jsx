@@ -1,6 +1,6 @@
 import { useWillingToArrive } from "../../context/WillingToArriveContext";
 import { useLanguage } from "../../context/LanguageContext";
-
+import ".././Card/Crad.css"
 import "./willing-to-arrive.css";
 
 function WillingToArrive() {
@@ -9,30 +9,33 @@ function WillingToArrive() {
   console.log(willingToArrive);
   return (
     <>
-      <div className="d-flex align-items-center gap-3 container">
-        {willingToArrive.map((item) => {
-          return (
-            <>
-              <div className="position-relative" style={{ width: 300 + "px" }}>
-                <div className="card experience-card border-0 shadow w-100 position-relative">
-                  <img className="card-img-top experience-card-image" src={item.place.image} alt={item.desc} />
-                  <div className="card-body">
-                    <div className="experience-card-badge">
-                      <h5>{item.place.city}</h5>
+      <div className="align-items-center gap-3 container">
+        <div className="row">
+
+          {willingToArrive.map((item) => {
+            return (
+              <>
+                <div className="col-lg-4 col-md-6 col-sm-8 mt-3 ">
+                  <div className="card text-start cardy border-0 shadow ">
+                    <img className="card-img-top h-100 w-100" src={item.place.image} alt="Title" />
+                    <div className="card-body">
+                      <h3 className={`card-title ${language === "ar" ? "text-end" : ""}`}>{item.place.city}</h3>
+                      <p className={`card-text ${language === "ar" ? "text-end" : ""}`} style={{ fontSize: 17, color: "#333333" }}>
+                        {item.place.desc}
+                      </p>
                     </div>
-                    <p>{item.place.desc}</p>
+                    <hr className="cardy-hr mt-4 ms-3" />
+                    <a href="coming-soon" className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
+                      <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
+                    </a>
+                    <Delete placeId={item.place.id} />
                   </div>
-                  <hr className="experience-card-hr mt-4 ms-3" />
-                  <button className="btn fw-bold" style={{ color: "rgb(83, 187, 123)" }}>
-                    <h5>{language === "en" ? "Book Now" : "أحجز الآن"}</h5>
-                  </button>
                 </div>
-                <Delete placeId={item.place.id} />
-              </div>
-            </>
-          );
-        })}
-      </div>
+              </>
+            );
+          })}
+        </div>
+      </div >
     </>
   );
 }
