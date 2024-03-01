@@ -265,7 +265,7 @@ function Navbar() {
       >
         <nav className="top-nav">
           <div className="container">
-            <a href="/">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>
+            <a href="/help-support">{language === "ar" ? "تواصل معنا" : "Contact us"}</a>
             <p className="change-lang" onClick={toggleLanguage} style={{ fontSize: 18 }}>
               <MdLanguage className="mx-1" />
               <span>{language === "ar" ? "English" : "عربي"}</span>
