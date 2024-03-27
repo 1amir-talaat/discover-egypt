@@ -20,7 +20,7 @@ function Card({ data }) {
             <div className="card text-start cardy border-0 shadow">
               {user && (
                 <div className="add-to-wishlist">
-                  {willingToArrive.some((i) => i.place.id === item.id) ? (
+                  {willingToArrive && willingToArrive.some((i) => (i.place ? i.place.id === item.id : i.placeId === item.id)) ? (
                     <FaHeart onClick={() => removeFromWillingToArrive(item.id)} />
                   ) : (
                     <FaRegHeart onClick={() => addToWillingToArrive(item.id)} />
