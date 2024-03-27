@@ -90,51 +90,62 @@ const PlaceController = {
 
   searchPlaces: async (req, res) => {
     const { keyword } = req.body;
-
-    console.log(keyword);
-
-    if (!keyword.trim()) {
-      return res.status(400).json({ message: "No keyword provided for search" });
-    }
-
-    const lowerKeyword = keyword.toLowerCase();
-
-    const keywords = lowerKeyword.split(" ");
-
     try {
-      const places = await Place.findAll({
-        where: {
-          [Op.or]: keywords.map((keyword) => ({
-            [Op.or]: [
-              { city_ar: { [Op.like]: `%${keyword}%` } },
-              { city_en: { [Op.like]: `%${keyword}%` } },
-              { title_ar: { [Op.like]: `%${keyword}%` } },
-              { title_en: { [Op.like]: `%${keyword}%` } },
-              { desc_ar: { [Op.like]: `%${keyword}%` } },
-              { desc_en: { [Op.like]: `%${keyword}%` } },
-              { place_name: { [Op.like]: `%${keyword}%` } },
-              { category: { [Op.like]: `%${keyword}%` } },
-              { sub_category: { [Op.like]: `%${keyword}%` } },
-              { location_url: { [Op.like]: `%${keyword}%` } },
-              {
-                [Op.and]: [{ min_price: { [Op.lte]: keyword } }, { max_price: { [Op.gte]: keyword } }],
-              },
-            ],
-          })),
-        },
-        include: [
-          {
-            model: Review,
-            include: [{ model: User, attributes: ["name", "email"] }],
-          },
-        ],
-      });
-
-      if (places.length === 0) {
-        return res.status(404).json({ message: "No places found for the specified keyword" });
+      if (!keyword) {
+        return res.status(400).json({ error: "Keyword is required for search" });
       }
 
-      const data = transformPlacesData(places);
+      let places;
+      let numericValue = parseFloat(keyword);
+
+      if (!isNaN(numericValue)) {
+        places = await Place.findAll({
+          where: {
+            [Op.and]: [{ min_price: { [Op.lte]: numericValue } }, { max_price: { [Op.gte]: numericValue } }],
+          },
+          include: [
+            {
+              model: Review,
+              include: [{ model: User, attributes: ["name", "email"] }],
+            },
+          ],
+        });
+      } else {
+        const terms = keyword.split(" ");
+        places = await Place.findAll({
+          where: {
+            [Op.or]: terms.map((term) => ({
+              [Op.or]: [
+                { title_ar: { [Op.like]: `%${term.toLowerCase()}%` } },
+                { title_en: { [Op.like]: `%${term.toLowerCase()}%` } },
+                { desc_ar: { [Op.like]: `%${term.toLowerCase()}%` } },
+                { desc_en: { [Op.like]: `%${term.toLowerCase()}%` } },
+                { place_name: { [Op.like]: `%${term.toLowerCase()}%` } },
+                { category: { [Op.like]: `%${term.toLowerCase()}%` } },
+              ],
+            })),
+          },
+          include: [
+            {
+              model: Review,
+              include: [{ model: User, attributes: ["name", "email"] }],
+            },
+          ],
+        });
+      }
+
+      numericValue = parseFloat(keyword.match(/\d+/));
+
+      let filteredPlaces;
+      if (numericValue) {
+        filteredPlaces = places.filter((place) => {
+          return place.min_price <= numericValue && place.max_price >= numericValue;
+        });
+      } else {
+        filteredPlaces = places;
+      }
+
+      const data = transformPlacesData(filteredPlaces);
       res.status(200).json(data);
     } catch (error) {
       res.status(400).json({ error: error.message });
