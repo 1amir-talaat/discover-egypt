@@ -245,8 +245,8 @@ function Navbar() {
     e.preventDefault();
     addToSearchHistory(serachValue);
     if (serachValue.trim() !== "") {
-      navigation("/coming-soon");
-      // navigation(`/search-results?search=${encodeURIComponent(serachValue)}`);
+      // navigation("/coming-soon");
+      navigation(`/search-results?search=${encodeURIComponent(serachValue)}`);
     }
   };
 

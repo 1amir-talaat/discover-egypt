@@ -9,6 +9,7 @@ import { FaRegHeart, FaHeart } from "react-icons/fa";
 function Card({ data }) {
   const { language } = useLanguage();
   const { willingToArrive, addToWillingToArrive, removeFromWillingToArrive } = useWillingToArrive();
+  console.log(willingToArrive);
   const { user } = useAuth();
 
   return (
@@ -19,7 +20,7 @@ function Card({ data }) {
             <div className="card text-start cardy border-0 shadow">
               {user && (
                 <div className="add-to-wishlist">
-                  {willingToArrive.some((i) => i.placeId === item.id) ? (
+                  {willingToArrive.some((i) => i.place.id === item.id) ? (
                     <FaHeart onClick={() => removeFromWillingToArrive(item.id)} />
                   ) : (
                     <FaRegHeart onClick={() => addToWillingToArrive(item.id)} />
