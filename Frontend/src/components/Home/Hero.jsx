@@ -1,31 +1,18 @@
-import { useEffect, useState } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
+import { useEffect, useState } from "react";
+import data from "./hero.json";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "./hero.css";
 
-import { useLanguage } from "../../context/LanguageContext";
-
 function Hero() {
-  const [heroData, setHeroData] = useState([]);
+  const { language } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const [heroSwiper, setHeroSwiper] = useState(null);
-  const { language } = useLanguage();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/category/Festivals");
-        const data = await response.json();
-        setHeroData(data[language]);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const heroData = data[language] || [];
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.realIndex);
@@ -73,7 +60,7 @@ function Hero() {
   return (
     <div className="hero">
       <div className="overlay">
-        {heroData.length > 0 && <img src={heroData[activeIndex].image} alt="" className="blur" />}
+        {heroData.length > 0 && <img src={heroData[activeIndex].img} alt="" className="blur" />}
         <div className="shodo"></div>
       </div>
 
@@ -84,7 +71,7 @@ function Hero() {
               {heroData.length > 0 && (
                 <>
                   <h1 className="hero-text-title">{heroData[activeIndex].title}</h1>
-                  <p className="hero-text-description">{heroData[activeIndex].desc}</p>
+                  <p className="hero-text-description">{heroData[activeIndex].description}</p>
                 </>
               )}
             </div>
@@ -92,6 +79,7 @@ function Hero() {
           </div>
           <div className="hero-slider">
             <Swiper
+              dir={language === "ar" ? "rtl" : "ltr"}
               autoplay={{ delay: 5000 }}
               loop={true} // Enable loop
               effect="cards"
@@ -101,18 +89,18 @@ function Hero() {
               modules={[EffectCards]}
               className="mySwiper"
             >
-              {heroData.map((festival, index) => (
+              {heroData.map((d, index) => (
                 <SwiperSlide key={index}>
-                  <img src={festival.image} alt={festival.title} />
+                  <img src={d.img} alt={d.title} />
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
         </div>
         <div className="tab-area">
-          {heroData.map((festival, index) => (
+          {heroData.map((d, index) => (
             <div key={index} className={`tab-item ${activeIndex === index ? "active" : ""}`} onClick={() => handleTabClick(index)}>
-              <div className="tab-title">{festival.title}</div>
+              <div className="tab-title">{d.title}</div>
             </div>
           ))}
         </div>

@@ -1,56 +1,46 @@
-{
-  "ar": [
-    {
-      "title": "مهرجان الفنون الشعبية بالفسطاط",
-      "description": "يعد مهرجان الفنون الشعبية بالفسطاط فرصة لعرض وتسليط الضوء على التراث الشعبي المصري من خلال فعاليات فنية وحرفية تقام في أحياء التراث بالقاهرة.",
-      "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
-    },
-    {
-      "title": "مهرجان أبو سمبل للشمس",
-      "description": "يحدث هذا الحدث مرتين في السنة عندما تتوافق أشعة الشمس لتنير الحجر الداخلي لمعبد أبو سمبل، ويجذب السياح الذين يرغبون في مشاهدة هذه الظاهرة القديمة.",
-      "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
-    },
-    {
-      "title": "مهرجان الجاز بالقاهرة",
-      "description": "يجذب مهرجان الجاز بالقاهرة عشاق الموسيقى من جميع أنحاء العالم للاستمتاع بأداء موسيقى الجاز الراقية في أجواء فنية مميزة.",
-      "img": "https://static.lahamag.com/attachments/173/FB_IMG_1633797615066_339239_original.jpg"
-    },
-    {
-      "title": "مهرجان القاهرة السينمائي الدولي",
-      "description": "يعد مهرجان القاهرة السينمائي الدولي مناسبة سنوية مهمة في عالم السينما، حيث يعرض أفلاما دولية ومصرية متنوعة ويجتذب صناع السينما وعشاقها من جميع أنحاء العالم.",
-      "img": "https://aljaras.com/wp-content/uploads/2018/11/45971457_262289091152425_3975700635763867648_n-445x630.jpg"
-    },
-    {
-      "title": "مهرجان القاهرة للأزياء",
-      "description": "يعد مهرجان القاهرة للأزياء واحدًا من أكبر المهرجانات في مجال الأزياء في الشرق الأوسط، حيث يعرض مصممون محليون وعالميون أحدث صيحات الموضة ويجذب عشاق الموضة والجمال.",
-      "img": "https://scontent.fcai22-4.fna.fbcdn.net/v/t39.30808-6/358686696_721436323326930_5633574240068293096_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=AhP05W7lhwkAX8MoiHZ&_nc_ht=scontent.fcai22-4.fna&oh=00_AfDNLa7GmjqCg1_CncW8JzqCzWK8UZ6d9IXLjTWVEAsR1A&oe=65E233F6"
-    }
-  ],
-  "en": [
-    {
-      "title": "Fustat Folk Arts Festival",
-      "description": "The Fustat Folk Arts Festival provides an opportunity to showcase and highlight Egyptian folk heritage through artistic and craft activities held in heritage neighborhoods in Cairo.",
-      "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
-    },
-    {
-      "title": "Abu Simbel Sun Festival",
-      "description": "This event occurs twice a year when sunlight aligns to illuminate the inner sanctum of the Abu Simbel temple, attracting tourists who wish to witness this ancient phenomenon.",
-      "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
-    },
-    {
-      "title": "Cairo Jazz Festival",
-      "description": "The Cairo Jazz Festival attracts music enthusiasts from around the world to enjoy performances of fine jazz music in distinctive artistic atmospheres.",
-      "img": "https://static.lahamag.com/attachments/173/FB_IMG_1633797615066_339239_original.jpg"
-    },
-    {
-      "title": "Cairo International Film Festival",
-      "description": "The Cairo International Film Festival is an important annual event in the world of cinema, showcasing a diverse range of international and Egyptian films and attracting filmmakers and enthusiasts from around the world.",
-      "img": "https://aljaras.com/wp-content/uploads/2018/11/45971457_262289091152425_3975700635763867648_n-445x630.jpg"
-    },
-    {
-      "title": "Cairo Fashion Festival",
-      "description": "The Cairo Fashion Festival is one of the largest fashion festivals in the Middle East, featuring local and international designers showcasing the latest fashion trends and attracting fashion enthusiasts and beauty lovers.",
-      "img": "https://scontent.fcai22-4.fna.fbcdn.net/v/t39.30808-6/358686696_721436323326930_5633574240068293096_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=AhP05W7lhwkAX8MoiHZ&_nc_ht=scontent.fcai22-4.fna&oh=00_AfDNLa7GmjqCg1_CncW8JzqCzWK8UZ6d9IXLjTWVEAsR1A&oe=65E233F6"
-    }
-  ]
-}
+  {
+    "ar": [
+      {
+        "title": "مهرجان الفنون الشعبية بالفسطاط",
+        "description": "يعد مهرجان الفنون الشعبية بالفسطاط فرصة لعرض وتسليط الضوء على التراث الشعبي المصري من خلال فعاليات فنية وحرفية تقام في أحياء التراث بالقاهرة.",
+        "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
+      },
+      {
+        "title": "مهرجان أبو سمبل للشمس",
+        "description": "يحدث هذا الحدث مرتين في السنة عندما تتوافق أشعة الشمس لتنير الحجر الداخلي لمعبد أبو سمبل، ويجذب السياح الذين يرغبون في مشاهدة هذه الظاهرة القديمة.",
+        "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
+      },
+      {
+        "title": "مهرجان الجاز بالقاهرة",
+        "description": "يجذب مهرجان الجاز بالقاهرة عشاق الموسيقى من جميع أنحاء العالم للاستمتاع بأداء موسيقى الجاز الراقية في أجواء فنية مميزة.",
+        "img": "https://static.lahamag.com/attachments/173/FB_IMG_1633797615066_339239_original.jpg"
+      },
+      {
+        "title": "مهرجان القاهرة السينمائي الدولي",
+        "description": "يعد مهرجان القاهرة السينمائي الدولي مناسبة سنوية مهمة في عالم السينما، حيث يعرض أفلاما دولية ومصرية متنوعة ويجتذب صناع السينما وعشاقها من جميع أنحاء العالم.",
+        "img": "https://aljaras.com/wp-content/uploads/2018/11/45971457_262289091152425_3975700635763867648_n-445x630.jpg"
+      }
+    ],
+    "en": [
+      {
+        "title": "Fustat Folk Arts Festival",
+        "description": "The Fustat Folk Arts Festival provides an opportunity to showcase and highlight Egyptian folk heritage through artistic and craft activities held in heritage neighborhoods in Cairo.",
+        "img": "https://d1b3667xvzs6rz.cloudfront.net/2021/12/Fustat4.jpg"
+      },
+      {
+        "title": "Abu Simbel Sun Festival",
+        "description": "This event occurs twice a year when sunlight aligns to illuminate the inner sanctum of the Abu Simbel temple, attracting tourists who wish to witness this ancient phenomenon.",
+        "img": "https://images.memphistours.com/large/3f1cbd70b891236bd079fdb3a2bc8b1d.jpg"
+      },
+      {
+        "title": "Cairo Jazz Festival",
+        "description": "The Cairo Jazz Festival attracts music enthusiasts from around the world to enjoy performances of fine jazz music in distinctive artistic atmospheres.",
+        "img": "https://static.lahamag.com/attachments/173/FB_IMG_1633797615066_339239_original.jpg"
+      },
+      {
+        "title": "Cairo International Film Festival",
+        "description": "The Cairo International Film Festival is an important annual event in the world of cinema, showcasing a diverse range of international and Egyptian films and attracting filmmakers and enthusiasts from around the world.",
+        "img": "https://aljaras.com/wp-content/uploads/2018/11/45971457_262289091152425_3975700635763867648_n-445x630.jpg"
+      }
+    ]
+  }
