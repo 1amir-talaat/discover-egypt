@@ -40,11 +40,5 @@ This project was completed as a collaborative effort among team members. Respons
 ## Acknowledgments
 Special thanks to our school mentors and team members for their dedication and support in bringing this project to life.
 
----
 
-## Contact Information
-For any inquiries or further information about this project, please contact us at:
-- Email: discoveregypt.project@example.com
-
----
 **This project was created as part of a school assignment and is intended for educational purposes.**
