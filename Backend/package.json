@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "nodemon",
+    "postinstall": "npm install mysql2 -g"
   },
   "keywords": [],
   "author": "",
