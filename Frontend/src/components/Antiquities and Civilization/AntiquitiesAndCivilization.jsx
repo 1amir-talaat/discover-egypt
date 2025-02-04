@@ -13,7 +13,7 @@ function AntiquitiesAndCivilization() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/category/Antiquities");
+        const response = await fetch("import.meta.env.VITE_HOSTcategory/Antiquities");
         const data = await response.json();
         setPlaces(data[language]);
       } catch (error) {
@@ -44,7 +44,7 @@ function AntiquitiesAndCivilization() {
           <h1 style={{ fontSize: 42 }}>{language == "en" ? "Discover the civilization of Egypt" : "اكتشف حضارة مصر    "}</h1>
           <Card data={places} />
         </div>
-      </div >
+      </div>
       <Places />
     </>
   );

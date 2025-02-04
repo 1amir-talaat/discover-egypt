@@ -13,7 +13,7 @@ function NatureAndAdventure() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/category/Civilization");
+        const response = await fetch("import.meta.env.VITE_HOSTcategory/Civilization");
         const data = await response.json();
         setPlaces(data[language]);
       } catch (error) {

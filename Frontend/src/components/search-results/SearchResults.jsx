@@ -16,7 +16,7 @@ function SearchResults() {
     console.log(querye);
 
     axios
-      .post("http://localhost:5000/search", { keyword: querye })
+      .post("import.meta.env.VITE_HOSTsearch", { keyword: querye })
       .then((response) => {
         console.log("Response:", response.data);
         setData(response.data);
