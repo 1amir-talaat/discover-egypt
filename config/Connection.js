@@ -1,11 +1,8 @@
 import { Sequelize } from "sequelize";
-import dotenv from "dotenv";
 
-dotenv.config();
-
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
+const sequelize = new Sequelize("sql8761187", "sql8761187", "QZFEW97bIk", {
+  host: "sql8.freesqldatabase.com",
+  port: 3306,
   dialect: "mysql",
 });
 
