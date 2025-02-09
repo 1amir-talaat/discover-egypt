@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/Connection.js";
 import Review from "./Review.js";
 
-const Place = sequelize.define("Place", {
+const Place = sequelize.define("place", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

@@ -4,7 +4,7 @@ import User from "./User.js";
 import Place from "./Place.js";
 
 // Define the Review model
-const Review = sequelize.define("Review", {
+const Review = sequelize.define("review", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
